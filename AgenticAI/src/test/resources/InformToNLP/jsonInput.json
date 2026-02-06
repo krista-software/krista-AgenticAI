@@ -1,0 +1,500 @@
+[
+  {},
+  {},
+  {
+    "available Days": {
+      "fieldType": "com.krista.fields.DateRange",
+      "attributes": {
+        "allowPast": true,
+        "allowToday": true,
+        "allowFuture": true,
+        "maxDurationInDays": 10,
+        "allowedRange": {
+          "startOfDateRange": "22/08/2025 00:00:00",
+          "endOfDateRange": "12/09/2025 00:00:00"
+        }
+      },
+      "isMandatoryField": true,
+      "value": {
+        "startOfDateRange": "30/08/2025 00:00:00",
+        "endOfDateRange": "02/09/2025 00:00:00"
+      }
+    },
+    "Previously exisiting diseases": {
+      "fieldType": "com.krista.fields.Checkboxes",
+      "attributes": {
+        "options": [
+          "Blood Pressure",
+          "Diabetes",
+          "Migrane",
+          "Polio",
+          "Thyroid"
+        ]
+      },
+      "isMandatoryField": true,
+      "value": [
+        "Blood Pressure",
+        "Diabetes"
+      ]
+    },
+    "Insurance Details": {
+      "fieldType": "com.krista.fields.MultiField",
+      "attributes": {
+        "fields": {
+          "Insurance provider": {
+            "fieldType": "com.krista.fields.Text",
+            "attributes": {},
+            "isMandatoryField": true
+          },
+          "Sum Assured": {
+            "fieldType": "com.krista.fields.Number",
+            "attributes": {},
+            "isMandatoryField": true
+          },
+          "Smoker?": {
+            "fieldType": "com.krista.fields.Switch",
+            "attributes": {},
+            "isMandatoryField": true
+          }
+        },
+        "isMandatoryField": true
+      },
+      "isMandatoryField": true,
+      "value": {
+        "Insurance provider": "ICICI",
+        "Sum Assured": 700000,
+        "Smoker?": false
+      }
+    }
+  },
+  {
+    "List of damages": {
+      "fieldType": "com.krista.fields.List",
+      "attributes": {
+        "field": {
+          "fieldType": "com.krista.fields.Text",
+          "isMandatoryField": true,
+          "attributes": {}
+        }
+      },
+      "isMandatoryField": true,
+      "value": [
+        "<krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"damage details\\\")\" value=\"window is scratched\" name=\"damage details\" fieldtype=\"com.krista.fields.Text\" attributes=\"{\\\"trim\\\":true}\"></krista-field>",
+        "<krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"damage details\\\")\" value=\"tail gate has dent\" name=\"damage details\" fieldtype=\"com.krista.fields.Text\" attributes=\"{\\\"trim\\\":true}\"></krista-field>",
+        "<krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"damage details\\\")\" value=\"tyre has scratches\" name=\"damage details\" fieldtype=\"com.krista.fields.Text\" attributes=\"{\\\"trim\\\":true}\"></krista-field>"
+      ]
+    }
+  },
+  {
+    "Holidays": {
+      "fieldType": "com.krista.fields.List",
+      "attributes": {
+        "field": {
+          "fieldType": "com.krista.fields.MultiField",
+          "attributes": {
+            "fields": {
+              "Name": {
+                "fieldType": "com.krista.fields.Text",
+                "attributes": {
+                  "minLength": 3,
+                  "maxLength": 10
+                },
+                "isMandatoryField": true
+              },
+              "Date": {
+                "fieldType": "com.krista.fields.Date",
+                "attributes": {
+                  "includeTimeOfDay": false,
+                  "allowPast": false,
+                  "allowToday": true,
+                  "allowFuture": true
+                },
+                "isMandatoryField": true
+              }
+            }
+          },
+          "isMandatoryField": true
+        },
+        "isMandatoryField": true,
+        "value": [
+          {
+            "Name": "Christmas",
+            "Date": "25/12/2025 00:00:00"
+          },
+          {
+            "Name": "New year",
+            "Date": "01/01/2026 00:00:00"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Section 80C": {
+      "fieldType": "com.krista.fields.MultiField",
+      "attributes": {
+        "fields": {
+          "Mutual Funds": {
+            "fieldType": "com.krista.fields.MultiField",
+            "attributes": {
+              "fields": {
+                "Type": {
+                  "fieldType": "com.krista.fields.PickOne",
+                  "attributes": {
+                    "options": [
+                      "ELSS",
+                      "others"
+                    ]
+                  },
+                  "isMandatoryField": true
+                },
+                "Amount": {
+                  "fieldType": "com.krista.fields.Currency",
+                  "attributes": {
+                    "formatPattern": "\"₹\"#,##0"
+                  },
+                  "isMandatoryField": true
+                }
+              }
+            },
+            "isMandatoryField": true
+          },
+          "Housing Loan": {
+            "fieldType": "com.krista.fields.MultiField",
+            "attributes": {
+              "fields": {
+                "Principal/Interest": {
+                  "fieldType": "com.krista.fields.PickOne",
+                  "attributes": {
+                    "options": [
+                      "Pricipal",
+                      "Interest"
+                    ]
+                  },
+                  "isMandatoryField": true
+                },
+                "Amount": {
+                  "fieldType": "com.krista.fields.Currency",
+                  "attributes": {
+                    "formatPattern": "\"₹\"#,##0"
+                  },
+                  "isMandatoryField": true
+                }
+              }
+            },
+            "isMandatoryField": true
+          }
+        }
+      },
+      "isMandatoryField": true,
+      "value": {
+        "Mutual Funds": {
+          "Type": "ELSS",
+          "Amount": 70000
+        },
+        "Housing Loan": {
+          "Principal/Interest": "Pricipal",
+          "Amount": 123000
+        }
+      }
+    },
+    "Section 80 D": {
+      "fieldType": "com.krista.fields.MultiField",
+      "attributes": {
+        "fields": {
+          "Investment A": {
+            "fieldType": "com.krista.fields.MultiField",
+            "attributes": {
+              "fields": {
+                "Name": {
+                  "fieldType": "com.krista.fields.Text",
+                  "attributes": {}
+                },
+                "Amount in Rs": {
+                  "fieldType": "com.krista.fields.Number",
+                  "attributes": {}
+                }
+              },
+              "isMandatoryField": true
+            }
+          },
+          "Investment B": {
+            "fieldType": "com.krista.fields.MultiField",
+            "attributes": {
+              "fields": {
+                "Name": {
+                  "fieldType": "com.krista.fields.Text",
+                  "attributes": {}
+                },
+                "Amount in Rs": {
+                  "fieldType": "com.krista.fields.Number",
+                  "attributes": {}
+                }
+              }
+            },
+            "isMandatoryField": true
+          }
+        }
+      },
+      "isMandatoryField": true,
+      "value": {
+        "Investment A": {
+          "Name": "SBI funds",
+          "Amount in Rs": 3000
+        },
+        "Investment B": {
+          "Name": "ICICI growth linked fund",
+          "Amount in Rs": 20000
+        }
+      }
+    }
+  },
+  {
+    "Items present in room": {
+      "fieldType": "com.krista.fields.List",
+      "attributes": {
+        "field": {
+          "fieldType": "com.krista.fields.Text",
+          "attributes": {}
+        },
+        "isMandatoryField": true,
+        "value": [
+          "TV",
+          "Fridge"
+        ]
+      }
+    }
+  },
+  {
+    "User": {
+      "fieldType": "com.krista.fields.Person",
+      "attributes": {
+        "minLength": 2,
+        "maxLength": 20
+      },
+      "isMandatoryField": false,
+      "value": "Paras Kumar"
+    },
+    "PAN": {
+      "fieldType": "com.krista.fields.Identifier",
+      "attributes": {
+        "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]$",
+        "maxLength": 20
+      },
+      "isMandatoryField": false,
+      "value": null
+    },
+    "Street Address": {
+      "fieldType": "com.krista.fields.Street2",
+      "attributes": {
+        "minLength": 10
+      },
+      "isMandatoryField": false,
+      "value": "C/O Late Prithvi Chand Sahu, Kumhar Toli, Irgu Road, Ranchi, Jharkhand, near veer Abhimanyu Chow"
+    }
+  },
+  {
+    "Are you facing any medical emergency?": {
+      "fieldType": "com.krista.fields.Switch",
+      "attributes": {},
+      "isMandatoryField": true,
+      "value": true
+    }
+  },
+  {},
+  {
+    "Name": {
+      "fieldType": "com.krista.fields.Text",
+      "attributes": {},
+      "isMandatoryField": true,
+      "value": "<krista-field ref=\"vars.inScope(\\\"env\\\").get(\\\"active user\\\").get(\\\"Name\\\")\" value=\"Paras Kumar\" name=\"Name\" fieldtype=\"com.krista.fields.Text\" attributes=\"{}\"></krista-field>"
+    },
+    "Contact Details": {
+      "fieldType": "com.krista.fields.MultiField",
+      "attributes": {
+        "fields": {
+          "Phone number": {
+            "fieldType": "com.krista.fields.Phone",
+            "attributes": {
+              "formatPattern": "+91 ##### #####"
+            },
+            "isMandatoryField": false
+          },
+          "Email": {
+            "fieldType": "com.krista.fields.Email",
+            "attributes": {
+              "allowedDomains": [
+                "kristasoft.com"
+              ]
+            },
+            "isMandatoryField": true
+          }
+        }
+      },
+      "isMandatoryField": true,
+      "value": null,
+        "Email": "paras.kumar@kristasoft.com"
+      }
+    },
+  {
+    "Account details": {
+      "fieldType": "com.krista.fields.MultiField",
+      "attributes": {
+        "fields": {
+          "Name": {
+            "fieldType": "com.krista.fields.Text",
+            "attributes": {},
+            "isMandatoryField": true
+          },
+          "Do you have existing account?": {
+            "fieldType": "com.krista.fields.Switch",
+            "attributes": {},
+            "isMandatoryField": true
+          },
+          "When did you create your account?": {
+            "fieldType": "com.krista.fields.DateTimeRange",
+            "attributes": {
+              "allowPast": true,
+              "allowFuture": false,
+              "maxDurationInHours": 100,
+              "allowedRange": {
+                "startOfDateRange": "01/05/2025 02:30:00",
+                "endOfDateRange": "15/05/2025 01:30:00"
+              }
+            },
+            "isMandatoryField": true
+          }
+        }
+      },
+      "isMandatoryField": true,
+      "value": {
+        "Name": "parasKumar47",
+        "Do you have existing account?": true,
+        "When did you create your account?": {
+          "startOfDateRange": "03/05/2025 02:30:00",
+          "endOfDateRange": "10/05/2025 01:30:00"
+        }
+      }
+    },
+    "Location details": {
+      "fieldType": "com.krista.fields.MultiField",
+      "attributes": {
+        "fields": {
+          "Address": {
+            "fieldType": "com.krista.fields.Street",
+            "attributes": {},
+            "isMandatoryField": false
+          },
+          "PostalCode": {
+            "fieldType": "com.krista.fields.PostalCode",
+            "attributes": {},
+            "isMandatoryField": true
+          }
+        }
+      },
+      "isMandatoryField": true,
+      "value": {
+        "PostalCode": "140001"
+      }
+    },
+    "Physical details": {
+      "fieldType": "com.krista.fields.MultiField",
+      "attributes": {
+        "fields": {
+          "Weight": {
+            "fieldType": "com.krista.fields.Unit",
+            "attributes": {
+              "formatPattern": "#,##0\" kg\"",
+              "minValue": 5
+            },
+            "isMandatoryField": false
+          },
+          "Height in feet(split your height between feet and inches)": {
+            "fieldType": "com.krista.fields.Unit",
+            "attributes": {
+              "formatPattern": "#,##0\" ft\""
+            },
+            "isMandatoryField": true
+          },
+          "Height in inch(split your height between feet and inches)": {
+            "fieldType": "com.krista.fields.Unit",
+            "attributes": {
+              "formatPattern": "#,##0\" in\"",
+              "maxValue": 11
+            },
+            "isMandatoryField": true
+          }
+        }
+      },
+      "isMandatoryField": true,
+      "value": {
+        "Height in feet(split your height between feet and inches)": 5,
+        "Height in inch(split your height between feet and inches)": 7
+      }
+    },
+    "Topics of interest(only top 5 will be considered)": {
+      "fieldType": "com.krista.fields.List",
+      "attributes": {
+        "field": {
+          "fieldType": "com.krista.fields.Text",
+          "attributes": {},
+          "isMandatoryField": false
+        }
+      },
+      "isMandatoryField": false,
+      "value": null
+    },
+    "Refferal credits/bonus points": {
+      "fieldType": "com.krista.fields.MultiField",
+      "attributes": {
+        "fields": {
+          "Number of bonus points": {
+            "fieldType": "com.krista.fields.Number",
+            "attributes": {
+              "minValue": 2
+            },
+            "isMandatoryField": false
+          },
+          "Account credits": {
+            "fieldType": "com.krista.fields.Currency",
+            "attributes": {
+              "formatPattern": "\"₹\"#,##0"
+            },
+            "isMandatoryField": false
+          },
+          "Percentage of credits you want to use": {
+            "fieldType": "com.krista.fields.Percentage",
+            "attributes": {
+              "formatPattern": "0%",
+              "maxValue": 0.5
+            },
+            "isMandatoryField": false
+          }
+        }
+      },
+      "isMandatoryField": true,
+      "value": {
+        "Number of bonus points": 10,
+        "Account credits": 20,
+        "Percentage of credits you want to use": 0.5
+      }
+    },
+    "Hobbies": {
+      "fieldType": "com.krista.fields.Checkboxes",
+      "attributes": {
+        "options": [
+          "Singing",
+          "Driving",
+          "Dancing",
+          "Photography"
+        ],
+        "maxSelection": 2
+      },
+      "isMandatoryField": true,
+      "value": [
+        "Singing",
+        "Driving"
+      ]
+    }
+  }
+]

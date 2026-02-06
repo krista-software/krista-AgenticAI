@@ -1,0 +1,1119 @@
+[
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_7541c233-5434-4c13-9237-6379424fdbae",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_ba230775-4121-4c4e-944d-7629707cc9b4",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1746777168940,
+    "attributes": {
+      "form": {
+        "localId": "FORM_4e50941c-79b7-4385-a0f6-3b8b14b586b8",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_03df24a7-6b85-4807-94c1-41e1d96ad4a2",
+                "label": "hospital name",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Text",
+                  "attributes": {
+                    "visualWidth": "S",
+                    "trim": true
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "sidebars": [],
+      "widgetSupportedFieldIds": [],
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_03df24a7-6b85-4807-94c1-41e1d96ad4a2": "Manipal Hospital"
+        },
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "bookmark": false,
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Enter hospital name"
+      },
+      "paths": []
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Book An Appointment",
+      "conversationDefinitionId": "CD_009592fa-0ecc-47e7-aea6-b2008fa063e7",
+      "conversationId": "CEC_ba230775-4121-4c4e-944d-7629707cc9b4",
+      "conversationStepId": "CS_93cbe811-4367-47c1-a3bf-f9d90bd5cb03",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1010",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Welcome",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "accepted",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_83bda313-cee0-409d-ab04-c9bef03b2be8",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_ba230775-4121-4c4e-944d-7629707cc9b4",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1746777169040,
+    "attributes": {
+      "sidebars": [],
+      "widgetSupportedFieldIds": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_ba230775-4121-4c4e-944d-7629707cc9b4": "M_83bda313-cee0-409d-ab04-c9bef03b2be8"
+      },
+      "form": {
+        "localId": "FORM_9a6f7b30-db66-42d8-af09-19932db59d8f",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Welcome to <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"hospital name\\\")\" value=\"Manipal Hospital\" name=\"hospital name\" fieldtype=\"com.krista.fields.Text\" attributes=\"{\\\"trim\\\":true}\"></krista-field>"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {},
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Book An Appointment",
+      "conversationDefinitionId": "CD_009592fa-0ecc-47e7-aea6-b2008fa063e7",
+      "conversationId": "CEC_ba230775-4121-4c4e-944d-7629707cc9b4",
+      "conversationStepId": "CS_c033e05c-200c-4704-83dc-381a73d82d50",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1030",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "uniqueMessageKey": "M_b53852c1-02ee-479b-9e80-44c6f3e071de",
+      "stepTitle": "Welcome",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_c0842f80-d44a-4098-8552-4175858a6cc3",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_ba230775-4121-4c4e-944d-7629707cc9b4",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1746777169118,
+    "attributes": {
+      "sidebars": [],
+      "widgetSupportedFieldIds": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_ba230775-4121-4c4e-944d-7629707cc9b4": "M_c0842f80-d44a-4098-8552-4175858a6cc3"
+      },
+      "form": {
+        "localId": "FORM_705461d4-8c09-4da8-9a56-3ad068b001f1",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_c7f858b7-ed95-4e44-9482-a48ef16cad28",
+                "label": "available Days",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.DateRange",
+                  "attributes": {
+                    "allowPast": true,
+                    "allowToday": true,
+                    "allowFuture": true,
+                    "defaultTimeSpan": 3,
+                    "dateFormat": "DD/MM/YY",
+                    "timezone": "Asia/Kolkata",
+                    "maxDurationInDays": 10,
+                    "typicalDurationInDays": 4,
+                    "allowedRange": {
+                      "type": "com.krista.net.model.fieldschemas.DateRange",
+                      "from": 1750962600000,
+                      "to": 1751221800000
+                    }
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_68551055-cd95-4054-993c-fce4137f2370",
+                "label": "Patient Name",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Text",
+                  "attributes": {
+                    "visualWidth": "S",
+                    "trim": true
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_23c6e1e5-abf3-4a8d-9c01-692755ad41c8",
+                "label": "Previously exisiting diseases",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Checkboxes",
+                  "attributes": {
+                    "visualWidth": "S",
+                    "options": [
+                      "Blood Pressure",
+                      "Diabetes",
+                      "Migrane",
+                      "Polio",
+                      "Thyroid"
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_32024a74-2de5-4ae1-a007-9a3ec02e4d97",
+                "label": "Insurance Details",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Insurance provider",
+                        "fieldType": "com.krista.fields.Text",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "trim": true
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Sum Assured",
+                        "fieldType": "com.krista.fields.Number",
+                        "attributes": {
+                          "visualWidth": "S"
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Smoker?",
+                        "fieldType": "com.krista.fields.Switch",
+                        "attributes": {
+                          "visualWidth": "S"
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          },
+                          "defaultValue": {
+                            "value": {
+                              "type": "Expression",
+                              "expression": "false",
+                              "yieldValue": "Boolean",
+                              "language": "Constant",
+                              "consumedVariables": []
+                            },
+                            "fieldType": "Expression"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Please enter following details to schedule an appointment"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_c7f858b7-ed95-4e44-9482-a48ef16cad28": {
+            "type": "com.krista.net.model.fieldschemas.DateRange",
+            "from": 1750962600000,
+            "to": 1751221800000
+          },
+          "FIELD_68551055-cd95-4054-993c-fce4137f2370": "Rahul",
+          "FIELD_23c6e1e5-abf3-4a8d-9c01-692755ad41c8": [
+            "Blood Pressure",
+            "Diabetes"
+          ],
+          "FIELD_32024a74-2de5-4ae1-a007-9a3ec02e4d97": {
+            "Insurance provider": "ICICI",
+            "Sum Assured": 700000,
+            "Smoker?": true
+          }
+        },
+        "submitType": "submit",
+        "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Book An Appointment",
+      "conversationDefinitionId": "CD_009592fa-0ecc-47e7-aea6-b2008fa063e7",
+      "conversationId": "CEC_ba230775-4121-4c4e-944d-7629707cc9b4",
+      "conversationStepId": "CS_6b3674a4-280c-4bb2-825b-df151b0cc7de",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Enter the details",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_be6af027-7397-4c58-a0e9-8e19ff73e946",
+    "messageType": "MT_2020",
+    "toInboxId": "inbox_CEC_ba230775-4121-4c4e-944d-7629707cc9b4",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1746777269259,
+    "attributes": {
+      "targetMessageId": "M_c0842f80-d44a-4098-8552-4175858a6cc3",
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_c7f858b7-ed95-4e44-9482-a48ef16cad28": {
+            "type": "com.krista.net.model.fieldschemas.DateRange",
+            "from": 1750962600000,
+            "to": 1751221800000
+          },
+          "FIELD_68551055-cd95-4054-993c-fce4137f2370": "Rahul",
+          "FIELD_23c6e1e5-abf3-4a8d-9c01-692755ad41c8": [
+            "Blood Pressure",
+            "Diabetes"
+          ],
+          "FIELD_32024a74-2de5-4ae1-a007-9a3ec02e4d97": {
+            "Insurance provider": "ICICI",
+            "Sum Assured": 700000,
+            "Smoker?": true
+          }
+        },
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "copies": {
+        "inbox_CEC_ba230775-4121-4c4e-944d-7629707cc9b4": "M_be6af027-7397-4c58-a0e9-8e19ff73e946"
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Book An Appointment",
+      "conversationDefinitionId": "CD_009592fa-0ecc-47e7-aea6-b2008fa063e7",
+      "conversationId": "CEC_ba230775-4121-4c4e-944d-7629707cc9b4",
+      "conversationStepId": "CS_6b3674a4-280c-4bb2-825b-df151b0cc7de",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Enter the details",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "read",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_7c8c3ba2-efbf-4f31-9383-8613843c5e63",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_ba230775-4121-4c4e-944d-7629707cc9b4",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1746777269372,
+    "attributes": {
+      "sidebars": [],
+      "widgetSupportedFieldIds": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_ba230775-4121-4c4e-944d-7629707cc9b4": "M_7c8c3ba2-efbf-4f31-9383-8613843c5e63"
+      },
+      "form": {
+        "localId": "FORM_49b884f9-f42e-4225-b847-64a9de6d44b8",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_313b63b6-817e-49bb-b4e4-5497c9c29bde",
+                "label": "available Days",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.DateRange",
+                  "attributes": {
+                    "allowPast": true,
+                    "allowToday": true,
+                    "allowFuture": true,
+                    "defaultTimeSpan": 3,
+                    "allowedRange": {
+                      "type": "com.krista.net.model.fieldschemas.DateRange",
+                      "from": 1750962600000,
+                      "to": 1751221800000
+                    },
+                    "typicalDurationInDays": 4,
+                    "maxDurationInDays": 10,
+                    "dateFormat": "DD/MM/YY",
+                    "timezone": "Asia/Kolkata"
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"available Days\")",
+                        "yieldValue": "com.krista.net.model.fieldschemas.DateRange",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"available Days\")",
+                  "yieldValue": "com.krista.net.model.fieldschemas.DateRange",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_d2d58b27-245f-4cce-a0cf-ddf0b9a0da09",
+                "label": "Insurance Details",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Insurance provider",
+                        "fieldType": "com.krista.fields.Text",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "trim": true
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Sum Assured",
+                        "fieldType": "com.krista.fields.Number",
+                        "attributes": {
+                          "visualWidth": "S"
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Smoker?",
+                        "fieldType": "com.krista.fields.Switch",
+                        "attributes": {
+                          "visualWidth": "S"
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          },
+                          "defaultValue": {
+                            "value": {
+                              "type": "Expression",
+                              "expression": "false",
+                              "yieldValue": "Boolean",
+                              "language": "Constant",
+                              "consumedVariables": []
+                            },
+                            "fieldType": "Expression"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Insurance Details\")",
+                        "yieldValue": "Map<Text, ?>",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Insurance Details\")",
+                  "yieldValue": "Map<Text, ?>",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_b0b06982-ef40-44a2-90f8-c4841e44f026",
+                "label": "Previously exisiting diseases",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Checkboxes",
+                  "attributes": {
+                    "visualWidth": "S",
+                    "options": [
+                      "Blood Pressure",
+                      "Diabetes",
+                      "Migrane",
+                      "Polio",
+                      "Thyroid"
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Previously exisiting diseases\")",
+                        "yieldValue": "Text[]",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Previously exisiting diseases\")",
+                  "yieldValue": "Text[]",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Congratulations<krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"Patient Name\\\")\" value=\"Rahul\" name=\"Patient Name\" fieldtype=\"com.krista.fields.Text\" attributes=\"{\\\"trim\\\":true}\"></krista-field>,  Your appointment has been soccerfully booked!."
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_313b63b6-817e-49bb-b4e4-5497c9c29bde": {
+            "type": "com.krista.net.model.fieldschemas.DateRange",
+            "from": 1750962600000,
+            "to": 1751221800000
+          },
+          "FIELD_d2d58b27-245f-4cce-a0cf-ddf0b9a0da09": {
+            "Insurance provider": "ICICI",
+            "Sum Assured": 700000,
+            "Smoker?": false
+          },
+          "FIELD_b0b06982-ef40-44a2-90f8-c4841e44f026": [
+            "Blood Pressure",
+            "Diabetes"
+          ]
+        },
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Book An Appointment",
+      "conversationDefinitionId": "CD_009592fa-0ecc-47e7-aea6-b2008fa063e7",
+      "conversationId": "CEC_ba230775-4121-4c4e-944d-7629707cc9b4",
+      "conversationStepId": "CS_d7778328-8cf5-451c-a37a-a110be0f5e7c",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1030",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "uniqueMessageKey": "M_a862669f-4fc8-46bf-b156-5c33c550949e",
+      "stepTitle": "Your details",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_c2070dc0-471e-467a-897d-e8a8f96a23d6",
+    "messageType": "MT_1010",
+    "toInboxId": "inbox_CEC_ba230775-4121-4c4e-944d-7629707cc9b4",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1746777269398,
+    "attributes": {
+      "message": "Thanks for choosing Krista!"
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Book An Appointment",
+      "conversationDefinitionId": "CD_009592fa-0ecc-47e7-aea6-b2008fa063e7",
+      "conversationId": "CEC_ba230775-4121-4c4e-944d-7629707cc9b4",
+      "conversationStepId": "CS_80f74edb-b4da-42d3-9bad-f869a03a7966",
+      "branch": [],
+      "thread": [],
+      "stepTypeId": "CST_1080",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": false,
+      "stepTitle": "Thanks",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  }
+]

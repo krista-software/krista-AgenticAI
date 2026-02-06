@@ -1,0 +1,1793 @@
+[
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_5b6e17c9-4a86-4123-a5da-08f37687afc2",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_119c13fd-f34a-4aaf-ba70-82eb666d0857",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1747396909142,
+    "attributes": {
+      "bookmark": false,
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {},
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "form": {
+        "localId": "FORM_318c890a-526b-4fd6-a05f-ab5edad68840",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Welcome to sign up page of Manipal hospital"
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 10",
+      "conversationDefinitionId": "CD_10b1e240-efe8-4f41-bef0-17fc28cc1e8d",
+      "conversationId": "CEC_119c13fd-f34a-4aaf-ba70-82eb666d0857",
+      "conversationStepId": "CS_f60f7dad-d406-4d4f-a036-998a1feb4417",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1010",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Person makes a request",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "accepted",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_affdd39e-572f-4522-870c-dba3488f3564",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_119c13fd-f34a-4aaf-ba70-82eb666d0857",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747396909358,
+    "attributes": {
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_119c13fd-f34a-4aaf-ba70-82eb666d0857": "M_affdd39e-572f-4522-870c-dba3488f3564"
+      },
+      "form": {
+        "localId": "FORM_50dbe5e5-d278-4549-9d74-b18395f3f663",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Basic details",
+            "pageFields": [
+              {
+                "localId": "FIELD_39538418-f984-4270-bd94-f4cb71a548e0",
+                "label": "Name",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Text",
+                  "attributes": {
+                    "visualWidth": "M",
+                    "trim": true,
+                    "toolTip": "Your name might be prefilled"
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "<krista-field ref=\"vars.inScope(\\\"env\\\").get(\\\"active user\\\").get(\\\"Name\\\")\" name=\"Name\" fieldtype=\"com.krista.fields.Text\" attributes=\"{}\"></krista-field>",
+                        "yieldValue": "Text",
+                        "language": "RichText",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "<krista-field ref=\"vars.inScope(\\\"env\\\").get(\\\"active user\\\").get(\\\"Name\\\")\" name=\"Name\" fieldtype=\"com.krista.fields.Text\" attributes=\"{}\"></krista-field>",
+                  "yieldValue": "Text",
+                  "language": "RichText",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_dd2426ec-8314-46f8-bedd-5990a45b0b57",
+                "label": "Contact Details",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Phone number",
+                        "fieldType": "com.krista.fields.Phone",
+                        "attributes": {
+                          "formatPattern": "+91 ##### #####"
+                        },
+                        "options": {
+                          "required": {
+                            "value": false,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Email",
+                        "fieldType": "com.krista.fields.Email",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "allowedDomains": [
+                            "kristasoft.com"
+                          ]
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_d74f6c67-700d-41af-b5ce-3fe6eac76fef",
+                "label": "Account details",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Name",
+                        "fieldType": "com.krista.fields.Text",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "trim": true
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Do you have existing account?",
+                        "fieldType": "com.krista.fields.Switch",
+                        "attributes": {
+                          "visualWidth": "S"
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          },
+                          "defaultValue": {
+                            "value": {
+                              "type": "Expression",
+                              "expression": "false",
+                              "yieldValue": "Boolean",
+                              "language": "Constant",
+                              "consumedVariables": []
+                            },
+                            "fieldType": "Expression"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "When did you create your account?",
+                        "fieldType": "com.krista.fields.DateTimeRange",
+                        "attributes": {
+                          "allowPast": true,
+                          "allowFuture": false,
+                          "defaultTimeSpan": 1,
+                          "visualWidth": "M",
+                          "maxDurationInHours": 100,
+                          "allowedRange": {
+                            "type": "com.krista.net.model.fieldschemas.DateRange",
+                            "from": 1745848140000,
+                            "to": 1746618540000
+                          }
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_673d08ee-f21a-4381-8604-4bb69b90af22",
+                "label": "Location details",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Address",
+                        "fieldType": "com.krista.fields.Street",
+                        "attributes": {
+                          "visualWidth": "L",
+                          "trim": true
+                        },
+                        "options": {
+                          "required": {
+                            "value": false,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "PostalCode",
+                        "fieldType": "com.krista.fields.PostalCode",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "trim": true
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_dfc4e10c-72fa-41f5-a74a-8ee7c70d456a",
+                "label": "Physical details",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Weight",
+                        "fieldType": "com.krista.fields.Unit",
+                        "attributes": {
+                          "formatPattern": "#,##0\" kg\"",
+                          "minValue": 5
+                        },
+                        "options": {
+                          "required": {
+                            "value": false,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Height in feet(split your height between feet and inches)",
+                        "fieldType": "com.krista.fields.Unit",
+                        "attributes": {
+                          "formatPattern": "#,##0\" ft\"",
+                          "typicalMaxValue": 10
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Height in inch(split your height between feet and inches)",
+                        "fieldType": "com.krista.fields.Unit",
+                        "attributes": {
+                          "formatPattern": "#,##0\" in\"",
+                          "maxValue": 11
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          },
+                          "defaultValue": {
+                            "value": {
+                              "type": "Expression",
+                              "expression": "0",
+                              "yieldValue": "Double",
+                              "language": "Constant",
+                              "consumedVariables": []
+                            },
+                            "fieldType": "Expression"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": false,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          },
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Additional details",
+            "pageFields": [
+              {
+                "localId": "FIELD_277dfb42-f8b3-4c35-b404-355347e80865",
+                "label": "Topics of interest(only top 5 will be considered)",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.List",
+                  "attributes": {
+                    "field": {
+                      "type": "Field",
+                      "fieldType": "com.krista.fields.Text",
+                      "attributes": {
+                        "visualWidth": "S",
+                        "trim": true
+                      },
+                      "options": {
+                        "required": {
+                          "value": true,
+                          "fieldType": "Boolean"
+                        }
+                      },
+                      "translations": {
+                        "type": "com.krista.model.translation.MultiTranslationMap",
+                        "translations": {}
+                      }
+                    },
+                    "toolTip": "Any random topic you like",
+                    "visualWidth": "M"
+                  },
+                  "options": {
+                    "required": {
+                      "value": false,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "Topics",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_d0a5f1ec-c1f3-4a6f-9bd3-a9806760d83c",
+                "label": "Refferal credits/bonus points",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Number of bonus points",
+                        "fieldType": "com.krista.fields.Number",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "minValue": 2
+                        },
+                        "options": {
+                          "required": {
+                            "value": false,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Account credits",
+                        "fieldType": "com.krista.fields.Currency",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "formatPattern": "\"₹\"#,##0"
+                        },
+                        "options": {
+                          "required": {
+                            "value": false,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Percentage of credits you want to use",
+                        "fieldType": "com.krista.fields.Percentage",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "formatPattern": "0%",
+                          "maxValue": 0.5
+                        },
+                        "options": {
+                          "required": {
+                            "value": false,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_a90af8fd-6b06-4a30-8601-dfd74cc9668d",
+                "label": "Hobbies",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Checkboxes",
+                  "attributes": {
+                    "visualWidth": "M",
+                    "options": [
+                      "Singing",
+                      "Driving",
+                      "Dancing",
+                      "Photography"
+                    ],
+                    "maxSelection": 2
+                  },
+                  "options": {
+                    "required": {
+                      "value": false,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_0a55756f-1bf4-42c1-9060-2635727bab33",
+                "label": "When do you typically wake up?",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Time",
+                  "attributes": {
+                    "visualWidth": "S",
+                    "timezone": "Asia/Kolkata"
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Complete this form to sign up on Manipal hospital!"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_39538418-f984-4270-bd94-f4cb71a548e0": "<krista-field ref=\"vars.inScope(\\\"env\\\").get(\\\"active user\\\").get(\\\"Name\\\")\" value=\"Paras Kumar\" name=\"Name\" fieldtype=\"com.krista.fields.Text\" attributes=\"{}\"></krista-field>",
+          "FIELD_dd2426ec-8314-46f8-bedd-5990a45b0b57": {
+            "Phone number": {
+              "countryCode": 0,
+              "nationalNumber": ""
+            },
+            "Email": "paras.kumar@kristasoft.com"
+          },
+          "FIELD_d74f6c67-700d-41af-b5ce-3fe6eac76fef": {
+            "Name": "parasKumar47",
+            "Do you have existing account?": true,
+            "When did you create your account?": {
+              "type": "com.krista.net.model.fieldschemas.DateRange",
+              "from": 1746374556566,
+              "to": 1746550956566
+            }
+          },
+          "FIELD_673d08ee-f21a-4381-8604-4bb69b90af22": {
+            "PostalCode": "140001"
+          },
+          "FIELD_dfc4e10c-72fa-41f5-a74a-8ee7c70d456a": {
+            "Height in feet(split your height between feet and inches)": 5,
+            "Height in inch(split your height between feet and inches)": 7
+          },
+          "FIELD_d0a5f1ec-c1f3-4a6f-9bd3-a9806760d83c": {
+            "Number of bonus points": 10,
+            "Account credits": 20,
+            "Percentage of credits you want to use": 0.5
+          },
+          "FIELD_a90af8fd-6b06-4a30-8601-dfd74cc9668d": [
+            "Singing",
+            "Driving"
+          ],
+          "FIELD_0a55756f-1bf4-42c1-9060-2635727bab33": 1747353600000
+        },
+        "submitType": "submit",
+        "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 10",
+      "conversationDefinitionId": "CD_10b1e240-efe8-4f41-bef0-17fc28cc1e8d",
+      "conversationId": "CEC_119c13fd-f34a-4aaf-ba70-82eb666d0857",
+      "conversationStepId": "CS_0684506a-6398-4b59-80e7-c57e0d697305",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_7a299bf8-879f-4108-866d-4ebd1e014565",
+    "messageType": "MT_2020",
+    "toInboxId": "inbox_CEC_119c13fd-f34a-4aaf-ba70-82eb666d0857",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1747397094854,
+    "attributes": {
+      "targetMessageId": "M_affdd39e-572f-4522-870c-dba3488f3564",
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_39538418-f984-4270-bd94-f4cb71a548e0": "<krista-field ref=\"vars.inScope(\\\"env\\\").get(\\\"active user\\\").get(\\\"Name\\\")\" value=\"Paras Kumar\" name=\"Name\" fieldtype=\"com.krista.fields.Text\" attributes=\"{}\"></krista-field>",
+          "FIELD_dd2426ec-8314-46f8-bedd-5990a45b0b57": {
+            "Phone number": {
+              "countryCode": 0,
+              "nationalNumber": ""
+            },
+            "Email": "paras.kumar@kristasoft.com"
+          },
+          "FIELD_d74f6c67-700d-41af-b5ce-3fe6eac76fef": {
+            "Name": "parasKumar47",
+            "Do you have existing account?": true,
+            "When did you create your account?": {
+              "type": "com.krista.net.model.fieldschemas.DateRange",
+              "from": 1746374556566,
+              "to": 1746550956566
+            }
+          },
+          "FIELD_673d08ee-f21a-4381-8604-4bb69b90af22": {
+            "PostalCode": "140001"
+          },
+          "FIELD_dfc4e10c-72fa-41f5-a74a-8ee7c70d456a": {
+            "Height in feet(split your height between feet and inches)": 5,
+            "Height in inch(split your height between feet and inches)": 7
+          },
+          "FIELD_d0a5f1ec-c1f3-4a6f-9bd3-a9806760d83c": {
+            "Number of bonus points": 10,
+            "Account credits": 20,
+            "Percentage of credits you want to use": 0.5
+          },
+          "FIELD_a90af8fd-6b06-4a30-8601-dfd74cc9668d": [
+            "Singing",
+            "Driving"
+          ],
+          "FIELD_0a55756f-1bf4-42c1-9060-2635727bab33": 1747353600000
+        },
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "copies": {
+        "inbox_CEC_119c13fd-f34a-4aaf-ba70-82eb666d0857": "M_7a299bf8-879f-4108-866d-4ebd1e014565"
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 10",
+      "conversationDefinitionId": "CD_10b1e240-efe8-4f41-bef0-17fc28cc1e8d",
+      "conversationId": "CEC_119c13fd-f34a-4aaf-ba70-82eb666d0857",
+      "conversationStepId": "CS_0684506a-6398-4b59-80e7-c57e0d697305",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "read",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_0cf9aaa3-97f1-4e98-9b86-949adaaac6e3",
+    "messageType": "MT_1010",
+    "toInboxId": "inbox_CEC_119c13fd-f34a-4aaf-ba70-82eb666d0857",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747397094920,
+    "attributes": {
+      "message": "For input string: \"\""
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 10",
+      "conversationDefinitionId": "CD_10b1e240-efe8-4f41-bef0-17fc28cc1e8d",
+      "conversationId": "CEC_119c13fd-f34a-4aaf-ba70-82eb666d0857",
+      "conversationStepId": "CS_0684506a-6398-4b59-80e7-c57e0d697305",
+      "branch": [],
+      "thread": [],
+      "stepTypeId": "CST_1040",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": false,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_0b508fe9-0929-48f1-81b5-6ad233c37693",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_119c13fd-f34a-4aaf-ba70-82eb666d0857",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747397095105,
+    "attributes": {
+      "widgetSupportedFieldIds": [
+        "FIELD_4d795516-f4cd-4f6c-8d36-2e78edbd23e7"
+      ],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_119c13fd-f34a-4aaf-ba70-82eb666d0857": "M_0b508fe9-0929-48f1-81b5-6ad233c37693"
+      },
+      "form": {
+        "localId": "FORM_ae1d514c-0bd1-4f2f-9e0d-539e42e44853",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_3b4a0885-5fbc-4154-88b6-6507e52e99b7",
+                "label": "Contact Details",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Phone number",
+                        "fieldType": "com.krista.fields.Phone",
+                        "attributes": {
+                          "formatPattern": "+91 ##### #####"
+                        },
+                        "options": {
+                          "required": {
+                            "value": false,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Email",
+                        "fieldType": "com.krista.fields.Email",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "allowedDomains": [
+                            "kristasoft.com"
+                          ]
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Contact Details\")",
+                        "yieldValue": "Map<Text, ?>",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Contact Details\")",
+                  "yieldValue": "Map<Text, ?>",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_c4ad99bf-97e9-478d-a1cb-5f542782aeb7",
+                "label": "Account details",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Name",
+                        "fieldType": "com.krista.fields.Text",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "trim": true
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Do you have existing account?",
+                        "fieldType": "com.krista.fields.Switch",
+                        "attributes": {
+                          "visualWidth": "S"
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          },
+                          "defaultValue": {
+                            "value": {
+                              "type": "Expression",
+                              "expression": "false",
+                              "yieldValue": "Boolean",
+                              "language": "Constant",
+                              "consumedVariables": []
+                            },
+                            "fieldType": "Expression"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "When did you create your account?",
+                        "fieldType": "com.krista.fields.DateTimeRange",
+                        "attributes": {
+                          "allowPast": true,
+                          "allowFuture": false,
+                          "defaultTimeSpan": 1,
+                          "visualWidth": "M",
+                          "maxDurationInHours": 100,
+                          "allowedRange": {
+                            "type": "com.krista.net.model.fieldschemas.DateRange",
+                            "from": 1745848140000,
+                            "to": 1746618540000
+                          }
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Account details\")",
+                        "yieldValue": "Map<Text, ?>",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Account details\")",
+                  "yieldValue": "Map<Text, ?>",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_9df14829-281b-4938-a0d6-e11935fda943",
+                "label": "Location details",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Address",
+                        "fieldType": "com.krista.fields.Street",
+                        "attributes": {
+                          "visualWidth": "L",
+                          "trim": true
+                        },
+                        "options": {
+                          "required": {
+                            "value": false,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "PostalCode",
+                        "fieldType": "com.krista.fields.PostalCode",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "trim": true
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Location details\")",
+                        "yieldValue": "Map<Text, ?>",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Location details\")",
+                  "yieldValue": "Map<Text, ?>",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_4d795516-f4cd-4f6c-8d36-2e78edbd23e7",
+                "label": "Topics of interest(only top 5 will be considered)",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.List",
+                  "attributes": {
+                    "field": {
+                      "type": "Field",
+                      "fieldType": "com.krista.fields.Text",
+                      "attributes": {
+                        "visualWidth": "S",
+                        "trim": true
+                      },
+                      "options": {
+                        "required": {
+                          "value": true,
+                          "fieldType": "Boolean"
+                        }
+                      },
+                      "translations": {
+                        "type": "com.krista.model.translation.MultiTranslationMap",
+                        "translations": {}
+                      }
+                    },
+                    "toolTip": "Any random topic you like",
+                    "visualWidth": "M"
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Topics of interest(only top 5 will be considered)\")",
+                        "yieldValue": "?[]",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Topics of interest(only top 5 will be considered)\")",
+                  "yieldValue": "?[]",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "Topics",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_9e2b2d1a-a6a6-4ef9-aa60-1e287ad096f3",
+                "label": "Refferal credits/bonus points",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Number of bonus points",
+                        "fieldType": "com.krista.fields.Number",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "minValue": 2
+                        },
+                        "options": {
+                          "required": {
+                            "value": false,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Account credits",
+                        "fieldType": "com.krista.fields.Currency",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "formatPattern": "\"₹\"#,##0"
+                        },
+                        "options": {
+                          "required": {
+                            "value": false,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Percentage of credits you want to use",
+                        "fieldType": "com.krista.fields.Percentage",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "formatPattern": "0%",
+                          "maxValue": 0.5
+                        },
+                        "options": {
+                          "required": {
+                            "value": false,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Refferal credits/bonus points\")",
+                        "yieldValue": "Map<Text, ?>",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Refferal credits/bonus points\")",
+                  "yieldValue": "Map<Text, ?>",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_2d11c922-a56b-437b-ad59-249dd593516e",
+                "label": "Physical details",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Weight",
+                        "fieldType": "com.krista.fields.Unit",
+                        "attributes": {
+                          "formatPattern": "#,##0\" kg\"",
+                          "minValue": 5
+                        },
+                        "options": {
+                          "required": {
+                            "value": false,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Height in feet(split your height between feet and inches)",
+                        "fieldType": "com.krista.fields.Unit",
+                        "attributes": {
+                          "formatPattern": "#,##0\" ft\"",
+                          "typicalMaxValue": 10
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Height in inch(split your height between feet and inches)",
+                        "fieldType": "com.krista.fields.Unit",
+                        "attributes": {
+                          "formatPattern": "#,##0\" in\"",
+                          "maxValue": 11
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          },
+                          "defaultValue": {
+                            "value": {
+                              "type": "Expression",
+                              "expression": "0",
+                              "yieldValue": "Double",
+                              "language": "Constant",
+                              "consumedVariables": []
+                            },
+                            "fieldType": "Expression"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Physical details\")",
+                        "yieldValue": "Map<Text, ?>",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Physical details\")",
+                  "yieldValue": "Map<Text, ?>",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_91a3866e-c922-4efe-965a-9853ee3bbb67",
+                "label": "Hobbies",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Checkboxes",
+                  "attributes": {
+                    "visualWidth": "M",
+                    "options": [
+                      "Singing",
+                      "Driving",
+                      "Dancing",
+                      "Photography"
+                    ],
+                    "maxSelection": 2
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Hobbies\")",
+                        "yieldValue": "Text[]",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Hobbies\")",
+                  "yieldValue": "Text[]",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Thanks <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"Name\\\")\" name=\"Name\" fieldtype=\"com.krista.fields.Text\" attributes=\"{\\\"trim\\\":true}\"></krista-field>! We captured all the details and submitted your account creation request at Manipal hospital. You can see your application form below:-"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_c4ad99bf-97e9-478d-a1cb-5f542782aeb7": {
+            "Do you have existing account?": false
+          },
+          "FIELD_2d11c922-a56b-437b-ad59-249dd593516e": {
+            "Height in inch(split your height between feet and inches)": 0
+          }
+        },
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 10",
+      "conversationDefinitionId": "CD_10b1e240-efe8-4f41-bef0-17fc28cc1e8d",
+      "conversationId": "CEC_119c13fd-f34a-4aaf-ba70-82eb666d0857",
+      "conversationStepId": "CS_5e8bbddf-9795-460b-a3b3-bb4c6703a6b0",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1030",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "uniqueMessageKey": "M_fb5d2e01-5f10-4c41-98a8-1d06acf730a5",
+      "stepTitle": "Inform a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  }
+]

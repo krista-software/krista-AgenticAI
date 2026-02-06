@@ -1,0 +1,23 @@
+Enter item name and price <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"Text1\\\")\" value=\"pk\" name=\"Text1\" fieldtype=\"com.krista.fields.Text\" attributes=\"{\\\"trim\\\":true}\"></krista-field> and <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"Number1\\\")\" value=\"123\" name=\"Number1\" fieldtype=\"com.krista.fields.Number\" attributes=\"{}\"></krista-field>
+Enter item name and price <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"Text1\\\")\" value=\"pk\" name=\"Text1\" fieldtype=\"com.krista.fields.Text\" attributes=\"{\\\"trim\\\":true}\"></krista-field> and <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"Number1\\\")\" value=\"123\" name=\"Number1\" fieldtype=\"com.krista.fields.Number\" attributes=\"{}\"></krista-field>
+Please enter following details to schedule an appointment
+Please enter following details to schedule an appointment
+Please fill the following details in form
+Please fill the following details in form
+Prepare holiday calender
+Complete the investment declaration
+Complete the investment declaration
+Complete the investment declaration
+"<img src=""https://studio.qa-in.eng.krista.app/media/workspaces/ws_f096fcca-d470-419e-b964-0dcd8c9ef3ef/media_ws_df2bceed-f892-4655-8ca9-abaa64421fa6"" data-mediaid=""media_ws_df2bceed-f892-4655-8ca9-abaa64421fa6"" alt=""Image"" style=""cursor:pointer;max-height:220px;max-width:220px;height:auto;width:auto;"">\nPlease enter following details to find a laminate that suits your needs"
+"<img src=""https://studio.qa-in.eng.krista.app/media/workspaces/ws_f096fcca-d470-419e-b964-0dcd8c9ef3ef/media_ws_df2bceed-f892-4655-8ca9-abaa64421fa6"" data-mediaid=""media_ws_df2bceed-f892-4655-8ca9-abaa64421fa6"" alt=""Image"" style=""cursor:pointer;max-height:220px;max-width:220px;height:auto;width:auto;"">\nPlease enter following details to find a laminate that suits your needs"
+"<img src=""https://studio.qa-in.eng.krista.app/media/workspaces/ws_f096fcca-d470-419e-b964-0dcd8c9ef3ef/media_ws_df2bceed-f892-4655-8ca9-abaa64421fa6"" data-mediaid=""media_ws_df2bceed-f892-4655-8ca9-abaa64421fa6"" alt=""Image"" style=""cursor:pointer;max-height:220px;max-width:220px;height:auto;width:auto;"">\nPlease enter following details to find a laminate that suits your needs"
+Complete the investment and address declaration
+Complete the investment and address declaration
+"We need to get your current location to help you, once details are confirmed you will get RSA facility within 30 mins* if you are in 10 Km radius of our nearest service centre(NSA)**, so kindly be as precise as possible to help us accurately locate you. Also answer few optional questions regarding condition of your vehicle and the passengers so that we can prioritise the request based on an emergency.\n\nPlease note below Terms and Conditions:-\n*30 mins time mentioned is indicative of best case scenario, there might be delay due to surge in demand\n**We might not have a service centre near you in that case you will have to bring your vehicle yourself to our nearest service station"
+"We need to get your current location to help you, once details are confirmed you will get RSA facility within 30 mins* if you are in 10 Km radius of our nearest service centre(NSA)**, so kindly be as precise as possible to help us accurately locate you. Also answer few optional questions regarding condition of your vehicle and the passengers so that we can prioritise the request based on an emergency.\n\nPlease note below Terms and Conditions:-\n*30 mins time mentioned is indicative of best case scenario, there might be delay due to surge in demand\n**We might not have a service centre near you in that case you will have to bring your vehicle yourself to our nearest service station"
+Add the details to get started
+Add the details to get started
+Add the details to get started
+Complete this form to sign up on Manipal hospital!
+Complete this form to sign up on Manipal hospital!
+Complete this form to sign up on Manipal hospital!

@@ -1,0 +1,699 @@
+[
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_2f674320-0c43-46bf-8748-9e8b725d7087",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_4f72bc35-64d9-4ea2-b54e-81205208d34d",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1747290634550,
+    "attributes": {
+      "bookmark": false,
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {},
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "form": {
+        "localId": "FORM_796063d8-e218-482a-99bf-fcf423678bcd",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Welcome!\n"
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 4",
+      "conversationDefinitionId": "CD_0a6525a7-9c65-478f-816d-17fd0c22dd7a",
+      "conversationId": "CEC_4f72bc35-64d9-4ea2-b54e-81205208d34d",
+      "conversationStepId": "CS_bae6402d-0037-4089-9837-395a373d6e77",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1010",
+      "executionMode": "draft",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Person makes a request",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "accepted",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_dd68d78f-a559-467b-aae1-ca7e167fccd1",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_4f72bc35-64d9-4ea2-b54e-81205208d34d",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747290634642,
+    "attributes": {
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_4f72bc35-64d9-4ea2-b54e-81205208d34d": "M_dd68d78f-a559-467b-aae1-ca7e167fccd1"
+      },
+      "form": {
+        "localId": "FORM_b151fa38-ddec-444e-b477-d1f3694bbeab",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_f701f69d-38ef-4c75-ba5f-375e6f3195de",
+                "label": "Holidays",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.List",
+                  "attributes": {
+                    "field": {
+                      "type": "Field",
+                      "fieldType": "com.krista.fields.MultiField",
+                      "attributes": {
+                        "fields": [
+                          {
+                            "type": "NamedField",
+                            "name": "Name",
+                            "fieldType": "com.krista.fields.Text",
+                            "attributes": {
+                              "visualWidth": "S",
+                              "trim": true,
+                              "minLength": 3,
+                              "maxLength": 10
+                            },
+                            "options": {
+                              "required": {
+                                "value": true,
+                                "fieldType": "Boolean"
+                              }
+                            },
+                            "translations": {
+                              "type": "com.krista.model.translation.MultiTranslationMap",
+                              "translations": {}
+                            }
+                          },
+                          {
+                            "type": "NamedField",
+                            "name": "Date",
+                            "fieldType": "com.krista.fields.Date",
+                            "attributes": {
+                              "visualWidth": "M",
+                              "includeTimeOfDay": false,
+                              "allowPast": false,
+                              "allowToday": true,
+                              "allowFuture": true,
+                              "dateFormat": "MM/DD/YY",
+                              "timezone": "US/Central"
+                            },
+                            "options": {
+                              "required": {
+                                "value": true,
+                                "fieldType": "Boolean"
+                              },
+                              "defaultValue": {
+                                "value": {
+                                  "type": "Expression",
+                                  "expression": "1747180800000",
+                                  "yieldValue": "Long",
+                                  "language": "Constant",
+                                  "consumedVariables": []
+                                },
+                                "fieldType": "Expression"
+                              }
+                            },
+                            "translations": {
+                              "type": "com.krista.model.translation.MultiTranslationMap",
+                              "translations": {}
+                            }
+                          }
+                        ]
+                      },
+                      "options": {
+                        "required": {
+                          "value": true,
+                          "fieldType": "Boolean"
+                        }
+                      },
+                      "translations": {
+                        "type": "com.krista.model.translation.MultiTranslationMap",
+                        "translations": {}
+                      }
+                    },
+                    "visualWidth": "L"
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Prepare holiday calender"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_f701f69d-38ef-4c75-ba5f-375e6f3195de": [
+            {
+              "Name": "Christmas",
+              "Date": 1747371600000
+            },
+            {
+              "Name": "New year",
+              "Date": 1758171600000
+            }
+          ]
+        },
+        "submitType": "submit",
+        "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 4",
+      "conversationDefinitionId": "CD_0a6525a7-9c65-478f-816d-17fd0c22dd7a",
+      "conversationId": "CEC_4f72bc35-64d9-4ea2-b54e-81205208d34d",
+      "conversationStepId": "CS_3601df14-721f-479a-95b8-947511cebcae",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "draft",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_85a397f7-850e-4233-a9b9-086a679cc06b",
+    "messageType": "MT_2020",
+    "toInboxId": "inbox_CEC_4f72bc35-64d9-4ea2-b54e-81205208d34d",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1747290715645,
+    "attributes": {
+      "targetMessageId": "M_dd68d78f-a559-467b-aae1-ca7e167fccd1",
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_f701f69d-38ef-4c75-ba5f-375e6f3195de": [
+            {
+              "Name": "Christmas",
+              "Date": 1747371600000
+            },
+            {
+              "Name": "New year",
+              "Date": 1758171600000
+            }
+          ]
+        },
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "copies": {
+        "inbox_CEC_4f72bc35-64d9-4ea2-b54e-81205208d34d": "M_85a397f7-850e-4233-a9b9-086a679cc06b"
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 4",
+      "conversationDefinitionId": "CD_0a6525a7-9c65-478f-816d-17fd0c22dd7a",
+      "conversationId": "CEC_4f72bc35-64d9-4ea2-b54e-81205208d34d",
+      "conversationStepId": "CS_3601df14-721f-479a-95b8-947511cebcae",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "draft",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "read",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_2430bf84-c5d0-4cf8-b801-30146dfd297b",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_4f72bc35-64d9-4ea2-b54e-81205208d34d",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747290715730,
+    "attributes": {
+      "widgetSupportedFieldIds": [
+        "FIELD_0a9a2f05-c76e-489d-8739-7accce69f148"
+      ],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_4f72bc35-64d9-4ea2-b54e-81205208d34d": "M_2430bf84-c5d0-4cf8-b801-30146dfd297b"
+      },
+      "form": {
+        "localId": "FORM_3c2ad356-ec5f-4115-a148-fe23b91f6889",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_0a9a2f05-c76e-489d-8739-7accce69f148",
+                "label": "Holidays",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.List",
+                  "attributes": {
+                    "field": {
+                      "type": "Field",
+                      "fieldType": "com.krista.fields.MultiField",
+                      "attributes": {
+                        "fields": [
+                          {
+                            "type": "NamedField",
+                            "name": "Name",
+                            "fieldType": "com.krista.fields.Text",
+                            "attributes": {
+                              "visualWidth": "S",
+                              "trim": true,
+                              "minLength": 3,
+                              "maxLength": 10
+                            },
+                            "options": {
+                              "required": {
+                                "value": true,
+                                "fieldType": "Boolean"
+                              }
+                            },
+                            "translations": {
+                              "type": "com.krista.model.translation.MultiTranslationMap",
+                              "translations": {}
+                            }
+                          },
+                          {
+                            "type": "NamedField",
+                            "name": "Date",
+                            "fieldType": "com.krista.fields.Date",
+                            "attributes": {
+                              "visualWidth": "M",
+                              "includeTimeOfDay": false,
+                              "allowPast": false,
+                              "allowToday": true,
+                              "allowFuture": true,
+                              "dateFormat": "MM/DD/YY",
+                              "timezone": "US/Central"
+                            },
+                            "options": {
+                              "required": {
+                                "value": true,
+                                "fieldType": "Boolean"
+                              },
+                              "defaultValue": {
+                                "value": {
+                                  "type": "Expression",
+                                  "expression": "1747180800000",
+                                  "yieldValue": "Long",
+                                  "language": "Constant",
+                                  "consumedVariables": []
+                                },
+                                "fieldType": "Expression"
+                              }
+                            },
+                            "translations": {
+                              "type": "com.krista.model.translation.MultiTranslationMap",
+                              "translations": {}
+                            }
+                          }
+                        ]
+                      },
+                      "options": {
+                        "required": {
+                          "value": true,
+                          "fieldType": "Boolean"
+                        }
+                      },
+                      "translations": {
+                        "type": "com.krista.model.translation.MultiTranslationMap",
+                        "translations": {}
+                      }
+                    },
+                    "visualWidth": "L"
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Holidays\")",
+                        "yieldValue": "?[]",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Holidays\")",
+                  "yieldValue": "?[]",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": ""
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_0a9a2f05-c76e-489d-8739-7accce69f148": [
+            {
+              "Name": "Christmas",
+              "Date": 1747371600000
+            },
+            {
+              "Name": "New year",
+              "Date": 1758171600000
+            }
+          ]
+        },
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 4",
+      "conversationDefinitionId": "CD_0a6525a7-9c65-478f-816d-17fd0c22dd7a",
+      "conversationId": "CEC_4f72bc35-64d9-4ea2-b54e-81205208d34d",
+      "conversationStepId": "CS_6be0c732-9416-4ab9-b6eb-176868660b25",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1030",
+      "executionMode": "draft",
+      "testData": false,
+      "allowChat": true,
+      "uniqueMessageKey": "M_202fc7bf-0fd3-444b-8b79-5f9665c5b134",
+      "stepTitle": "Inform a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  }
+]

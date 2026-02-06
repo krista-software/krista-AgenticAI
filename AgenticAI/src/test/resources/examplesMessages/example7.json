@@ -1,0 +1,740 @@
+[
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_72edad7e-c34b-4378-9e59-09dc90ba72a2",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_8c8e9b11-f5ba-4ecd-a900-ddb144160866",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1747296436312,
+    "attributes": {
+      "bookmark": false,
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {},
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "form": {
+        "localId": "FORM_f0d5b803-9f43-4a77-83a0-29451e473458",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Click to start ITR document correction"
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 7",
+      "conversationDefinitionId": "CD_1c1c6501-4d4d-49d7-be28-28f26add6a43",
+      "conversationId": "CEC_8c8e9b11-f5ba-4ecd-a900-ddb144160866",
+      "conversationStepId": "CS_fc016d8b-0bef-47d6-a093-3667127c7860",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1010",
+      "executionMode": "draft",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Person makes a request",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "accepted",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_316600cc-93ca-40d7-92af-54d3ffd9fd9b",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_8c8e9b11-f5ba-4ecd-a900-ddb144160866",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747296436413,
+    "attributes": {
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_8c8e9b11-f5ba-4ecd-a900-ddb144160866": "M_316600cc-93ca-40d7-92af-54d3ffd9fd9b"
+      },
+      "form": {
+        "localId": "FORM_0244f5c9-ecf7-445c-b7b5-dde52ed2f55a",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_1275544c-8715-4469-9f23-1eecc0b17094",
+                "label": "User",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Person",
+                  "attributes": {
+                    "visualWidth": "M",
+                    "trim": true,
+                    "minLength": 2,
+                    "maxLength": 20
+                  },
+                  "options": {
+                    "required": {
+                      "value": false,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_a7664aaa-bb90-4833-b8ea-8b55e1a8db0a",
+                "label": "PAN",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Identifier",
+                  "attributes": {
+                    "visualWidth": "S",
+                    "trim": true,
+                    "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]$",
+                    "maxLength": 20
+                  },
+                  "options": {
+                    "required": {
+                      "value": false,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "It should be a valid pan number",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_f8b6990d-d76f-449e-aa5a-a065f70e227b",
+                "label": "Street Address",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Street2",
+                  "attributes": {
+                    "visualWidth": "L",
+                    "trim": true,
+                    "minLength": 10
+                  },
+                  "options": {
+                    "required": {
+                      "value": false,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Complete the investment and address declaration"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_1275544c-8715-4469-9f23-1eecc0b17094": "Paras Kumar",
+          "FIELD_a7664aaa-bb90-4833-b8ea-8b55e1a8db0a": "EMKPK9968K",
+          "FIELD_f8b6990d-d76f-449e-aa5a-a065f70e227b": "C/O Late Prithvi Chand Sahu, Kumhar Toli, Irgu Road, Ranchi, Jharkhand, near veer Abhimanyu Chow"
+        },
+        "submitType": "submit",
+        "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 7",
+      "conversationDefinitionId": "CD_1c1c6501-4d4d-49d7-be28-28f26add6a43",
+      "conversationId": "CEC_8c8e9b11-f5ba-4ecd-a900-ddb144160866",
+      "conversationStepId": "CS_0f609cb1-efce-4b17-9a5b-aa99788967bd",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "draft",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_30943b76-591a-4b8b-be7d-cb4b11f9c132",
+    "messageType": "MT_2020",
+    "toInboxId": "inbox_CEC_8c8e9b11-f5ba-4ecd-a900-ddb144160866",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1747296467005,
+    "attributes": {
+      "targetMessageId": "M_316600cc-93ca-40d7-92af-54d3ffd9fd9b",
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_1275544c-8715-4469-9f23-1eecc0b17094": "Paras Kumar",
+          "FIELD_a7664aaa-bb90-4833-b8ea-8b55e1a8db0a": "EMKPK9968K",
+          "FIELD_f8b6990d-d76f-449e-aa5a-a065f70e227b": "C/O Late Prithvi Chand Sahu, Kumhar Toli, Irgu Road, Ranchi, Jharkhand, near veer Abhimanyu Chow"
+        },
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "copies": {
+        "inbox_CEC_8c8e9b11-f5ba-4ecd-a900-ddb144160866": "M_30943b76-591a-4b8b-be7d-cb4b11f9c132"
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 7",
+      "conversationDefinitionId": "CD_1c1c6501-4d4d-49d7-be28-28f26add6a43",
+      "conversationId": "CEC_8c8e9b11-f5ba-4ecd-a900-ddb144160866",
+      "conversationStepId": "CS_0f609cb1-efce-4b17-9a5b-aa99788967bd",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "draft",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "read",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_62cc8219-9248-4b32-a92a-e7d49bbfa2b4",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_8c8e9b11-f5ba-4ecd-a900-ddb144160866",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747296467278,
+    "attributes": {
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_8c8e9b11-f5ba-4ecd-a900-ddb144160866": "M_62cc8219-9248-4b32-a92a-e7d49bbfa2b4"
+      },
+      "form": {
+        "localId": "FORM_438d160f-d0c6-4fb7-9b5d-7e39b0f5516e",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_68d6a7c2-62c5-449b-aa9d-f2b64d5ca7fa",
+                "label": "User",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Person",
+                  "attributes": {
+                    "visualWidth": "M",
+                    "trim": true,
+                    "minLength": 2,
+                    "maxLength": 20
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"User\")",
+                        "yieldValue": "Text",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"User\")",
+                  "yieldValue": "Text",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_a0d7c135-5fd6-4ab4-9b14-2656a7df5ba3",
+                "label": "PAN",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Identifier",
+                  "attributes": {
+                    "visualWidth": "S",
+                    "trim": true,
+                    "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]$",
+                    "maxLength": 20
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"PAN\")",
+                        "yieldValue": "Text",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"PAN\")",
+                  "yieldValue": "Text",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "It should be a valid pan number",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_0948d640-b7e9-427a-80b3-c09d6f19186a",
+                "label": "Street Address",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Street2",
+                  "attributes": {
+                    "visualWidth": "L",
+                    "trim": true,
+                    "minLength": 10
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Street Address\")",
+                        "yieldValue": "Text",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Street Address\")",
+                  "yieldValue": "Text",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "These are all the values we captured for PAN <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"PAN\\\")\" value=\"EMKPK9968K\" name=\"PAN\" fieldtype=\"com.krista.fields.Text\" attributes=\"{\\\"trim\\\":true}\"></krista-field>, you would find the list of possibly updated documents below"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_68d6a7c2-62c5-449b-aa9d-f2b64d5ca7fa": "Paras Kumar",
+          "FIELD_a0d7c135-5fd6-4ab4-9b14-2656a7df5ba3": "EMKPK9968K",
+          "FIELD_0948d640-b7e9-427a-80b3-c09d6f19186a": "C/O Late Prithvi Chand Sahu, Kumhar Toli, Irgu Road, Ranchi, Jharkhand, near veer Abhimanyu Chow"
+        },
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 7",
+      "conversationDefinitionId": "CD_1c1c6501-4d4d-49d7-be28-28f26add6a43",
+      "conversationId": "CEC_8c8e9b11-f5ba-4ecd-a900-ddb144160866",
+      "conversationStepId": "CS_0a59f308-29bf-4e5f-bf73-d31508923c12",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1030",
+      "executionMode": "draft",
+      "testData": false,
+      "allowChat": true,
+      "uniqueMessageKey": "M_7d046cbf-4e48-41ca-a6b2-793e4f58bdec",
+      "stepTitle": "Inform a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_55b41da4-c37b-4465-a0df-e1342dd887a3",
+    "messageType": "MT_1010",
+    "toInboxId": "inbox_CEC_8c8e9b11-f5ba-4ecd-a900-ddb144160866",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747296467307,
+    "attributes": {
+      "message": "Goodbye!"
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 7",
+      "conversationDefinitionId": "CD_1c1c6501-4d4d-49d7-be28-28f26add6a43",
+      "conversationId": "CEC_8c8e9b11-f5ba-4ecd-a900-ddb144160866",
+      "conversationStepId": "CS_c3455f49-e9a3-454b-a22e-a4bdd4b6bdf3",
+      "branch": [],
+      "thread": [],
+      "stepTypeId": "CST_1080",
+      "executionMode": "draft",
+      "testData": false,
+      "allowChat": false,
+      "stepTitle": "End Conversation",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  }
+]

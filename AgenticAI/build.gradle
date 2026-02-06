@@ -1,0 +1,287 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+}
+
+import java.util.regex.Pattern
+
+jar.archiveBaseName = "AgenticAI"
+group 'app.krista.extensions.playground.learning'
+
+version(System.getenv('BRANCH') == null ? "local" : System.getenv('BRANCH').replace("/", "_").replace("AgenticAI", ""))
+
+/*
+ * Use extension.name for archiveBaseName, extension.version for version.
+ * Resulting jar: <extension.name>-<extension.version>.jar e.g. AgenticAI-1.0.2.jar
+ */
+def computedBaseName = ""
+// Default to the Gradle project version (based on BRANCH env) when release.properties is absent
+def computedVersion = project.version.toString()
+
+tasks.register("setReleaseProperties") {
+	dependsOn("generateReleaseProperties")
+	doFirst {
+		def releasePropsFile = file("release.properties")
+		if (releasePropsFile.exists()) {
+			def props = new Properties()
+			releasePropsFile.withInputStream { stream -> props.load(stream) }
+			computedBaseName = (props['extension.name'] ?: computedBaseName).replaceAll(/\s+/, "")
+			computedVersion = props['extension.version'] ?: computedVersion
+
+			project.ext.set("finalBaseName", computedBaseName)
+			project.version = computedVersion
+
+			println "\u2714 Loaded extension name = ${computedBaseName}, version = ${computedVersion}"
+			System.setProperty("extensionVersion", computedVersion.toString())
+		} else {
+			logger.warn("\u26a0 release.properties not found; using default values.")
+			project.ext.set("finalBaseName", computedBaseName)
+			project.version = computedVersion
+			System.setProperty("extensionVersion", computedVersion.toString())
+		}
+	}
+}
+
+compileJava.dependsOn clean
+
+System.setProperty("extensionVersion", version.toString())
+
+sourceCompatibility = '21'
+targetCompatibility = '21'
+
+repositories {
+    maven {
+        url "https://packages.cicd.in.antbrains.com/artifactory/libs-release"
+    }
+    mavenCentral()
+    mavenLocal()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << '-Xlint:all,-serial'
+}
+
+task compile() {
+    dependsOn compileJava
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            afterEvaluate {
+                artifactId = jar.archiveBaseName.get()
+                groupId = rootProject.group
+            }
+        }
+    }
+    repositories {
+        mavenLocal()
+        maven {
+            credentials {
+                username = rootProject.properties['MAVEN_USERNAME']
+                password = rootProject.properties['MAVEN_PASSWORD']
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+            url rootProject.properties['MAVEN_UPLOAD_URL']
+        }
+    }
+}
+
+configurations {
+    implementation {
+        canBeConsumed = false
+        canBeResolved = true
+    }
+}
+
+dependencies {
+    annotationProcessor 'app.krista:extension-impl-anno-processors:1.0.118-rc3'
+    compileOnly 'app.krista:krista-apis:1.0.118-rc3'
+    testImplementation 'app.krista:krista-apis:1.0.118-rc3'
+    compileOnly 'org.glassfish.hk2:hk2-api:3.0.3'
+
+    implementation 'javax.ws.rs:javax.ws.rs-api:2.1.1'
+    implementation 'org.glassfish.jersey.core:jersey-client:2.35'
+    implementation 'org.glassfish.jersey.media:jersey-media-json-jackson:2.35'
+    implementation 'org.glassfish.jersey.inject:jersey-hk2:2.31'
+    implementation 'org.apache.commons:commons-lang3:3.13.0'
+    implementation 'commons-io:commons-io:2.13.0'
+    implementation 'commons-validator:commons-validator:1.7'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+    testImplementation 'org.mockito:mockito-core:5.7.0'
+    testImplementation 'org.mockito:mockito-inline:5.2.0'
+    testImplementation 'junit:junit:4.13.2'
+
+
+    implementation 'org.glassfish.jersey.media:jersey-media-multipart:2.35'
+    implementation 'io.gsonfire:gson-fire:1.8.5'
+    implementation 'dev.failsafe:failsafe:3.3.2' // used for rate limit support
+    implementation 'com.theokanning.openai-gpt3-java:service:0.14.0'
+    implementation 'org.apache.commons:commons-text:1.10.0'
+
+
+
+    testImplementation 'com.kristasoft.common:common-test:1.0.37'
+
+    implementation 'org.apache.commons:commons-csv:1.10.0'
+}
+
+task createSourceDir(type: Exec) {
+    dependsOn processResources
+    commandLine "mkdir", "-p", "$projectDir/build/classes/java/main/META-INF/project"
+}
+
+task copyGradleFile(type: Exec) {
+    dependsOn createSourceDir
+    commandLine "cp", "$projectDir/build.gradle", "$projectDir/build/classes/java/main/META-INF/project/build.gradle"
+}
+
+task includeSources(type: Exec) {
+    dependsOn copyGradleFile
+    commandLine "cp", "-r", "$projectDir/src", "$projectDir/build/classes/java/main/META-INF/project/src"
+}
+
+	/*
+		Task to generate release.properties file in below format.
+		extension.version=<version>
+		extension.name=<name>
+		domain.name=<domain>
+		ecosystem.name=<ecosystem>
+		Values are extracted from CamHookExtension annotations.
+	 */
+
+	/**
+	 * Extracts annotation information from a file
+	 * @param file The file to extract from
+	 * @param annotationName The annotation name to look for
+	 * @param keyValuePattern The regex pattern to extract key-value pairs
+	 * @param processProperty Closure to process each property
+	 */
+	def extractAnnotationInfo(File file, String annotationName, Pattern keyValuePattern, def processProperty) {
+		StringBuilder annotationText = new StringBuilder()
+		boolean inAnnotation = false
+		file.eachLine { line ->
+			line = line.trim()
+			if (line.contains(annotationName)) {
+				inAnnotation = true
+			}
+			if (inAnnotation) {
+				annotationText.append(line)
+				// End of annotation when closing parenthesis is reached
+				if (line.contains(")")) {
+					inAnnotation = false
+					def matcher = keyValuePattern.matcher(annotationText.toString())
+					while (matcher.find()) {
+						def key = matcher.group(1)
+						def value = matcher.group(2)
+						processProperty.call(key, value)
+					}
+					annotationText.setLength(0)
+				}
+			}
+		}
+	}
+
+	tasks.register('generateReleaseProperties') {
+		group = 'build'
+		description = 'Generates release.properties file with extension version and domain information'
+
+		doLast {
+			def extensionFilePath = 'src/main/java/app/krista/extensions/hook/CamHookExtension.java'
+			def extensionFile = project.file(extensionFilePath)
+			if (!extensionFile.exists()) {
+				throw new RuntimeException("Extension file not found: ${extensionFilePath}")
+			}
+
+			def properties = new Properties()
+			// Pre-compile the regex pattern for better performance
+			def keyValuePattern = Pattern.compile(/(\w+)\s*=\s*"([^"]+)"/)
+
+			// Extract Extension annotation information (@Extension)
+			extractAnnotationInfo(extensionFile, "@Extension", keyValuePattern) { key, value ->
+				if (key == "name") {
+					properties.setProperty("extension.name", value)
+					logger.lifecycle("Found extension name: ${value}")
+				} else if (key == "version") {
+					properties.setProperty("extension.version", value)
+					logger.lifecycle("Found extension version: ${value}")
+				}
+			}
+
+			// Extract Domain annotation information (@Domain) from the same file
+			extractAnnotationInfo(extensionFile, "@Domain", keyValuePattern) { key, value ->
+				if (key == "name") {
+					properties.setProperty("domain.name", value)
+					logger.lifecycle("Found domain name: ${value}")
+				} else if (key == "ecosystemName") {
+					properties.setProperty("ecosystem.name", value)
+					logger.lifecycle("Found ecosystem name: ${value}")
+				}
+			}
+
+			if (!properties.getProperty('extension.version')) {
+				throw new RuntimeException("Could not find extension version in ${extensionFilePath}")
+			}
+			if (!properties.getProperty('domain.name') || !properties.getProperty('ecosystem.name')) {
+				throw new RuntimeException("Could not find domain name or ecosystem name in ${extensionFilePath}")
+			}
+
+			def releasePropertiesFile = project.file('release.properties')
+			def content = properties.collect { key, value -> "${key}=${value}" }.join('\n')
+			releasePropertiesFile.text = content + '\n'
+			logger.lifecycle("Generated release.properties with content:\n${content}")
+		}
+	}
+
+task candidate(type: Exec) {
+    commandLine "env",
+            "DOCKER_UPLOAD_REPO=" + rootProject.properties['DOCKER_UPLOAD_REPO'],
+            "MAVEN_URL=" + System.properties['MAVEN_URL'],
+            "MAVEN_UPLOAD_URL=" + rootProject.properties['MAVEN_UPLOAD_URL'],
+            "MAVEN_USERNAME=" + rootProject.properties['MAVEN_USERNAME'],
+            "MAVEN_PASSWORD=" + rootProject.properties['MAVEN_PASSWORD'],
+            "bash", "candidate.sh"
+    standardOutput = new ByteArrayOutputStream()
+    ext.output = {
+        return standardOutput.toString()
+    }
+}
+
+task release(type: Exec) {
+    commandLine "env",
+            "DOCKER_UPLOAD_REPO=" + rootProject.properties['DOCKER_UPLOAD_REPO'],
+            "MAVEN_URL=" + System.properties['MAVEN_URL'],
+            "MAVEN_UPLOAD_URL=" + rootProject.properties['MAVEN_UPLOAD_URL'],
+            "MAVEN_USERNAME=" + rootProject.properties['MAVEN_USERNAME'],
+            "MAVEN_PASSWORD=" + rootProject.properties['MAVEN_PASSWORD'],
+            "bash", "release.sh"
+    standardOutput = new ByteArrayOutputStream()
+    ext.output = {
+        return standardOutput.toString()
+    }
+}
+
+jar {
+	// Ensure release.properties is generated and applied before creating the jar
+	dependsOn tasks.named("setReleaseProperties")
+	archiveBaseName = project.ext.has("finalBaseName") ? project.ext.finalBaseName : "AgenticAI"
+
+    manifest {
+    }
+    from {
+        configurations.implementation.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+    duplicatesStrategy = "exclude"
+}

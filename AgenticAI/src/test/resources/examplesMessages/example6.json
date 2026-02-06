@@ -1,0 +1,919 @@
+[
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_08c8060c-d29e-4084-9331-e105a512bd98",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1747293918069,
+    "attributes": {
+      "bookmark": false,
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {},
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "form": {
+        "localId": "FORM_634e9f72-30b6-4930-8cf6-92fe3ea2f32e",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Welcome to ABC laminates!"
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 6",
+      "conversationDefinitionId": "CD_7a11586f-b4e6-441c-afbe-3eaec89c09d8",
+      "conversationId": "CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac",
+      "conversationStepId": "CS_d713ad04-789c-45c5-949a-56f72ad04a7a",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1010",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Person makes a request",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "accepted",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_e6327769-ed9f-42e9-9266-6f60e4cd4226",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747293918162,
+    "attributes": {
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac": "M_e6327769-ed9f-42e9-9266-6f60e4cd4226"
+      },
+      "form": {
+        "localId": "FORM_0b9891e5-64fc-4fb0-8709-4e23c63f10a6",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_59c115f5-8276-4ef0-9462-1f5aba5e48b7",
+                "label": "Room type",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.PickOne",
+                  "attributes": {
+                    "visualWidth": "M",
+                    "options": [
+                      "MBR",
+                      "GBR",
+                      "MB (master bathroom)",
+                      "GB (guest bathroom)"
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_c6814eb3-25cc-46ad-8a29-efcce2f8b183",
+                "label": "Items present in room",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.List",
+                  "attributes": {
+                    "field": {
+                      "type": "Field",
+                      "fieldType": "com.krista.fields.Text",
+                      "attributes": {
+                        "visualWidth": "S",
+                        "trim": true
+                      },
+                      "options": {
+                        "required": {
+                          "value": true,
+                          "fieldType": "Boolean"
+                        }
+                      },
+                      "translations": {
+                        "type": "com.krista.model.translation.MultiTranslationMap",
+                        "translations": {}
+                      }
+                    }
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "Enter items one by one",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_c20cebde-5bb1-4ecd-beeb-ca0562de3d17",
+                "label": "Furniture details",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Material",
+                        "fieldType": "com.krista.fields.PickOne",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "options": [
+                            "Teak",
+                            "Plywood",
+                            "GreenPly"
+                          ]
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          },
+                          "defaultValue": {
+                            "value": {
+                              "type": "Expression",
+                              "expression": "\"Plywood\"",
+                              "yieldValue": "Text",
+                              "language": "Constant",
+                              "consumedVariables": []
+                            },
+                            "fieldType": "Expression"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Condition (rating out of 5)",
+                        "fieldType": "com.krista.fields.Rating",
+                        "attributes": {
+                          "visualWidth": "S",
+                          "ratingIcon": "Star"
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          },
+                          "defaultValue": {
+                            "value": {
+                              "type": "Expression",
+                              "expression": "1",
+                              "yieldValue": "Integer",
+                              "language": "Constant",
+                              "consumedVariables": []
+                            },
+                            "fieldType": "Expression"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_3d0755ff-e742-4fdc-b6d2-f9657b2fb374",
+                "label": "Laminates codes used from prviously(fill only if this is you bought laminates from us previously)",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Checkboxes",
+                  "attributes": {
+                    "visualWidth": "S",
+                    "options": [
+                      "LAM-ABCDS",
+                      "LAM-GHJKS",
+                      "LAM-FEIIJF"
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": false,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "<img src=\"https://studio.qa-in.eng.krista.app/media/workspaces/ws_f096fcca-d470-419e-b964-0dcd8c9ef3ef/media_ws_df2bceed-f892-4655-8ca9-abaa64421fa6\" data-mediaid=\"media_ws_df2bceed-f892-4655-8ca9-abaa64421fa6\" alt=\"Image\" style=\"cursor:pointer;max-height:220px;max-width:220px;height:auto;width:auto;\">\nPlease enter following details to find a laminate that suits your needs"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_59c115f5-8276-4ef0-9462-1f5aba5e48b7": "GBR",
+          "FIELD_c6814eb3-25cc-46ad-8a29-efcce2f8b183": [
+            "TV",
+            "Fridge"
+          ],
+          "FIELD_c20cebde-5bb1-4ecd-beeb-ca0562de3d17": {
+            "Material": "Teak",
+            "Condition (rating out of 5)": 4
+          },
+          "FIELD_3d0755ff-e742-4fdc-b6d2-f9657b2fb374": [
+            "LAM-GHJKS"
+          ]
+        },
+        "submitType": "submit",
+        "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 6",
+      "conversationDefinitionId": "CD_7a11586f-b4e6-441c-afbe-3eaec89c09d8",
+      "conversationId": "CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac",
+      "conversationStepId": "CS_4b5bb008-38cf-46fb-b52d-73126a0be49f",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_44982991-4ba1-48d0-8f3d-586d5c3f8dac",
+    "messageType": "MT_2020",
+    "toInboxId": "inbox_CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1747293959121,
+    "attributes": {
+      "targetMessageId": "M_e6327769-ed9f-42e9-9266-6f60e4cd4226",
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_59c115f5-8276-4ef0-9462-1f5aba5e48b7": "GBR",
+          "FIELD_c6814eb3-25cc-46ad-8a29-efcce2f8b183": [
+            "TV",
+            "Fridge"
+          ],
+          "FIELD_c20cebde-5bb1-4ecd-beeb-ca0562de3d17": {
+            "Material": "Teak",
+            "Condition (rating out of 5)": 4
+          },
+          "FIELD_3d0755ff-e742-4fdc-b6d2-f9657b2fb374": [
+            "LAM-GHJKS"
+          ]
+        },
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "copies": {
+        "inbox_CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac": "M_44982991-4ba1-48d0-8f3d-586d5c3f8dac"
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 6",
+      "conversationDefinitionId": "CD_7a11586f-b4e6-441c-afbe-3eaec89c09d8",
+      "conversationId": "CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac",
+      "conversationStepId": "CS_4b5bb008-38cf-46fb-b52d-73126a0be49f",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "read",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_efe272a1-1d03-4a8e-9b79-a5b2e961f428",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747293959220,
+    "attributes": {
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac": "M_efe272a1-1d03-4a8e-9b79-a5b2e961f428"
+      },
+      "form": {
+        "localId": "FORM_d4b1fbb3-f4d5-47ab-8482-f3aa3a2fb7b8",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "We found <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"current Laminates codes used from prviously(fill only if this is you bought laminates from us previously)\\\")\" name=\"current Laminates codes used from prviously(fill only if this is you bought laminates from us previously)\" fieldtype=\"com.krista.fields.Text\" attributes=\"{}\"></krista-field>in our system."
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {},
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 6",
+      "conversationDefinitionId": "CD_7a11586f-b4e6-441c-afbe-3eaec89c09d8",
+      "conversationId": "CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac",
+      "conversationStepId": "CS_b56d4d32-39db-45b7-b478-b12eaaca704c",
+      "branch": [
+        "main",
+        "Repeat path"
+      ],
+      "thread": [
+        "main",
+        "repeat-0"
+      ],
+      "stepTypeId": "CST_1030",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "uniqueMessageKey": "M_e38f1191-281e-4e1c-b188-ac40be03c306",
+      "stepTitle": "Inform a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_687f760f-6076-4944-b5dd-1ab50c6f66d0",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747293959274,
+    "attributes": {
+      "widgetSupportedFieldIds": [
+        "FIELD_8a188c58-f507-4f09-803b-149b9e1a64ad"
+      ],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac": "M_687f760f-6076-4944-b5dd-1ab50c6f66d0"
+      },
+      "form": {
+        "localId": "FORM_39d71770-772c-4974-a54a-2fc5f9c5f6c0",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_8a188c58-f507-4f09-803b-149b9e1a64ad",
+                "label": "Items present in room",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.List",
+                  "attributes": {
+                    "field": {
+                      "type": "Field",
+                      "fieldType": "com.krista.fields.Text",
+                      "attributes": {
+                        "visualWidth": "S",
+                        "trim": true
+                      },
+                      "options": {
+                        "required": {
+                          "value": true,
+                          "fieldType": "Boolean"
+                        }
+                      },
+                      "translations": {
+                        "type": "com.krista.model.translation.MultiTranslationMap",
+                        "translations": {}
+                      }
+                    }
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Items present in room\")",
+                        "yieldValue": "?[]",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Items present in room\")",
+                  "yieldValue": "?[]",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "Enter items one by one",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "<img src=\"https://studio.qa-in.eng.krista.app/media/workspaces/ws_f096fcca-d470-419e-b964-0dcd8c9ef3ef/media_ws_aeae893c-8d2d-4018-ab0d-b6baa9318809\" data-mediaid=\"media_ws_aeae893c-8d2d-4018-ab0d-b6baa9318809\" alt=\"Image\" style=\"cursor:pointer;max-height:220px;max-width:220px;height:auto;width:auto;\">\nHere are all the details we have captured:- \nRoom type: <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"Room type\\\")\" value=\"GBR\" name=\"Room type\" fieldtype=\"com.krista.fields.PickOne\" attributes=\"{}\"></krista-field>\nFurniture material: <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"Furniture details\\\").get(\\\"Material\\\")\" value=\"Teak\" name=\"Material\" fieldtype=\"com.krista.fields.PickOne\" attributes=\"{}\"></krista-field>\nFurniture current condition rating: <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"Furniture details\\\").get(\\\"Condition (rating out of 5)\\\")\" name=\"Condition (rating out of 5)\" fieldtype=\"com.krista.fields.Rating\" attributes=\"{\\\"ratingIcon\\\":\\\"Star\\\"}\"></krista-field>\nBelow are items present in room:-"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_8a188c58-f507-4f09-803b-149b9e1a64ad": [
+            "TV",
+            "Fridge"
+          ]
+        },
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 6",
+      "conversationDefinitionId": "CD_7a11586f-b4e6-441c-afbe-3eaec89c09d8",
+      "conversationId": "CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac",
+      "conversationStepId": "CS_18f598f8-b4e6-4355-a773-1c9783601f26",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1030",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "uniqueMessageKey": "M_a2e6fa60-cf2f-41df-8835-3d217308dd4a",
+      "stepTitle": "Inform a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_3c43bcef-1fb5-43c9-b40a-966725d68368",
+    "messageType": "MT_1010",
+    "toInboxId": "inbox_CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747293959301,
+    "attributes": {
+      "message": "Thanks, for shopping with us we have confirmed your order!"
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 6",
+      "conversationDefinitionId": "CD_7a11586f-b4e6-441c-afbe-3eaec89c09d8",
+      "conversationId": "CEC_1ffb7bd4-15d3-496b-b7f9-a1f950be52ac",
+      "conversationStepId": "CS_7665f66e-2149-4f8a-8ca3-79d31576e122",
+      "branch": [],
+      "thread": [],
+      "stepTypeId": "CST_1080",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": false,
+      "stepTitle": "End Conversation",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  }
+]

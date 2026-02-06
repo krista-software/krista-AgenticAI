@@ -1,0 +1,11 @@
+Ex No	Conversation name	Conversation Description
+1	Basic Data Input Collection Flow	A basic data collection flow for gathering text input and monetary values with simple step interactions
+2	Book yourself an appointment at a hospital	Schedule a hospital appointment by entering your details, checking availability, and providing medical history and insurance information
+3	Car insurance claim	A streamlined process for submitting car insurance claims with details about damages and vehicle information
+4	Create list of holidays	Creates a customized holiday calendar by collecting and organizing holiday dates and information from user input
+5	ITR submission	A simple flow to collect investment declarations for tax filing with personal details and sections 80C and 80D information
+6	Laminates shopping	A guided conversation to help customers select suitable laminates by capturing room details and furniture specifications
+7	ITR correction	Process for requesting ITR document corrections by submitting PAN and address details for verification and updates
+8	RSA help service	Emergency roadside assistance service with location tracking and vehicle condition assessment for prioritized response within 30 minutes
+9	PDF generator	Create custom PDFs by specifying page count borders dimensions and download the generated document instantly
+10	Hospital sign up	Patient registration system for Manipal hospital collecting personal details time preferences and interests for account creation

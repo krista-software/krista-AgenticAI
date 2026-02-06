@@ -1,0 +1,242 @@
+[
+  {
+    "VariableMapping": {
+      "name": "book"
+    },
+    "FollowUp": "Please enter price of book"
+  },
+  {
+    "VariableMapping": {
+      "price": "100"
+    },
+    "FollowUp": "These are the values you have entered, You want to buy a book that cost 100$. Can we proceed with these values?"
+  },
+  {
+    "VariableMapping": {
+      "Insurance Details": {
+        "Insurance provider": "ICICI",
+        "Sum Assured": 700000
+      }
+    },
+    "FollowUp": "Thanks, I got most of the policy details but I didn't get whether you declared smoker for your policy."
+  },
+  {
+    "VariableMapping": {
+      "Insurance Details": {
+        "Smoker?": true
+      }
+    },
+    "FollowUp": "Please type yes if you think I mapped the details correctly:- The patient name is Rahul  for which I want to book appointment and the date range in which I want appointmen is  27th June to 30th June. Also, I have an insurance policy of Rs 7 lakh from ICICI with smoker declared. Also,I have  have blood pressure and diabaetes."
+  },
+  {
+    "VariableMapping": {
+      "Registration number": "KA01NA9532"
+    },
+    "FollowUp": "What is your car model is it model A, model B or model C?"
+  },
+  {
+    "VariableMapping": {
+      "Car model": "model B"
+    },
+    "FollowUp": "We have captured following details:- 1. Your registraton number is KA01NA9532 2. Your address is C/O Late Prithvi Chand Sahu, Kumhar Toli, Irgu Road, Ranchi, Jharkhand, near veer Abhimanyu Chow 3. Your car model is model B. Please let us know if these details are correct or you want to change something?"
+  },
+  {
+    "VariableMapping": {
+      "Holidays": [
+        {
+          "Name": "Christmas",
+          "Date": "25/12/2025 00:00:00"
+        },
+        {
+          "Name": "New Year",
+          "Date": "01/01/2026 00:00:00"
+        }
+      ]
+    },
+    "FollowUp": "Holiday for Christmas is on 25/12/2025 and holiday for New Year is on 01/01/2026, please let us know if you want to add any more holidays, updating holiday list is not allowed!"
+  },
+  {
+    "VariableMapping": {
+      "Section 80 D": {
+        "Investment B": {
+          "Name": "Chit funds",
+          "Amount in Rs": 1000000
+        }
+      },
+      "Address": "C/O Late Prithvi Chand Sahu, Kumhar Toli, Irgu Road, Ranchi, Jharkhand, near veer Abhimanyu Chow"
+    },
+    "FollowUp": "The address you provided is less than 10 characters that is not allowed, give it again in correct format. Also, please enter your PAN(2-20 characters allowed)"
+  },
+  {
+    "VariableMapping": {
+      "Section 80 D": {
+        "Investment B": {
+          "Name": "Chit funds",
+          "Amount in Rs": 1000000
+        }
+      },
+      "Address": "C/O Late Prithvi Chand Sahu, Kumhar Toli, Irgu Road, Ranchi, Jharkhand, near veer Abhimanyu Chow"
+    },
+    "FollowUp": "Please enter your PAN(2-20 characters allowed)"
+  },
+  {
+    "VariableMapping": {
+      "Section 80 C": {
+        "Housing Loan": {
+          "Principal/Interest": "Principal",
+          "Amount": 123000
+        }
+      },
+      "PAN": "EMKPK9968N"
+    },
+    "FollowUp": "These are the details we have received for Paras Kumar having email id paras.kumar@kristasoft.com, phone number +91 7050337381, PAN as EMKPK9968N and address C/O Late Prithvi Chand Sahu, Kumhar Toli, Irgu Road, Ranchi, Jharkhand, near veer Abhimanyu Chow:- 1. 80C - Rs70,000 i ELSS, 1,23,000 in homeloan pricipal component 2. 80D - Mutual fund investments of Rs 3000 in SBI funds and Rs 20,000 in ICICI growth linked fund. Are you satisfied with above details?"
+  },
+  {
+    "VariableMapping": {
+      "Items present in room": [
+        "TV",
+        "Fridge"
+      ]
+    },
+    "FollowUp": "What is condition of Teak material you selected?, give rating out of 5"
+  },
+  {
+    "VariableMapping": {
+      "Items present in room": [
+        "TV",
+        "Fridge"
+      ]
+    },
+    "FollowUp": "What is condition of Teak material you selected?, give rating out of 5"
+  },
+  {
+    "VariableMapping": {
+      "Items present in room": [
+        "TV",
+        "Fridge"
+      ],
+      "Furniture details": {
+        "Condition (rating out of 5)": 4
+      }
+    },
+    "FollowUp": "You have selected room type as GBR, you have TV and Fridge in room, have furniture of Teak having condition 4/5 , Can you confirm these details are correct?"
+  },
+  {
+    "VariableMapping": {},
+    "FollowUp": "Sorry, your PAN number is not valid"
+  },
+  {
+    "VariableMapping": {
+      "PAN": "EMKPK9968K"
+    },
+    "FollowUp": "Your PAN number is EMKPK9968K, is this correct?"
+  },
+  {
+    "VariableMapping": {
+      "Are you facing any medical emergency?": true
+    },
+    "FollowUp": "State name should have at least 4 characters, please give correct state name and country name(it should have at least 3 letters)"
+  },
+  {
+    "VariableMapping": {
+      "Country": "India",
+      "State": "Jharkhand",
+      "Are you facing any medical emergency?": true
+    },
+    "FollowUp": "Your address is C/O Late Prithvi Chand Sahu, Kumhar Toli, Irgu Road, Ranchi, Jharkhand, near veer Abhimanyu Chow, India. You reported your tyre is punctured and you are facing medical emergency. Please confirm if these details are correct?"
+  },
+  {
+    "VariableMapping": {
+      "Pages": [
+        "Maya wandered through the abandoned train station, her flashlight flickering. She had heard rumors of a hidden journal left by her grandfather, who vanished here decades ago. Dust covered the benches, and echoes of old announcements bounced off the cracked walls.",
+        "Behind a loose tile near the ticket booth, she found a small metal box. Inside was the journal, wrapped in faded cloth. Its pages were brittle, filled with sketches, maps, and notes about a secret project called \"Echo Line.\" One phrase stood out: \"Find the pulse beneath the tracks.\"",
+        "Following the journal's clues, Maya descended into a forgotten tunnel. At its heart, she found a humming machine still pulsing with life. As she touched it, memories not her own flooded her mind. Her grandfather hadn't vanished—he had crossed into something beyond time."
+      ]
+    },
+    "FollowUp": "Please give border in % range of 5-10%"
+  },
+  {
+    "VariableMapping": {},
+    "FollowUp": "Border should be between 5-15%, 20% is not allowed, enter correct value."
+  },
+  {
+    "VariableMapping": {
+      "Borders": 0.1
+    },
+    "FollowUp": "Please give width in cm format, meter is not allowed."
+  },
+  {
+    "VariableMapping": {
+      "Hobbies": [
+        "Singing",
+        "Driving"
+      ],
+      "When do you typically wake up?": "05:30:00"
+    },
+    "FollowUp": "To complete the form we need your name and following missing details from you:- 1. Contact Details: Email(only kristasoft email allowed)  2. Account Details: account name, do you have existing account and when did you create it?(give a date range of account creation between 1st May 2:20 AM and 15 May 1:30 AM) 3. Location Details: Your pincode  4. Physical Details: height in feet and inches 5. Upto 5 topics you are interested in(this detail is optional) 6. Offers: number of bonus points(min 2 bonus points allowed), account credits(In Rs) and percentage of credits you want to use(upto 50%), All of these details are optional"
+  },
+  {
+    "VariableMapping": {
+      "Name": "Paras Kumar",
+      "Contact Details": {
+        "Email": "paras.kumar@kristasoft.com"
+      },
+      "Account details": {
+        "Name": "parasKumar47",
+        "Do you have existing account?": true,
+        "When did you create your account?": null
+      },
+      "Location details": {
+        "PostalCode": "140001"
+      },
+      "Physical details": {
+        "Height in feet(split your height between feet and inches)": 5,
+        "Height in inch(split your height between feet and inches)": 7
+      },
+      "Refferal credits/bonus points": {
+        "Number of bonus points": 10,
+        "Account credits": 20
+      },
+      "Hobbies": [
+        "Singing",
+        "Driving"
+      ],
+      "When do you typically wake up?": "05:30:00"
+    },
+    "FollowUp": "We found following details were incorrect and need correct values:- 1. Your account creation date range is wrong(give a date range of account creation between 1st May 2:20 AM and 15 May 1:30 AM) 2. Enter correct % of credits you want to use(It should be less than 50%)"
+  },
+  {
+    "VariableMapping": {
+      "Name": "Paras Kumar",
+      "Contact Details": {
+        "Email": "paras.kumar@kristasoft.com"
+      },
+      "Account details": {
+        "Name": "parasKumar47",
+        "Do you have existing account?": true,
+        "When did you create your account?": {
+          "startOfDateRange": "03/05/2025 02:30:00",
+          "endOfDateRange": "10/05/2025 01:30:00"
+        }
+      },
+      "Location details": {
+        "PostalCode": "140001"
+      },
+      "Physical details": {
+        "Height in feet(split your height between feet and inches)": 5,
+        "Height in inch(split your height between feet and inches)": 7
+      },
+      "Refferal credits/bonus points": {
+        "Number of bonus points": 10,
+        "Account credits": 20,
+        "Percentage of credits you want to use": 0.5
+      },
+      "Hobbies": [
+        "Singing",
+        "Driving"
+      ],
+      "When do you typically wake up?": "05:30:00"
+    },
+    "FollowUp": " Hi Paras Kumar we have got following details from you:- 1. Contact Details: paras.kumar@kristasoft.com 2. Account Details: account name as parasKumar47, you have existing account and you created it between 3rd of May 2:30 AM and 10th of May 1:30 AM 3. Location Details: Your pincode is 140001 4. Physical Details: your  heightis 5 feet 7 inch 5. Offers: You have 10 bonus points, 20 account credits and I want to use 50% of credits 6. You selected hobbies as Singing and Driving 7. You wake up at 5:30 AM. Can you confirm if the above details are correct?"
+  }
+]

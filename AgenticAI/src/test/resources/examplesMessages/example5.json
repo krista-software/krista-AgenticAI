@@ -1,0 +1,1320 @@
+[
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_16163210-abfc-4f38-8461-c31374dc3f08",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_29f2fbdd-03b4-40cc-8716-698aecb092b3",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1747293538398,
+    "attributes": {
+      "bookmark": false,
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {},
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "form": {
+        "localId": "FORM_f0d5b803-9f43-4a77-83a0-29451e473458",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Click to start filing ITR"
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 5",
+      "conversationDefinitionId": "CD_156744c0-d36d-4035-8d2e-9b5f68829c19",
+      "conversationId": "CEC_29f2fbdd-03b4-40cc-8716-698aecb092b3",
+      "conversationStepId": "CS_fc016d8b-0bef-47d6-a093-3667127c7860",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1010",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Person makes a request",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "accepted",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_82756d3d-0595-4d46-ada0-ae9473ad3bf7",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_29f2fbdd-03b4-40cc-8716-698aecb092b3",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747293538573,
+    "attributes": {
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_29f2fbdd-03b4-40cc-8716-698aecb092b3": "M_82756d3d-0595-4d46-ada0-ae9473ad3bf7"
+      },
+      "form": {
+        "localId": "FORM_0244f5c9-ecf7-445c-b7b5-dde52ed2f55a",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_5d90a898-4769-44a6-805e-5f3bb4d9b67f",
+                "label": "Name",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Text",
+                  "attributes": {
+                    "visualWidth": "S",
+                    "trim": true,
+                    "maxLength": 20
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_94fc1bd0-6cb2-4d1a-89d9-e8ff559fe8a6",
+                "label": "Email",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Email",
+                  "attributes": {
+                    "visualWidth": "S",
+                    "allowedDomains": [
+                      "kristasoft.com",
+                      "kristaai.com"
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "Enter your offiicial email",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_26183632-0281-4b87-bc67-6314f4fb9d64",
+                "label": "Phone number",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Phone",
+                  "attributes": {
+                    "formatPattern": "+91 ##### #####",
+                    "visualWidth": "M"
+                  },
+                  "options": {
+                    "required": {
+                      "value": false,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_e938fb23-34be-411e-a473-4dccb31e12b8",
+                "label": "Section 80C",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Mutual Funds",
+                        "fieldType": "com.krista.fields.MultiField",
+                        "attributes": {
+                          "fields": [
+                            {
+                              "type": "NamedField",
+                              "name": "Type",
+                              "fieldType": "com.krista.fields.PickOne",
+                              "attributes": {
+                                "visualWidth": "S",
+                                "options": [
+                                  "ELSS",
+                                  "others"
+                                ]
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            },
+                            {
+                              "type": "NamedField",
+                              "name": "Amount",
+                              "fieldType": "com.krista.fields.Currency",
+                              "attributes": {
+                                "visualWidth": "S",
+                                "formatPattern": "\"₹\"#,##0"
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            }
+                          ]
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Housing Loan",
+                        "fieldType": "com.krista.fields.MultiField",
+                        "attributes": {
+                          "fields": [
+                            {
+                              "type": "NamedField",
+                              "name": "Principal/Interest",
+                              "fieldType": "com.krista.fields.PickOne",
+                              "attributes": {
+                                "visualWidth": "S",
+                                "options": [
+                                  "Pricipal",
+                                  "Interest"
+                                ]
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            },
+                            {
+                              "type": "NamedField",
+                              "name": "Amount",
+                              "fieldType": "com.krista.fields.Currency",
+                              "attributes": {
+                                "visualWidth": "S",
+                                "formatPattern": "\"₹\"#,##0"
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            }
+                          ]
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_ce7dda78-3921-4b94-82ad-2a1efacf748e",
+                "label": "Section 80 D",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Investment A",
+                        "fieldType": "com.krista.fields.MultiField",
+                        "attributes": {
+                          "fields": [
+                            {
+                              "type": "NamedField",
+                              "name": "Name",
+                              "fieldType": "com.krista.fields.Text",
+                              "attributes": {
+                                "visualWidth": "S",
+                                "trim": true
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            },
+                            {
+                              "type": "NamedField",
+                              "name": "Amount in Rs",
+                              "fieldType": "com.krista.fields.Number",
+                              "attributes": {
+                                "visualWidth": "S"
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            }
+                          ]
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Investment B",
+                        "fieldType": "com.krista.fields.MultiField",
+                        "attributes": {
+                          "fields": [
+                            {
+                              "type": "NamedField",
+                              "name": "Name",
+                              "fieldType": "com.krista.fields.Text",
+                              "attributes": {
+                                "visualWidth": "S",
+                                "trim": true
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            },
+                            {
+                              "type": "NamedField",
+                              "name": "Amount in Rs",
+                              "fieldType": "com.krista.fields.Number",
+                              "attributes": {
+                                "visualWidth": "S"
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            }
+                          ]
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_7c70c8fc-621a-41c4-9d34-b538c1af158c",
+                "label": "Address",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Text",
+                  "attributes": {
+                    "visualWidth": "L",
+                    "trim": true,
+                    "minLength": 10
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_ecc004f8-b47b-402a-9515-3c1a962d12a7",
+                "label": "PAN",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Text",
+                  "attributes": {
+                    "visualWidth": "S",
+                    "trim": true,
+                    "minLength": 2,
+                    "maxLength": 20
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_a2736271-3cf8-4b04-b633-929900ee623e",
+                "label": "Permanenet Address",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Paragraph",
+                  "attributes": {
+                    "visualWidth": "L",
+                    "maxLineCount": 5,
+                    "minLength": 15
+                  },
+                  "options": {
+                    "required": {
+                      "value": false,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Complete the investment declaration"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_5d90a898-4769-44a6-805e-5f3bb4d9b67f": "Paras Kumar",
+          "FIELD_94fc1bd0-6cb2-4d1a-89d9-e8ff559fe8a6": "paras.kumar@kristasoft.com",
+          "FIELD_e938fb23-34be-411e-a473-4dccb31e12b8": {
+            "Mutual Funds": {
+              "Type": "ELSS",
+              "Amount": 70000
+            },
+            "Housing Loan": {
+              "Principal/Interest": "Pricipal",
+              "Amount": 123000
+            }
+          },
+          "FIELD_ce7dda78-3921-4b94-82ad-2a1efacf748e": {
+            "Investment A": {
+              "Name": "SBI funds",
+              "Amount in Rs": 3000
+            },
+            "Investment B": {
+              "Name": "ICICI growth linked fund",
+              "Amount in Rs": 20000
+            }
+          },
+          "FIELD_7c70c8fc-621a-41c4-9d34-b538c1af158c": "C/O Late Prithvi Chand Sahu, Kumhar Toli, Irgu Road, Ranchi, Jharkhand, near veer Abhimanyu Chow",
+          "FIELD_ecc004f8-b47b-402a-9515-3c1a962d12a7": "EMKPK9968N"
+        },
+        "submitType": "submit",
+        "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 5",
+      "conversationDefinitionId": "CD_156744c0-d36d-4035-8d2e-9b5f68829c19",
+      "conversationId": "CEC_29f2fbdd-03b4-40cc-8716-698aecb092b3",
+      "conversationStepId": "CS_0f609cb1-efce-4b17-9a5b-aa99788967bd",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_36133ca8-33be-4f1f-bcca-a354a3da3700",
+    "messageType": "MT_2020",
+    "toInboxId": "inbox_CEC_29f2fbdd-03b4-40cc-8716-698aecb092b3",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1747293630577,
+    "attributes": {
+      "targetMessageId": "M_82756d3d-0595-4d46-ada0-ae9473ad3bf7",
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_5d90a898-4769-44a6-805e-5f3bb4d9b67f": "Paras Kumar",
+          "FIELD_94fc1bd0-6cb2-4d1a-89d9-e8ff559fe8a6": "paras.kumar@kristasoft.com",
+          "FIELD_e938fb23-34be-411e-a473-4dccb31e12b8": {
+            "Mutual Funds": {
+              "Type": "ELSS",
+              "Amount": 70000
+            },
+            "Housing Loan": {
+              "Principal/Interest": "Pricipal",
+              "Amount": 123000
+            }
+          },
+          "FIELD_ce7dda78-3921-4b94-82ad-2a1efacf748e": {
+            "Investment A": {
+              "Name": "SBI funds",
+              "Amount in Rs": 3000
+            },
+            "Investment B": {
+              "Name": "ICICI growth linked fund",
+              "Amount in Rs": 20000
+            }
+          },
+          "FIELD_7c70c8fc-621a-41c4-9d34-b538c1af158c": "C/O Late Prithvi Chand Sahu, Kumhar Toli, Irgu Road, Ranchi, Jharkhand, near veer Abhimanyu Chow",
+          "FIELD_ecc004f8-b47b-402a-9515-3c1a962d12a7": "EMKPK9968N"
+        },
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "copies": {
+        "inbox_CEC_29f2fbdd-03b4-40cc-8716-698aecb092b3": "M_36133ca8-33be-4f1f-bcca-a354a3da3700"
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 5",
+      "conversationDefinitionId": "CD_156744c0-d36d-4035-8d2e-9b5f68829c19",
+      "conversationId": "CEC_29f2fbdd-03b4-40cc-8716-698aecb092b3",
+      "conversationStepId": "CS_0f609cb1-efce-4b17-9a5b-aa99788967bd",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "read",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_47e69bb1-78c8-4a69-91d7-e84e48909fb7",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_29f2fbdd-03b4-40cc-8716-698aecb092b3",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747293630703,
+    "attributes": {
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_29f2fbdd-03b4-40cc-8716-698aecb092b3": "M_47e69bb1-78c8-4a69-91d7-e84e48909fb7"
+      },
+      "form": {
+        "localId": "FORM_9461081c-6dde-4117-9cfe-bf45fb660e1f",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_67b9c5b0-f10a-494b-88e5-59d6a9914ffe",
+                "label": "Section 80C",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Mutual Funds",
+                        "fieldType": "com.krista.fields.MultiField",
+                        "attributes": {
+                          "fields": [
+                            {
+                              "type": "NamedField",
+                              "name": "Type",
+                              "fieldType": "com.krista.fields.PickOne",
+                              "attributes": {
+                                "visualWidth": "S",
+                                "options": [
+                                  "ELSS",
+                                  "others"
+                                ]
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            },
+                            {
+                              "type": "NamedField",
+                              "name": "Amount",
+                              "fieldType": "com.krista.fields.Currency",
+                              "attributes": {
+                                "visualWidth": "S",
+                                "formatPattern": "\"₹\"#,##0"
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            }
+                          ]
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Housing Loan",
+                        "fieldType": "com.krista.fields.MultiField",
+                        "attributes": {
+                          "fields": [
+                            {
+                              "type": "NamedField",
+                              "name": "Principal/Interest",
+                              "fieldType": "com.krista.fields.PickOne",
+                              "attributes": {
+                                "visualWidth": "S",
+                                "options": [
+                                  "Pricipal",
+                                  "Interest"
+                                ]
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            },
+                            {
+                              "type": "NamedField",
+                              "name": "Amount",
+                              "fieldType": "com.krista.fields.Currency",
+                              "attributes": {
+                                "visualWidth": "S",
+                                "formatPattern": "\"₹\"#,##0"
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            }
+                          ]
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Section 80C\")",
+                        "yieldValue": "Map<Text, ?>",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Section 80C\")",
+                  "yieldValue": "Map<Text, ?>",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_f4f73e8c-01d3-45d3-adf0-7c40ae8cb441",
+                "label": "Section 80 D",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.MultiField",
+                  "attributes": {
+                    "fields": [
+                      {
+                        "type": "NamedField",
+                        "name": "Investment A",
+                        "fieldType": "com.krista.fields.MultiField",
+                        "attributes": {
+                          "fields": [
+                            {
+                              "type": "NamedField",
+                              "name": "Name",
+                              "fieldType": "com.krista.fields.Text",
+                              "attributes": {
+                                "visualWidth": "S",
+                                "trim": true
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            },
+                            {
+                              "type": "NamedField",
+                              "name": "Amount in Rs",
+                              "fieldType": "com.krista.fields.Number",
+                              "attributes": {
+                                "visualWidth": "S"
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            }
+                          ]
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      },
+                      {
+                        "type": "NamedField",
+                        "name": "Investment B",
+                        "fieldType": "com.krista.fields.MultiField",
+                        "attributes": {
+                          "fields": [
+                            {
+                              "type": "NamedField",
+                              "name": "Name",
+                              "fieldType": "com.krista.fields.Text",
+                              "attributes": {
+                                "visualWidth": "S",
+                                "trim": true
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            },
+                            {
+                              "type": "NamedField",
+                              "name": "Amount in Rs",
+                              "fieldType": "com.krista.fields.Number",
+                              "attributes": {
+                                "visualWidth": "S"
+                              },
+                              "options": {
+                                "required": {
+                                  "value": true,
+                                  "fieldType": "Boolean"
+                                }
+                              },
+                              "translations": {
+                                "type": "com.krista.model.translation.MultiTranslationMap",
+                                "translations": {}
+                              }
+                            }
+                          ]
+                        },
+                        "options": {
+                          "required": {
+                            "value": true,
+                            "fieldType": "Boolean"
+                          }
+                        },
+                        "translations": {
+                          "type": "com.krista.model.translation.MultiTranslationMap",
+                          "translations": {}
+                        }
+                      }
+                    ]
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Section 80 D\")",
+                        "yieldValue": "Map<Text, ?>",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Section 80 D\")",
+                  "yieldValue": "Map<Text, ?>",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Thanks <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"Name\\\")\" value=\"Paras Kumar\" name=\"Name\" fieldtype=\"com.krista.fields.Text\" attributes=\"{\\\"trim\\\":true}\"></krista-field>! We have recorded your email as <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"Email\\\")\" value=\"paras.kumar@kristasoft.com\" name=\"Email\" fieldtype=\"com.krista.fields.Email\" attributes=\"{}\"></krista-field>. Below are the invested details and files we have received:-"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_67b9c5b0-f10a-494b-88e5-59d6a9914ffe": {
+            "Mutual Funds": {
+              "Type": ["Type is wrong"],
+              "Amount": ["Amount is wrong", "Amount should be min 10000"]
+            },
+            "Housing Loan": {
+              "Principal/Interest": "Pricipal",
+              "Amount": 123000
+            }
+          },
+          "FIELD_f4f73e8c-01d3-45d3-adf0-7c40ae8cb441": {
+            "Investment A": {
+              "Name": "SBI funds",
+              "Amount in Rs": 3000
+            },
+            "Investment B": {
+              "Name": "ICICI growth linked fund",
+              "Amount in Rs": 20000
+            }
+          }
+        },
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 5",
+      "conversationDefinitionId": "CD_156744c0-d36d-4035-8d2e-9b5f68829c19",
+      "conversationId": "CEC_29f2fbdd-03b4-40cc-8716-698aecb092b3",
+      "conversationStepId": "CS_4c4f18fc-2684-4bcb-977e-d5dd123774cb",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1030",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "uniqueMessageKey": "M_7191aa23-f484-47e4-aca8-f09c6d5b382b",
+      "stepTitle": "Inform a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  }
+]

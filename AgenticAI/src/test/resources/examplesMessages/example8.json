@@ -1,0 +1,815 @@
+[
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_79033090-ee70-419e-9fd4-aa3efbe6d698",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_df618058-1a1c-4aca-9629-d7e0a5f98391",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1747296762333,
+    "attributes": {
+      "bookmark": false,
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_d2df4d41-9a91-49d6-8024-f1d400e6f9d6": "KA01NDSI"
+        },
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "form": {
+        "localId": "FORM_810f1fcf-133a-44b2-804d-0704929ea784",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_d2df4d41-9a91-49d6-8024-f1d400e6f9d6",
+                "label": "Registration number",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Text",
+                  "attributes": {
+                    "visualWidth": "S",
+                    "trim": true,
+                    "maxLength": 15
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Welcome to SPEEED service centre, enter your registration number to continue"
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 8",
+      "conversationDefinitionId": "CD_d5aa5e14-d9b0-4842-b26d-aca8a294e5ef",
+      "conversationId": "CEC_df618058-1a1c-4aca-9629-d7e0a5f98391",
+      "conversationStepId": "CS_94df300b-6064-4e16-8764-128586887ac8",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1010",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Person makes a request",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "accepted",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_7d8f7e43-2e07-49e3-9690-f2664fd7d47a",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_df618058-1a1c-4aca-9629-d7e0a5f98391",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747296762497,
+    "attributes": {
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_df618058-1a1c-4aca-9629-d7e0a5f98391": "M_7d8f7e43-2e07-49e3-9690-f2664fd7d47a"
+      },
+      "form": {
+        "localId": "FORM_3fd3a7e9-4e4b-418b-9738-69b876fe4e45",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_8f6ea7c5-b25c-486c-b8ba-e1292a71b96f",
+                "label": "Country",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Country",
+                  "attributes": {
+                    "visualWidth": "M",
+                    "trim": true,
+                    "minLength": 3
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "Country",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_89faecc6-5208-4e95-93e1-562f7a3fbc87",
+                "label": "State",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.State",
+                  "attributes": {
+                    "visualWidth": "M",
+                    "trim": true,
+                    "minLength": 4
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "State",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_54a8f6f4-354b-42ab-99a5-e864137ab552",
+                "label": "City",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.City",
+                  "attributes": {
+                    "visualWidth": "M",
+                    "trim": true
+                  },
+                  "options": {
+                    "required": {
+                      "value": false,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "City name",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_fa2c3b01-f47c-4391-a51e-d99b63fb5e4f",
+                "label": "Street",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Street",
+                  "attributes": {
+                    "visualWidth": "L",
+                    "trim": true,
+                    "minLength": 10
+                  },
+                  "options": {
+                    "required": {
+                      "value": false,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "Street address",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_4d8b6701-096a-476c-a0c3-2a5844062f45",
+                "label": "Full address",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Paragraph",
+                  "attributes": {
+                    "visualWidth": "L",
+                    "maxLineCount": 2
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_effd0f9c-e0ad-4128-bd53-617f8b30439b",
+                "label": "Condition of vehicle",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Paragraph",
+                  "attributes": {
+                    "visualWidth": "L",
+                    "maxLineCount": 5,
+                    "maxLength": 30
+                  },
+                  "options": {
+                    "required": {
+                      "value": false,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_b79392e0-1e8a-46f9-be07-133007d1cdef",
+                "label": "Are you facing any medical emergency?",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Switch",
+                  "attributes": {
+                    "visualWidth": "S"
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "true",
+                        "yieldValue": "Boolean",
+                        "language": "Constant",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "true",
+                  "yieldValue": "Boolean",
+                  "language": "Constant",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "We need to get your current location to help you, once details are confirmed you will get RSA facility within 30 mins* if you are in 10 Km radius of our nearest service centre(NSA)**, so kindly be as precise as possible to help us accurately locate you. Also answer few optional questions regarding condition of your vehicle and the passengers so that we can prioritise the request based on an emergency.\n\nPlease note below Terms and Conditions:-\n*30 mins time mentioned is indicative of best case scenario, there might be delay due to surge in demand\n**We might not have a service centre near you in that case you will have to bring your vehicle yourself to our nearest service station"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_8f6ea7c5-b25c-486c-b8ba-e1292a71b96f": "India",
+          "FIELD_89faecc6-5208-4e95-93e1-562f7a3fbc87": "Jharkhand",
+          "FIELD_54a8f6f4-354b-42ab-99a5-e864137ab552": "Ranchi",
+          "FIELD_fa2c3b01-f47c-4391-a51e-d99b63fb5e4f": "C/O Late Prithvi Chand Sahu, Kumhar Toli, Irgu Road, Ranchi, Jharkhand, near veer Abhimanyu Chow",
+          "FIELD_4d8b6701-096a-476c-a0c3-2a5844062f45": "IIT Ropar\nSatluj Hostel, SE 403",
+          "FIELD_effd0f9c-e0ad-4128-bd53-617f8b30439b": "One of my tires is puctured",
+          "FIELD_b79392e0-1e8a-46f9-be07-133007d1cdef": false
+        },
+        "submitType": "submit",
+        "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 8",
+      "conversationDefinitionId": "CD_d5aa5e14-d9b0-4842-b26d-aca8a294e5ef",
+      "conversationId": "CEC_df618058-1a1c-4aca-9629-d7e0a5f98391",
+      "conversationStepId": "CS_a667ed21-a967-405b-a407-808d6f5c3040",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_98ac56c0-b846-4a43-bf89-ba480b5374bc",
+    "messageType": "MT_2020",
+    "toInboxId": "inbox_CEC_df618058-1a1c-4aca-9629-d7e0a5f98391",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1747296863836,
+    "attributes": {
+      "targetMessageId": "M_7d8f7e43-2e07-49e3-9690-f2664fd7d47a",
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_8f6ea7c5-b25c-486c-b8ba-e1292a71b96f": "India",
+          "FIELD_89faecc6-5208-4e95-93e1-562f7a3fbc87": "Jharkhand",
+          "FIELD_54a8f6f4-354b-42ab-99a5-e864137ab552": "Ranchi",
+          "FIELD_fa2c3b01-f47c-4391-a51e-d99b63fb5e4f": "C/O Late Prithvi Chand Sahu, Kumhar Toli, Irgu Road, Ranchi, Jharkhand, near veer Abhimanyu Chow",
+          "FIELD_4d8b6701-096a-476c-a0c3-2a5844062f45": "IIT Ropar\nSatluj Hostel, SE 403",
+          "FIELD_effd0f9c-e0ad-4128-bd53-617f8b30439b": "One of my tires is puctured",
+          "FIELD_b79392e0-1e8a-46f9-be07-133007d1cdef": false
+        },
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "copies": {
+        "inbox_CEC_df618058-1a1c-4aca-9629-d7e0a5f98391": "M_98ac56c0-b846-4a43-bf89-ba480b5374bc"
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 8",
+      "conversationDefinitionId": "CD_d5aa5e14-d9b0-4842-b26d-aca8a294e5ef",
+      "conversationId": "CEC_df618058-1a1c-4aca-9629-d7e0a5f98391",
+      "conversationStepId": "CS_a667ed21-a967-405b-a407-808d6f5c3040",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "read",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_2ee4c3a2-b830-40d3-827d-189cf5a8af13",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_df618058-1a1c-4aca-9629-d7e0a5f98391",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747296863951,
+    "attributes": {
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_df618058-1a1c-4aca-9629-d7e0a5f98391": "M_2ee4c3a2-b830-40d3-827d-189cf5a8af13"
+      },
+      "form": {
+        "localId": "FORM_8193ccf4-277e-4412-b76a-53512faac19d",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_f48a3c8f-af5e-4401-86aa-b63781cb6614",
+                "label": "Are you facing any medical emergency?",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Switch",
+                  "attributes": {
+                    "visualWidth": "S"
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "vars.inScope(\"current\").get(\"Are you facing any medical emergency?\")",
+                        "yieldValue": "Boolean",
+                        "language": "Variable",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "vars.inScope(\"current\").get(\"Are you facing any medical emergency?\")",
+                  "yieldValue": "Boolean",
+                  "language": "Variable",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Thanks, we have captured your registration number <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"Registration number\\\")\" value=\"KA01NDSI\" name=\"Registration number\" fieldtype=\"com.krista.fields.Text\" attributes=\"{\\\"trim\\\":true}\"></krista-field> and address <krista-field ref=\"vars.inScope(\\\"current\\\").get(\\\"Full address\\\")\" value=\"IIT Ropar\nSatluj Hostel, SE 403\" name=\"Full address\" fieldtype=\"com.krista.fields.Paragraph\" attributes=\"{\\\"maxLineCount\\\":2}\"></krista-field>. Our customer support will reach out to you shortly. Please verify you selected correct location otherwise close the website and start the process again.\n\nYou will get RSA facility within 30 mins* if you are in 10 Km radius of our nearest service centre(NSA)**.\n\nPlease note below Terms and Conditions:-\n*30 mins time mentioned is indicative of best case scenario, there might be delay due to surge in demand\n**We might not have a service centre near you in that case you will have to bring your vehicle yourself to our nearest service station\n"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_f48a3c8f-af5e-4401-86aa-b63781cb6614": false
+        },
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 8",
+      "conversationDefinitionId": "CD_d5aa5e14-d9b0-4842-b26d-aca8a294e5ef",
+      "conversationId": "CEC_df618058-1a1c-4aca-9629-d7e0a5f98391",
+      "conversationStepId": "CS_bcb26c52-27f0-464a-ac93-06a38304ecbb",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1030",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "uniqueMessageKey": "M_89a88e15-55e8-4437-a112-f49bc28919fc",
+      "stepTitle": "Inform a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_3815e176-21c2-4cf5-ab13-d15c96782a22",
+    "messageType": "MT_1010",
+    "toInboxId": "inbox_CEC_df618058-1a1c-4aca-9629-d7e0a5f98391",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747296863983,
+    "attributes": {
+      "message": "Thanks!"
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 8",
+      "conversationDefinitionId": "CD_d5aa5e14-d9b0-4842-b26d-aca8a294e5ef",
+      "conversationId": "CEC_df618058-1a1c-4aca-9629-d7e0a5f98391",
+      "conversationStepId": "CS_b184cb2b-710d-4af1-a84d-35d06e7328ec",
+      "branch": [],
+      "thread": [],
+      "stepTypeId": "CST_1080",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": false,
+      "stepTitle": "End Conversation",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  }
+]

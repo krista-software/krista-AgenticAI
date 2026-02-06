@@ -1,0 +1,619 @@
+[
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_17acb73c-02c6-46e5-985f-f55aed8b923b",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_f2e25e0a-a360-464b-9574-2782992c6a5b",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1747297292231,
+    "attributes": {
+      "bookmark": false,
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {},
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "form": {
+        "localId": "FORM_ad905b04-26fa-44da-a9d3-def56a428186",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Welcome to PDFLabs editor, click to start editing..."
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 9",
+      "conversationDefinitionId": "CD_5241ba13-e2bd-4497-bcdb-c577d4e82c9c",
+      "conversationId": "CEC_f2e25e0a-a360-464b-9574-2782992c6a5b",
+      "conversationStepId": "CS_4b228092-cda4-4620-93b1-7314482fef14",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1010",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Person makes a request",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "accepted",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_96a2db61-fe5e-4e0d-a0ae-6517f50df044",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_f2e25e0a-a360-464b-9574-2782992c6a5b",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747297292537,
+    "attributes": {
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_f2e25e0a-a360-464b-9574-2782992c6a5b": "M_96a2db61-fe5e-4e0d-a0ae-6517f50df044"
+      },
+      "form": {
+        "localId": "FORM_63f329e1-a492-4d09-b3e9-3640d4457c85",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [
+              {
+                "localId": "FIELD_bfd0575e-4320-4d90-9519-c026b705db42",
+                "label": "Pages",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.List",
+                  "attributes": {
+                    "field": {
+                      "type": "Field",
+                      "fieldType": "com.krista.fields.Paragraph",
+                      "attributes": {
+                        "visualWidth": "L",
+                        "maxLineCount": 10,
+                        "minLength": 200,
+                        "maxLength": 500
+                      },
+                      "options": {
+                        "required": {
+                          "value": true,
+                          "fieldType": "Boolean"
+                        }
+                      },
+                      "translations": {
+                        "type": "com.krista.model.translation.MultiTranslationMap",
+                        "translations": {}
+                      }
+                    }
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "Enter data page wise",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_321fcfdb-118b-4645-87ec-6a023b0a0676",
+                "label": "Borders",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Percentage",
+                  "attributes": {
+                    "visualWidth": "S",
+                    "formatPattern": "0%",
+                    "maxValue": 0.15,
+                    "minValue": 0.05
+                  },
+                  "options": {
+                    "required": {
+                      "value": true,
+                      "fieldType": "Boolean"
+                    },
+                    "defaultValue": {
+                      "value": {
+                        "type": "Expression",
+                        "expression": "0.05",
+                        "yieldValue": "Double",
+                        "language": "Constant",
+                        "consumedVariables": []
+                      },
+                      "fieldType": "Expression"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "defaultValue": {
+                  "type": "Expression",
+                  "expression": "0.05",
+                  "yieldValue": "Double",
+                  "language": "Constant",
+                  "consumedVariables": []
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_5850372e-5b29-4153-8f1f-3e17f7c3353f",
+                "label": "Length",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Unit",
+                  "attributes": {
+                    "minValue": 5,
+                    "maxValue": 20,
+                    "typicalMaxValue": 10,
+                    "formatPattern": "#,##0\" cm\""
+                  },
+                  "options": {
+                    "required": {
+                      "value": false,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              },
+              {
+                "localId": "FIELD_b19f65bb-1257-442d-95b7-6f7cca2cbeee",
+                "label": "width",
+                "field": {
+                  "type": "Field",
+                  "fieldType": "com.krista.fields.Unit",
+                  "attributes": {
+                    "maxValue": 10,
+                    "typicalMaxValue": 8,
+                    "minValue": 5,
+                    "formatPattern": "#,##0\" cm\""
+                  },
+                  "options": {
+                    "required": {
+                      "value": false,
+                      "fieldType": "Boolean"
+                    }
+                  },
+                  "translations": {
+                    "type": "com.krista.model.translation.MultiTranslationMap",
+                    "translations": {}
+                  }
+                },
+                "readOnly": true,
+                "hidden": false,
+                "additionalNlpHints": [],
+                "displayLabel": "",
+                "translations": {
+                  "type": "com.krista.model.translation.MultiTranslationMap",
+                  "translations": {}
+                }
+              }
+            ],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Add the details to get started"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_bfd0575e-4320-4d90-9519-c026b705db42": [
+            "Maya wandered through the abandoned train station, her flashlight flickering. She had heard rumors of a hidden journal left by her grandfather, who vanished here decades ago. Dust covered the benches, and echoes of old announcements bounced off the cracked walls.",
+            "Behind a loose tile near the ticket booth, she found a small metal box. Inside was the journal, wrapped in faded cloth. Its pages were brittle, filled with sketches, maps, and notes about a secret project called \"Echo Line.\" One phrase stood out: \"Find the pulse beneath the tracks.\"",
+            "Following the journal's clues, Maya descended into a forgotten tunnel. At its heart, she found a humming machine still pulsing with life. As she touched it, memories not her own flooded her mind. Her grandfather hadn't vanished—he had crossed into something beyond time."
+          ],
+          "FIELD_321fcfdb-118b-4645-87ec-6a023b0a0676": 0.05,
+          "FIELD_5850372e-5b29-4153-8f1f-3e17f7c3353f": 20
+        },
+        "submitType": "submit",
+        "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 9",
+      "conversationDefinitionId": "CD_5241ba13-e2bd-4497-bcdb-c577d4e82c9c",
+      "conversationId": "CEC_f2e25e0a-a360-464b-9574-2782992c6a5b",
+      "conversationStepId": "CS_2df14fb5-3cd2-485b-88cc-0c702a87c2c7",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_3ecddae8-eb4b-4d87-adf0-4777f7abe8d2",
+    "messageType": "MT_2020",
+    "toInboxId": "inbox_CEC_f2e25e0a-a360-464b-9574-2782992c6a5b",
+    "fromInboxId": "inbox_wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "fromAccountId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+    "creationTime": 1747297375305,
+    "attributes": {
+      "targetMessageId": "M_96a2db61-fe5e-4e0d-a0ae-6517f50df044",
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {
+          "FIELD_bfd0575e-4320-4d90-9519-c026b705db42": [
+            "Maya wandered through the abandoned train station, her flashlight flickering. She had heard rumors of a hidden journal left by her grandfather, who vanished here decades ago. Dust covered the benches, and echoes of old announcements bounced off the cracked walls.",
+            "Behind a loose tile near the ticket booth, she found a small metal box. Inside was the journal, wrapped in faded cloth. Its pages were brittle, filled with sketches, maps, and notes about a secret project called \"Echo Line.\" One phrase stood out: \"Find the pulse beneath the tracks.\"",
+            "Following the journal's clues, Maya descended into a forgotten tunnel. At its heart, she found a humming machine still pulsing with life. As she touched it, memories not her own flooded her mind. Her grandfather hadn't vanished—he had crossed into something beyond time."
+          ],
+          "FIELD_321fcfdb-118b-4645-87ec-6a023b0a0676": 0.05,
+          "FIELD_5850372e-5b29-4153-8f1f-3e17f7c3353f": 20
+        },
+        "submitType": "submit",
+        "autoSubmit": false
+      },
+      "copies": {
+        "inbox_CEC_f2e25e0a-a360-464b-9574-2782992c6a5b": "M_3ecddae8-eb4b-4d87-adf0-4777f7abe8d2"
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 9",
+      "conversationDefinitionId": "CD_5241ba13-e2bd-4497-bcdb-c577d4e82c9c",
+      "conversationId": "CEC_f2e25e0a-a360-464b-9574-2782992c6a5b",
+      "conversationStepId": "CS_2df14fb5-3cd2-485b-88cc-0c702a87c2c7",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main",
+        "user-0-{{accountId}}"
+      ],
+      "stepTypeId": "CST_1040",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "stepTitle": "Ask a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_acc16152-2071-4a40-98a3-915589dba402"
+      ],
+      "roleIds": []
+    },
+    "state": "read",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_7be18528-9809-46c1-a476-38e4ab45442a",
+      "personId": "single_a4863b5d-7bb7-47e3-ba99-2b503f7d1dfd",
+      "name": "Paras Kumar"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  },
+  {
+    "type": "com.krista.net.model.conv.DrainInboxResponse$MessageDto",
+    "messageId": "M_bd39249d-8fc1-4989-8994-f134ac021c48",
+    "messageType": "MT_2010",
+    "toInboxId": "inbox_CEC_f2e25e0a-a360-464b-9574-2782992c6a5b",
+    "fromInboxId": "inbox_wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "fromAccountId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+    "creationTime": 1747297375387,
+    "attributes": {
+      "widgetSupportedFieldIds": [],
+      "sidebars": [],
+      "bookmark": false,
+      "copies": {
+        "inbox_CEC_f2e25e0a-a360-464b-9574-2782992c6a5b": "M_bd39249d-8fc1-4989-8994-f134ac021c48"
+      },
+      "form": {
+        "localId": "FORM_e55bc52f-492f-4bcc-a06b-4db78a504bf7",
+        "pages": [
+          {
+            "type": "com.krista.net.model.form.FormPage",
+            "title": "Input",
+            "pageFields": [],
+            "translations": {
+              "type": "com.krista.model.translation.MultiTranslationMap",
+              "translations": {}
+            }
+          }
+        ],
+        "visibilityRules": [
+          {
+            "type": "com.krista.net.model.form.VisibilityRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ],
+            "elseActions": [
+              {
+                "type": "com.krista.net.model.form.FieldVisibilityAction",
+                "action": "show_field"
+              }
+            ]
+          }
+        ],
+        "validationRules": [
+          {
+            "type": "com.krista.net.model.form.FormValidationRule",
+            "condition": [
+              {
+                "type": "Expression",
+                "expression": "",
+                "yieldValue": "Boolean",
+                "language": "JavaScript",
+                "consumedVariables": []
+              }
+            ],
+            "thenActions": [
+              {
+                "type": "ValidationNotification",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "roleMatrix": {},
+        "readOnly": true,
+        "nlpHints": []
+      },
+      "paths": [],
+      "message": {
+        "type": "com.krista.net.model.message.TextMessage",
+        "message": "Download the PDF from here <krista-link title=\"PDF link\" href=\"https://google.com\"></krista-link>"
+      },
+      "formResponse": {
+        "type": "com.krista.net.model.form.FormResponse",
+        "fieldValues": {},
+        "autoSubmit": false
+      }
+    },
+    "stepExecutionMeta": {
+      "type": "com.krista.net.model.conv.StepExecutionMeta",
+      "conversationTitle": "Example 9",
+      "conversationDefinitionId": "CD_5241ba13-e2bd-4497-bcdb-c577d4e82c9c",
+      "conversationId": "CEC_f2e25e0a-a360-464b-9574-2782992c6a5b",
+      "conversationStepId": "CS_aac10acd-abeb-4d04-9764-23a90506804d",
+      "branch": [
+        "main"
+      ],
+      "thread": [
+        "main"
+      ],
+      "stepTypeId": "CST_1030",
+      "executionMode": "test",
+      "testData": false,
+      "allowChat": true,
+      "uniqueMessageKey": "M_dd8ed71f-29f6-4717-aadc-f02f78eb9122",
+      "stepTitle": "Inform a Person",
+      "isErrorMessage": false,
+      "topicId": "defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+    },
+    "targetAudience": {
+      "type": "com.krista.net.model.message.TargetAudience",
+      "accountIds": [
+        "wsContact_7be18528-9809-46c1-a476-38e4ab45442a"
+      ],
+      "roleIds": []
+    },
+    "state": "readack",
+    "fromAccount": {
+      "type": "com.krista.net.model.conv.DrainInboxResponse$MemberDto",
+      "contactId": "wsContact_acc16152-2071-4a40-98a3-915589dba402",
+      "personId": "single_krista",
+      "name": "Krista"
+    },
+    "attentionRequired": false,
+    "sessionId": "S_defnMult_d9808219-7a4e-4233-90dd-cf730f428be4"
+  }
+]
