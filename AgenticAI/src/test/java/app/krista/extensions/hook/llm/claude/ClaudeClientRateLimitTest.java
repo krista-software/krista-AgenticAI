@@ -57,7 +57,7 @@ public class ClaudeClientRateLimitTest {
         HttpClientPool.getInstance().clearCache();
 
         // Create Claude client with test configuration
-        claudeClient = new ClaudeClient("test-api-key", "claude-3-sonnet-20240229", 30);
+        claudeClient = new ClaudeClient("test-api-key", "REDACTED_SECRET", 30);
     }
 
     @Test

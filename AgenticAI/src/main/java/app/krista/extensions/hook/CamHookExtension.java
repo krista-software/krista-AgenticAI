@@ -183,7 +183,7 @@ public class CamHookExtension {
         return switch (normalizedProvider) {
             case "openai" -> new OpenAIClient(apiKey, "gpt-4o-mini", 10); // 10 second timeout for connection test
             case "claude" ->
-                    new ClaudeClient(apiKey, "claude-sonnet-4-5-20250929", 10); // 10 second timeout for connection test
+                    new ClaudeClient(apiKey, "REDACTED_SECRET", 10); // 10 second timeout for connection test
             default -> throw new IllegalArgumentException("Unsupported LLM provider: " + cloudProvider);
         };
     }
