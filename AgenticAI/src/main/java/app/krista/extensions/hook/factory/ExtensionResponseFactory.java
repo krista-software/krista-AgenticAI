@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.factory;
@@ -22,8 +22,12 @@ import app.krista.extension.executor.ExtensionResponse;
 import app.krista.extension.executor.RemediationAction;
 import app.krista.extension.executor.RemediationActions;
 import app.krista.extension.executor.impl.AskAPersonAction;
+import app.krista.extension.executor.impl.ChatFormMessageAction;
 import app.krista.extension.executor.impl.ConfirmVariablesAction;
+import app.krista.extension.executor.impl.ExecuteToolAction;
+import app.krista.extension.executor.impl.FlowCompletionAction;
 import app.krista.extension.executor.impl.InformAPersonAction;
+import app.krista.extension.executor.impl.InformStepType;
 import app.krista.extension.executor.impl.MapVariablesAction;
 import app.krista.model.base.FreeForm;
 
@@ -99,6 +103,18 @@ public class ExtensionResponseFactory {
     }
 
     /**
+     * Creates ExtensionResponse for field not supported cases with ChatFormMessageAction.
+     * This action displays the message in both chat and form modes.
+     * Always returns empty FreeForm to avoid serialization issues with unsupported fields.
+     */
+    public static ExtensionResponse createChatFormMessageResponse(String message) {
+        List<RemediationAction> actions = new ArrayList<>();
+        actions.add(ChatFormMessageAction.create(message));
+
+        return createSuccessResponse(new FreeForm(), actions);
+    }
+
+    /**
      * Creates a successful ExtensionResponse with variables and actions.
      */
     private static ExtensionResponse createSuccessResponse(FreeForm variables, List<RemediationAction> actions) {
@@ -118,10 +134,255 @@ public class ExtensionResponseFactory {
     private static ExtensionResponse createSuccessResponseWithEmptyVariables(List<RemediationAction> actions) {
         RemediationActions remediationActions = new RemediationActions(actions, null);
         return new ExtensionResponse(
-            ExtensionResponse.Result.SUCCESS, 
-            Map.of(), 
-            null, 
-            remediationActions, 
+            ExtensionResponse.Result.SUCCESS,
+            Map.of(),
+            null,
+            remediationActions,
+            null
+        );
+    }
+
+    // -------------------------------------------------------------------------
+    // Orchestration / agentic flow responses
+    // -------------------------------------------------------------------------
+
+    /**
+     * Creates a fallback ExtensionResponse used when the agentic response is null or malformed.
+     */
+    public static ExtensionResponse createFallbackErrorResponse() {
+        List<RemediationAction> actions = new ArrayList<>();
+        actions.add(InformAPersonAction.create(
+            "An internal error occurred. Please try again.",
+            null,
+            null
+        ));
+
+        return new ExtensionResponse(
+            ExtensionResponse.Result.SUCCESS,
+            null,
+            null,
+            new RemediationActions(actions, null),
+            null
+        );
+    }
+
+    /**
+     * Creates an ExtensionResponse that instructs the platform to execute a tool.
+     * Used for both normal tool execution (child session) and parent-to-child delegation.
+     *
+     * @param sessionId    the session ID to associate with this tool execution
+     * @param toolName     the name of the tool to execute
+     * @param arguments    the tool arguments
+     * @param outputVars   the current output variables carried forward
+     */
+    public static ExtensionResponse createExecuteToolResponse(String sessionId,
+                                                              String toolName,
+                                                              Map<String, Object> arguments,
+                                                              Map<String, Object> outputVars) {
+
+        return createExecuteToolResponse(sessionId, toolName, arguments, outputVars, null, null);
+    }
+
+    /**
+     * Creates an ExtensionResponse that instructs the platform to execute a tool,
+     * with an optional user-facing status message.
+     *
+     * @param sessionId      the session ID to associate with this tool execution
+     * @param toolName       the name of the tool to execute
+     * @param arguments      the tool arguments
+     * @param outputVars     the current output variables carried forward
+     * @param statusMessage  user-facing status text (nullable)
+     * @param informStepType the inform step type controlling message persistence (nullable)
+     */
+    public static ExtensionResponse createExecuteToolResponse(String sessionId,
+                                                              String toolName,
+                                                              Map<String, Object> arguments,
+                                                              Map<String, Object> outputVars,
+                                                              String statusMessage,
+                                                              InformStepType informStepType) {
+
+        List<RemediationAction> actions = new ArrayList<>();
+        actions.add(ExecuteToolAction.create(sessionId, toolName, arguments, statusMessage, informStepType));
+
+        return new ExtensionResponse(
+            ExtensionResponse.Result.SUCCESS,
+            outputVars,
+            null,
+            new RemediationActions(actions, null),
+            null
+        );
+    }
+
+    /**
+     * Creates an ExtensionResponse for a successfully completed parent agent flow.
+     *
+     * @param sessionId      the parent session ID
+     * @param finalResponse  the final text response from the agent
+     * @param outputVars     the output variables produced by the flow
+     */
+    public static ExtensionResponse createParentCompleteResponse(String sessionId,
+                                                                 String finalResponse,
+                                                                 Map<String, Object> outputVars) {
+
+        return createParentCompleteResponse(sessionId, finalResponse, outputVars, null, null);
+    }
+
+    /**
+     * Creates an ExtensionResponse for a successfully completed parent agent flow,
+     * with an optional user-facing status message.
+     *
+     * @param sessionId      the parent session ID
+     * @param finalResponse  the final text response from the agent
+     * @param outputVars     the output variables produced by the flow
+     * @param statusMessage  user-facing status text (nullable)
+     * @param informStepType the inform step type controlling message persistence (nullable)
+     */
+    public static ExtensionResponse createParentCompleteResponse(String sessionId,
+                                                                 String finalResponse,
+                                                                 Map<String, Object> outputVars,
+                                                                 String statusMessage,
+                                                                 InformStepType informStepType) {
+
+        List<RemediationAction> actions = new ArrayList<>();
+        actions.add(FlowCompletionAction.forParentComplete(
+                sessionId, finalResponse, outputVars, statusMessage, informStepType));
+
+        return new ExtensionResponse(
+            ExtensionResponse.Result.SUCCESS,
+            outputVars,
+            null,
+            new RemediationActions(actions, null),
+            null
+        );
+    }
+
+    /**
+     * Creates an ExtensionResponse for a successfully completed child agent flow,
+     * returning control to the parent session.
+     *
+     * @param parentSessionId the parent session to return to
+     * @param finalResponse   the final text response from the child agent
+     * @param outputVars      the output variables produced by the child flow
+     */
+    public static ExtensionResponse createChildCompleteResponse(String parentSessionId,
+                                                                String finalResponse,
+                                                                Map<String, Object> outputVars) {
+
+        return createChildCompleteResponse(parentSessionId, finalResponse, outputVars, null, null);
+    }
+
+    /**
+     * Creates an ExtensionResponse for a successfully completed child agent flow,
+     * with an optional user-facing status message.
+     *
+     * @param parentSessionId the parent session to return to
+     * @param finalResponse   the final text response from the child agent
+     * @param outputVars      the output variables produced by the child flow
+     * @param statusMessage   user-facing status text (nullable)
+     * @param informStepType  the inform step type controlling message persistence (nullable)
+     */
+    public static ExtensionResponse createChildCompleteResponse(String parentSessionId,
+                                                                String finalResponse,
+                                                                Map<String, Object> outputVars,
+                                                                String statusMessage,
+                                                                InformStepType informStepType) {
+
+        List<RemediationAction> actions = new ArrayList<>();
+        actions.add(FlowCompletionAction.forChildComplete(
+                parentSessionId, finalResponse, outputVars, statusMessage, informStepType));
+
+        return new ExtensionResponse(
+            ExtensionResponse.Result.SUCCESS,
+            outputVars,
+            null,
+            new RemediationActions(actions, null),
+            null
+        );
+    }
+
+    /**
+     * Creates an ExtensionResponse for a failed parent agent flow.
+     *
+     * @param sessionId    the parent session ID
+     * @param errorMessage the error message
+     * @param outputVars   the output variables at the time of failure
+     */
+    public static ExtensionResponse createParentErrorResponse(String sessionId,
+                                                              String errorMessage,
+                                                              Map<String, Object> outputVars) {
+
+        return createParentErrorResponse(sessionId, errorMessage, outputVars, null, null);
+    }
+
+    /**
+     * Creates an ExtensionResponse for a failed parent agent flow,
+     * with an optional user-facing status message.
+     *
+     * @param sessionId      the parent session ID
+     * @param errorMessage   the error message
+     * @param outputVars     the output variables at the time of failure
+     * @param statusMessage  user-facing status text (nullable)
+     * @param informStepType the inform step type controlling message persistence (nullable)
+     */
+    public static ExtensionResponse createParentErrorResponse(String sessionId,
+                                                              String errorMessage,
+                                                              Map<String, Object> outputVars,
+                                                              String statusMessage,
+                                                              InformStepType informStepType) {
+
+        List<RemediationAction> actions = new ArrayList<>();
+        actions.add(FlowCompletionAction.forParentError(
+                sessionId, errorMessage, outputVars, statusMessage, informStepType));
+
+        return new ExtensionResponse(
+            ExtensionResponse.Result.SUCCESS,
+            outputVars,
+            null,
+            new RemediationActions(actions, null),
+            null
+        );
+    }
+
+    /**
+     * Creates an ExtensionResponse for a failed child agent flow,
+     * returning the error to the parent session.
+     *
+     * @param parentSessionId the parent session to return to
+     * @param errorMessage    the error message from the child agent
+     * @param outputVars      the output variables at the time of failure
+     */
+    public static ExtensionResponse createChildErrorResponse(String parentSessionId,
+                                                             String errorMessage,
+                                                             Map<String, Object> outputVars) {
+
+        return createChildErrorResponse(parentSessionId, errorMessage, outputVars, null, null);
+    }
+
+    /**
+     * Creates an ExtensionResponse for a failed child agent flow,
+     * with an optional user-facing status message.
+     *
+     * @param parentSessionId the parent session to return to
+     * @param errorMessage    the error message from the child agent
+     * @param outputVars      the output variables at the time of failure
+     * @param statusMessage   user-facing status text (nullable)
+     * @param informStepType  the inform step type controlling message persistence (nullable)
+     */
+    public static ExtensionResponse createChildErrorResponse(String parentSessionId,
+                                                             String errorMessage,
+                                                             Map<String, Object> outputVars,
+                                                             String statusMessage,
+                                                             InformStepType informStepType) {
+
+        List<RemediationAction> actions = new ArrayList<>();
+        actions.add(FlowCompletionAction.forChildError(
+                parentSessionId, errorMessage, outputVars, statusMessage, informStepType));
+
+        return new ExtensionResponse(
+            ExtensionResponse.Result.SUCCESS,
+            outputVars,
+            null,
+            new RemediationActions(actions, null),
             null
         );
     }

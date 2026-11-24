@@ -13,12 +13,12 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.common;
 
-import app.krista.extensions.hook.common.fieldToLLM.FieldOptionsExtractor;
+import app.krista.extensions.hook.common.fieldToLLM.FieldMetadataExtractor;
 import app.krista.model.base.FreeForm;
 import app.krista.model.field.Field;
 import app.krista.model.field.NamedField;
@@ -136,7 +136,7 @@ public class FreeFormDefaultsHelper {
             Field referenceField = referenceTypedValue.getField();
             if (referenceField != null) {
                 // Check if field is mandatory
-                boolean isMandatory = FieldOptionsExtractor.extractIsMandatory(referenceField);
+                boolean isMandatory = FieldMetadataExtractor.extractIsMandatory(referenceField);
 
                 // If checkOnlyMandatoryFields is true, only consider mandatory fields
                 if (checkOnlyMandatoryFields && !isMandatory) {
@@ -196,7 +196,7 @@ public class FreeFormDefaultsHelper {
 
             if (updatedField != null && updatedFieldValue != null && !FreeFormHelper.isValueEmpty(updatedFieldValue)) {
                 // Check if field is mandatory
-                boolean isMandatory = FieldOptionsExtractor.extractIsMandatory(updatedField);
+                boolean isMandatory = FieldMetadataExtractor.extractIsMandatory(updatedField);
 
                 // If checkOnlyMandatoryFields is true, only consider mandatory fields
                 if (checkOnlyMandatoryFields && !isMandatory) {
@@ -359,7 +359,7 @@ public class FreeFormDefaultsHelper {
 
             // If we have nested field definition, check if it's mandatory
             if (nestedField != null) {
-                boolean isMandatory = FieldOptionsExtractor.extractIsMandatory(nestedField);
+                boolean isMandatory = FieldMetadataExtractor.extractIsMandatory(nestedField);
 
                 if (checkOnlyMandatoryFields && !isMandatory) {
                     continue; // Skip non-mandatory nested fields
@@ -457,7 +457,7 @@ public class FreeFormDefaultsHelper {
 
                 // If we have nested field definition, check if it's mandatory
                 if (nestedField != null) {
-                    boolean isMandatory = FieldOptionsExtractor.extractIsMandatory(nestedField);
+                    boolean isMandatory = FieldMetadataExtractor.extractIsMandatory(nestedField);
 
                     if (checkOnlyMandatoryFields && !isMandatory) {
                         continue; // Skip non-mandatory nested fields

@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.handler;
@@ -23,8 +23,10 @@ import app.krista.extension.executor.Invoker;
 import app.krista.extensions.hook.common.FileReader;
 import app.krista.extensions.hook.common.PromptBuilder;
 import app.krista.extensions.hook.llm.LLMServiceWithFallback;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import app.krista.extensions.hook.util.GsonProvider;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.*;
 
 /**
@@ -54,8 +56,8 @@ public class IntentClassificationHandler {
         try {
             String userPrompt = PromptBuilder.createPromptForIntentClassification(userMessage, conversationsMetaData);
             String llmResponse = llmService.queryWithFallback(intentPrompt, userPrompt);
-            ObjectMapper mapper = new ObjectMapper();
-            Map<String, Object> result = mapper.readValue(llmResponse, Map.class);
+            Type mapType = new TypeToken<Map<String, Object>>(){}.getType();
+            Map<String, Object> result = GsonProvider.getInstance().fromJson(llmResponse, mapType);
 
             return processSimpleIntentResult(result, userMessage);
 

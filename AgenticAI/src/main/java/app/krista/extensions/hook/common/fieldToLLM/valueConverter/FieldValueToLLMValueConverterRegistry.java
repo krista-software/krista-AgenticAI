@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.common.fieldToLLM.valueConverter;
@@ -37,7 +37,6 @@ public class FieldValueToLLMValueConverterRegistry {
         registry.register("com.krista.fields.DateTimeRange", new DateRangeFieldValueToLLMValueConverter());
 
         registry.register("com.krista.fields.MultiField", new MultiFieldValueToLLMValueConverter(registry));
-        registry.register("com.krista.fields.List", new ListFieldValueToLLMValueConverter(registry));
         registry.register("com.krista.fields.Checkboxes", new CheckboxFieldValueToLLMValueConverter());
         registry.register("com.krista.fields.Switch", new SwitchFieldValueToLLMValueConverter());
         registry.register("com.krista.fields.Phone", new PhoneNumberFieldValueToLLMValueConverter());

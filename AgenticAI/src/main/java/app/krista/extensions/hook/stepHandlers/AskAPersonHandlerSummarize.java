@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.stepHandlers;
@@ -47,7 +47,7 @@ public class AskAPersonHandlerSummarize implements StepExecutionHandler {
     }
 
     @Override
-    public ExtensionResponse processRequest(AgentAction agentAction, FreeForm currentVariables, String formMessage, String userMessage, StepMetadata metaData, FreeForm currentVariablesDefault, String language) throws Exception {
+    public ExtensionResponse processRequest(AgentAction agentAction, FreeForm currentVariables, String formMessage, String userMessage, StepMetadata metaData, FreeForm currentVariablesDefault, String language, OrchestrationContext orchestrationContext) throws Exception {
         if (agentAction != AgentAction.SUMMARIZE_ASK) {
             throw new UnsupportedOperationException("SummarizeAskHandler only supports SUMMARIZE_ASK action");
         }
@@ -96,8 +96,11 @@ public class AskAPersonHandlerSummarize implements StepExecutionHandler {
                 boolean hasDefaultValues = FreeFormHelper.hasAtLeastOneValue(currentVariablesDefault, false);
 
                 if (hasDefaultValues) {
-                    // Use DefaultValuesConfirmation prompt with CurrentVariablesDefault
-                    return convertDefaultValuesToConfirmation(currentVariablesDefault, language);
+                    // Merge: CurrentVariables values override defaults, gaps filled by defaults
+                    // This ensures extracted values from user's original message take priority
+                    FreeForm mergedVariables = FreeFormDefaultsHelper.updateFreeFormFromFreeForm(
+                            currentVariablesDefault, currentVariables, true);
+                    return convertDefaultValuesToConfirmation(mergedVariables, language);
                 } else {
                     // Use existing AskUser prompt with currentVariables
                     return convertEntireFormToQuestion(inputFieldValueMap, currentVariables, formMessage, metaData, language);
@@ -110,8 +113,9 @@ public class AskAPersonHandlerSummarize implements StepExecutionHandler {
             }
         } catch (StepHandlerHelper.UnsupportedFieldTypeException e) {
             // Handle unsupported field type from isCurrentVariablesEmpty or convertFreeFormToFieldValueMap
+            // Use ChatFormMessageAction to display message in both chat and form modes
             String errorMessage = TranslatableConstants.translate(TranslatableConstants.FIELD_NOT_SUPPORTED, translationService, language);
-            return ExtensionResponseFactory.createAskUserResponse(currentVariables, errorMessage);
+            return ExtensionResponseFactory.createChatFormMessageResponse(errorMessage);
         } catch (Exception e) {
             // Re-throw other exceptions
             throw e;

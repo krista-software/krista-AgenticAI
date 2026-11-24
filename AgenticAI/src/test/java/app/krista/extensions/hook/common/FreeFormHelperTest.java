@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.common;
@@ -515,36 +515,6 @@ public class FreeFormHelperTest {
     }
 
     @Test
-    public void testConvertFreeFormToFieldValueMap_WithNestedListField_ReturnsCorrectStructure() throws Exception {
-        // Arrange - Create FreeForm with List field
-        FreeForm listForm = new FreeForm();
-
-        Field listField = createListField();
-        List<String> listValue = List.of("Item1", "Item2", "Item3");
-        listForm.put("items", "Items List", listField, listValue);
-
-        // Act
-        Map<String, Object> result = FreeFormHelper.convertFreeFormToFieldValueMap(listForm);
-
-        // Assert
-        assertNotNull(result);
-        assertEquals(1, result.size());
-
-        Map<String, Object> itemsField = (Map<String, Object>) result.get("items");
-        assertNotNull(itemsField);
-        assertEquals("com.krista.fields.List", itemsField.get("fieldType"));
-        assertEquals(false, itemsField.get("isMandatoryField"));
-
-        // Check list value
-        List<String> itemsValue = (List<String>) itemsField.get("value");
-        assertNotNull(itemsValue);
-        assertEquals(3, itemsValue.size());
-        assertEquals("Item1", itemsValue.get(0));
-        assertEquals("Item2", itemsValue.get(1));
-        assertEquals("Item3", itemsValue.get(2));
-    }
-
-    @Test
     public void testIsFreeFormFilled_WithNestedStructures_ChecksMandatoryFieldsCorrectly() {
         // Arrange - Create FreeForm with nested mandatory and optional fields
         FreeForm complexForm = new FreeForm();
@@ -739,57 +709,6 @@ public class FreeFormHelperTest {
         assertEquals("Java", skills.get(0));
         assertEquals("Spring", skills.get(1));
         assertEquals("Microservices", skills.get(2));
-    }
-
-    @Test
-    public void testConvertFreeFormToFieldValueMap_WithComplexNestedStructure_ReturnsCorrectStructure() throws Exception {
-        // Arrange - Create complex 3-level deep nested structure
-        FreeForm complexForm = new FreeForm();
-
-        Field listOfMultiField = createComplexListField();
-        List<Map<String, Object>> complexValue = new ArrayList<>();
-
-        Map<String, Object> employee = new HashMap<>();
-        employee.put("name", "John Doe");
-        employee.put("email", "john@example.com");
-        employee.put("active", true);
-
-        // Level 2: Contact information with phone numbers
-        Map<String, Object> contactInfo = new HashMap<>();
-        contactInfo.put("phone", new PhoneNumber(1, 15551234567L));
-        contactInfo.put("mobile", new PhoneNumber(1, 15559876543L));
-
-        // Level 3: Address (deepest level)
-        Map<String, Object> address = new HashMap<>();
-        address.put("street", "123 Main St");
-        address.put("city", "New York");
-        address.put("state", "NY");
-        address.put("postalCode", "10001");
-        address.put("country", "USA");
-        contactInfo.put("address", address);
-
-        employee.put("contactInfo", contactInfo);
-        employee.put("skills", List.of("Java", "Python", "React"));
-        complexValue.add(employee);
-
-        complexForm.put("employees", "Employee List", listOfMultiField, complexValue);
-
-        // Act
-        Map<String, Object> result = FreeFormHelper.convertFreeFormToFieldValueMap(complexForm);
-
-        // Assert
-        assertNotNull(result);
-        assertEquals(1, result.size());
-
-        Map<String, Object> employeesField = (Map<String, Object>) result.get("employees");
-        assertNotNull(employeesField);
-        assertEquals("com.krista.fields.List", employeesField.get("fieldType"));
-
-        // Check that the value exists (the converter may transform it)
-        Object employeesValue = employeesField.get("value");
-        assertNotNull(employeesValue);
-        // Note: The actual structure depends on how the List converter processes nested values
-        // For now, just verify the value is present and not null
     }
 
     @Test

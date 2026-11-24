@@ -99,10 +99,25 @@ configurations {
 }
 
 dependencies {
-    annotationProcessor 'app.krista:extension-impl-anno-processors:1.0.118-rc3'
-    compileOnly 'app.krista:krista-apis:1.0.118-rc3'
-    testImplementation 'app.krista:krista-apis:1.0.118-rc3'
+    annotationProcessor 'app.krista:extension-impl-anno-processors:1.0.127'
+    compileOnly 'app.krista:krista-apis:1.0.127'
+    testImplementation 'app.krista:krista-apis:1.0.127'
     compileOnly 'org.glassfish.hk2:hk2-api:3.0.3'
+
+    // LangChain4j dependencies for agentic AI
+    implementation 'dev.langchain4j:langchain4j:0.36.2'
+    implementation 'dev.langchain4j:langchain4j-core:0.36.2'
+    implementation 'dev.langchain4j:langchain4j-open-ai:0.36.2'
+    implementation 'dev.langchain4j:langchain4j-anthropic:0.36.2'
+    implementation 'dev.langchain4j:langchain4j-google-ai-gemini:0.36.2'
+
+    // Jackson for JSON handling
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.2'
+
+    // Caffeine cache for session management
+    implementation 'com.github.ben-manes.caffeine:caffeine:3.1.8'
+
+    implementation 'org.slf4j:slf4j-api:2.0.16'
 
     implementation 'javax.ws.rs:javax.ws.rs-api:2.1.1'
     implementation 'org.glassfish.jersey.core:jersey-client:2.35'
@@ -115,6 +130,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.11.0'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'
 
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
     testImplementation 'org.mockito:mockito-core:5.7.0'
@@ -123,7 +139,6 @@ dependencies {
 
 
     implementation 'org.glassfish.jersey.media:jersey-media-multipart:2.35'
-    implementation 'io.gsonfire:gson-fire:1.8.5'
     implementation 'dev.failsafe:failsafe:3.3.2' // used for rate limit support
     implementation 'com.theokanning.openai-gpt3-java:service:0.14.0'
     implementation 'org.apache.commons:commons-text:1.10.0'
@@ -131,8 +146,16 @@ dependencies {
 
 
     testImplementation 'com.kristasoft.common:common-test:1.0.37'
+    testImplementation 'ch.qos.logback:logback-classic:1.4.11'
 
     implementation 'org.apache.commons:commons-csv:1.10.0'
+}
+
+test {
+
+    useJUnitPlatform {
+        excludeTags 'flaky-llm'
+    }
 }
 
 task createSourceDir(type: Exec) {

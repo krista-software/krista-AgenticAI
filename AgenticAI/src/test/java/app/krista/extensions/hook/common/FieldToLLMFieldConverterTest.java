@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.common;
@@ -21,7 +21,6 @@ package app.krista.extensions.hook.common;
 import app.krista.extensions.hook.common.fieldToLLM.FieldToLLMFieldConverter;
 import app.krista.extensions.hook.common.fieldToLLM.FieldToLLMFieldConverterRegistry;
 import app.krista.extensions.hook.common.fieldToLLM.impl.DefaultFieldToLLMFieldConverter;
-import app.krista.extensions.hook.common.fieldToLLM.impl.ListFieldToLLMFieldConverter;
 import app.krista.extensions.hook.common.fieldToLLM.impl.MultiFieldToLLMFieldConverter;
 import app.krista.extensions.hook.common.models.LLMField;
 import app.krista.model.field.Field;
@@ -44,7 +43,6 @@ public class FieldToLLMFieldConverterTest {
     private FieldToLLMFieldConverterRegistry registry;
     private DefaultFieldToLLMFieldConverter defaultConverter;
     private MultiFieldToLLMFieldConverter multiFieldConverter;
-    private ListFieldToLLMFieldConverter listConverter;
 
     // Mock fields for all supported field types
     @Mock private Field textField;
@@ -73,7 +71,6 @@ public class FieldToLLMFieldConverterTest {
     @Mock private Field unitField;
     @Mock private Field currencyField;
     @Mock private Field multiField;
-    @Mock private Field listField;
 
     // Mock nested fields
     @Mock private NamedField nestedTextField;
@@ -91,7 +88,6 @@ public class FieldToLLMFieldConverterTest {
         registry = FieldToLLMFieldConverterRegistry.create();
         defaultConverter = new DefaultFieldToLLMFieldConverter();
         multiFieldConverter = new MultiFieldToLLMFieldConverter(registry);
-        listConverter = new ListFieldToLLMFieldConverter(registry);
 
         createTestFieldObjects();
     }
@@ -135,11 +131,6 @@ public class FieldToLLMFieldConverterTest {
                 Map.of("fields", List.of(nestedTextField, nestedEmailField)));
         setupFieldOptions(multiField, true);
 
-        // Setup List field with element field
-        when(listField.getFieldType()).thenReturn("com.krista.fields.List");
-        when(listField.getAttributeValues()).thenReturn(
-                Map.of("field", nestedTextField));
-        setupFieldOptions(listField, false);
     }
 
     private void setupBasicField(Field field, String fieldType, boolean isMandatory) {
@@ -265,28 +256,6 @@ public class FieldToLLMFieldConverterTest {
         assertNotNull(emailField.get("attributes"));
     }
 
-    // Test ListFieldToLLMFieldConverter
-    @Test
-    public void testListConverter_WithElementField_ReturnsCorrectLLMField() throws Exception {
-        // Act
-        LLMField result = listConverter.extract(listField);
-
-        // Assert
-        assertNotNull(result);
-        assertEquals("com.krista.fields.List", result.fieldType());
-        assertFalse(result.isMandatory());
-
-        // Verify element field processing
-        Map<String, Object> attributes = result.attributeValues();
-        assertTrue(attributes.containsKey("field"));
-
-        Map<String, Object> processedField = (Map<String, Object>) attributes.get("field");
-        assertNotNull(processedField);
-        assertEquals("com.krista.fields.Text", processedField.get("fieldType"));
-        assertEquals(true, processedField.get("isMandatoryField"));
-        assertNotNull(processedField.get("attributes"));
-    }
-
     // Test Registry functionality
     @Test
     public void testRegistry_GetDefaultConverter_ForBasicFieldTypes() throws Exception {
@@ -311,9 +280,6 @@ public class FieldToLLMFieldConverterTest {
         assertNotNull(converter);
         assertTrue(converter instanceof MultiFieldToLLMFieldConverter);
 
-        converter = registry.get("com.krista.fields.List");
-        assertNotNull(converter);
-        assertTrue(converter instanceof ListFieldToLLMFieldConverter);
     }
 
     @Test
@@ -331,7 +297,7 @@ public class FieldToLLMFieldConverterTest {
         // Test all supported field types from the registry
         String[] supportedTypes = {
                 "com.krista.fields.Time", "com.krista.fields.Date", "com.krista.fields.DateRange",
-                "com.krista.fields.DateTimeRange", "com.krista.fields.MultiField", "com.krista.fields.List",
+                "com.krista.fields.DateTimeRange", "com.krista.fields.MultiField",
                 "com.krista.fields.Checkboxes", "com.krista.fields.Switch", "com.krista.fields.Phone",
                 "com.krista.fields.Rating", "com.krista.fields.PickOne", "com.krista.fields.Email",
                 "com.krista.fields.Identifier", "com.krista.fields.Text", "com.krista.fields.Street",
@@ -347,17 +313,14 @@ public class FieldToLLMFieldConverterTest {
         }
     }
 
-    // Test complex nested field case
+    // Test complex nested field case - List is unsupported, so MultiField containing List throws
     @Test
-    public void testComplexNestedField_WithMultiFieldContainingList_ReturnsCorrectStructure() throws Exception {
-        // Arrange - Create complex nested structure: MultiField containing List and other fields
-        NamedField skillItemField = mock(NamedField.class);
-        setupNamedField(skillItemField, "Skill", "com.krista.fields.Text", false);
-
+    public void testComplexNestedField_WithMultiFieldContainingList_ThrowsUnsupportedFieldTypeException() {
+        // Arrange - Create MultiField containing a List nested field (List is unsupported)
         NamedField skillsListField = mock(NamedField.class);
         when(skillsListField.getName()).thenReturn("Skills");
         when(skillsListField.getFieldType()).thenReturn("com.krista.fields.List");
-        when(skillsListField.getAttributeValues()).thenReturn(Map.of("field", skillItemField));
+        when(skillsListField.getAttributeValues()).thenReturn(Map.of());
         setupFieldOptions(skillsListField, true);
 
         NamedField personalInfoField = mock(NamedField.class);
@@ -373,44 +336,14 @@ public class FieldToLLMFieldConverterTest {
                 Map.of("fields", List.of(personalInfoField, skillsListField, nestedRatingField)));
         setupFieldOptions(complexRootField, true);
 
-        // Act
-        LLMField result = multiFieldConverter.extract(complexRootField);
-
-        // Assert
-        assertNotNull(result);
-        assertEquals("com.krista.fields.MultiField", result.fieldType());
-        assertTrue(result.isMandatory());
-
-        // Verify complex nested structure
-        Map<String, Object> attributes = result.attributeValues();
-        List<Map<String, Object>> fields = (List<Map<String, Object>>) attributes.get("fields");
-        assertEquals(3, fields.size());
-
-        // Verify PersonalInfo (nested MultiField)
-        Map<String, Object> personalInfo = fields.get(0);
-        assertEquals("PersonalInfo", personalInfo.get("name"));
-        assertEquals("com.krista.fields.MultiField", personalInfo.get("fieldType"));
-        assertEquals(false, personalInfo.get("isMandatoryField"));
-
-        Map<String, Object> personalInfoAttrs = (Map<String, Object>) personalInfo.get("attributes");
-        List<Map<String, Object>> personalInfoFields = (List<Map<String, Object>>) personalInfoAttrs.get("fields");
-        assertEquals(2, personalInfoFields.size());
-
-        // Verify Skills (List field)
-        Map<String, Object> skills = fields.get(1);
-        assertEquals("Skills", skills.get("name"));
-        assertEquals("com.krista.fields.List", skills.get("fieldType"));
-        assertEquals(true, skills.get("isMandatoryField"));
-
-        Map<String, Object> skillsAttrs = (Map<String, Object>) skills.get("attributes");
-        Map<String, Object> skillField = (Map<String, Object>) skillsAttrs.get("field");
-        assertEquals("com.krista.fields.Text", skillField.get("fieldType"));
-
-        // Verify Rating (simple field)
-        Map<String, Object> rating = fields.get(2);
-        assertEquals("Rating", rating.get("name"));
-        assertEquals("com.krista.fields.Rating", rating.get("fieldType"));
-        assertEquals(true, rating.get("isMandatoryField"));
+        // Act & Assert - should throw because List is unsupported
+        try {
+            multiFieldConverter.extract(complexRootField);
+            fail("Expected exception to be thrown for unsupported List field type");
+        } catch (Exception e) {
+            assertTrue("Expected exception message about unsupported field type but got: " + e.getMessage(),
+                    e.getMessage().contains("No converter registered for field type"));
+        }
     }
 
     // Test edge cases

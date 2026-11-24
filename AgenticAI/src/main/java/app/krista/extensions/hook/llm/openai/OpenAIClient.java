@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.llm.openai;
@@ -25,7 +25,7 @@ import app.krista.extensions.hook.llm.LLMClient;
 import app.krista.extensions.hook.llm.RateLimitException;
 import app.krista.extensions.hook.llm.openai.util.ChatGPTResponse;
 import app.krista.extensions.hook.llm.openai.util.StringI18N;
-import com.google.gson.Gson;
+import app.krista.extensions.hook.util.GsonProvider;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
@@ -128,7 +128,7 @@ public class OpenAIClient implements LLMClient {
                 if (StringI18N.isEmpty(responseJson)) {
                     throw new IOException(HTTP_ERROR_PREFIX + response.code() + NO_RESPONSE_BODY_ERROR);
                 } else {
-                    JsonObject chat = new Gson().fromJson(responseJson, JsonObject.class);
+                    JsonObject chat = GsonProvider.getInstance().fromJson(responseJson, JsonObject.class);
                     String errorMessage = chat.get("error").getAsJsonObject().get("message").toString();
                     throw new IOException(HTTP_ERROR_PREFIX + response.code() + ": " + errorMessage);
                 }
@@ -138,7 +138,7 @@ public class OpenAIClient implements LLMClient {
                 return null;
             }
 
-            ChatGPTResponse chat = new Gson().fromJson(responseJson, ChatGPTResponse.class);
+            ChatGPTResponse chat = GsonProvider.getInstance().fromJson(responseJson, ChatGPTResponse.class);
             if (chat.getChoices() == null || chat.getChoices().isEmpty()) {
                 return null;
             }
@@ -153,7 +153,7 @@ public class OpenAIClient implements LLMClient {
 
     private String addModelParameters(String rawDocumentJson, String modelName) {
         try{
-            JsonObject json = new Gson().fromJson(rawDocumentJson, JsonObject.class);
+            JsonObject json = GsonProvider.getInstance().fromJson(rawDocumentJson, JsonObject.class);
             json.addProperty("model", modelName);
             json.addProperty("temperature", PRECISE_TEMPERATURE);
             json.addProperty("top_p", PRECISE_TOP_P);

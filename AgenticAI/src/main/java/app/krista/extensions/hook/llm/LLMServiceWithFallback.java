@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.llm;
@@ -21,11 +21,10 @@ package app.krista.extensions.hook.llm;
 import app.krista.extension.executor.Invoker;
 import app.krista.extensions.hook.config.LLMConfiguration;
 import app.krista.extensions.hook.factory.LLMClientFactory;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+import app.krista.extensions.hook.util.GsonProvider;
+import com.google.gson.reflect.TypeToken;
 
-import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -42,7 +41,6 @@ public class LLMServiceWithFallback {
 
     private final LLMClientFactory llmClientFactory;
     private final LLMConfiguration llmConfiguration;
-    private final ObjectMapper objectMapper;
 
     // Retry configuration
     private static final int KRISTA_MAX_ATTEMPTS = 1;
@@ -56,7 +54,6 @@ public class LLMServiceWithFallback {
     public LLMServiceWithFallback(Invoker invoker) {
         this.llmClientFactory = new LLMClientFactory(invoker);
         this.llmConfiguration = new LLMConfiguration(invoker);
-        this.objectMapper = new ObjectMapper();
     }
 
     /**
@@ -322,17 +319,19 @@ public class LLMServiceWithFallback {
      * @return beautified JSON string or original string if not valid JSON
      */
     private String beautifyJson(String jsonString) {
+
         if (jsonString == null || jsonString.trim().isEmpty()) {
+
             return jsonString;
         }
 
         try {
+
             // Parse and reformat with pretty printing
-            ObjectMapper prettyMapper = new ObjectMapper();
-            prettyMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            Object jsonObject = prettyMapper.readValue(jsonString, Object.class);
-            return prettyMapper.writeValueAsString(jsonObject);
+            Object parsed = GsonProvider.getInstance().fromJson(jsonString, Object.class);
+            return GsonProvider.getPrettyPrinter().toJson(parsed);
         } catch (Exception e) {
+
             // If it's not valid JSON, return the original string
             return jsonString;
         }
@@ -350,15 +349,18 @@ public class LLMServiceWithFallback {
     }
 
     private Map<String, Object> convertStringToMap(String jsonString) {
+
         try {
+
             // Preprocess the string to handle JSON wrapped in markdown code blocks
             String cleanedJson = preprocessJsonString(jsonString);
             System.out.println("LLMServiceWithFallback: Original JSON string length: " + (jsonString != null ? jsonString.length() : "null"));
             System.out.println("LLMServiceWithFallback: Cleaned JSON string length: " + (cleanedJson != null ? cleanedJson.length() : "null"));
             System.out.println("LLMServiceWithFallback: Cleaned JSON content: " + cleanedJson);
-            return objectMapper.readValue(cleanedJson, new TypeReference<>() {
-            });
-        } catch (IOException e) {
+            Type mapType = new TypeToken<Map<String, Object>>(){}.getType();
+            return GsonProvider.getInstance().fromJson(cleanedJson, mapType);
+        } catch (Exception e) {
+
             System.out.println("LLMServiceWithFallback: JSON parsing failed. Original: " + jsonString);
             throw new RuntimeException("Failed to parse LLM response JSON: " + jsonString, e);
         }

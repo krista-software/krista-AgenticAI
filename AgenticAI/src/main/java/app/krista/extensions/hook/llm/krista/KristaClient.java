@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.llm.krista;
@@ -21,6 +21,7 @@ package app.krista.extensions.hook.llm.krista;
 import app.krista.extensions.hook.llm.HttpClientPool;
 import app.krista.extensions.hook.llm.LLMClient;
 import app.krista.extensions.hook.llm.krista.util.KristaResponse;
+import app.krista.extensions.hook.util.GsonProvider;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -55,7 +56,7 @@ public class KristaClient implements LLMClient {
         // Use pooled HTTP client for better resource management and concurrency
         this.httpClient = HttpClientPool.getInstance().getClient("krista", timeoutSeconds);
 
-        this.gson = new Gson();
+        this.gson = GsonProvider.getInstance();
         this.apiKey = apiKey;
         this.model = model;
         this.apiUrl = DEFAULT_API_URL;

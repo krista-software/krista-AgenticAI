@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.stepHandlers;
@@ -24,6 +24,7 @@ import app.krista.extension.executor.impl.AgentAction;
 import app.krista.extensions.hook.llm.LLMServiceWithFallback;
 import app.krista.extensions.hook.common.FileReader;
 import app.krista.extensions.hook.common.FreeFormHelper;
+import app.krista.extensions.hook.common.OrchestrationContext;
 import app.krista.extensions.hook.common.PromptBuilder;
 import app.krista.extensions.hook.common.models.StepMetadata;
 import app.krista.extensions.hook.factory.ExtensionResponseFactory;
@@ -46,7 +47,7 @@ public class InformAPersonHandlerSummarize implements StepExecutionHandler {
     }
 
     @Override
-    public ExtensionResponse processRequest(AgentAction agentAction, FreeForm currentVariables, String formMessage, String userMessage, StepMetadata metaData, FreeForm currentVariablesDefault, String language) throws StepHandlerHelper.UnsupportedFieldTypeException {
+    public ExtensionResponse processRequest(AgentAction agentAction, FreeForm currentVariables, String formMessage, String userMessage, StepMetadata metaData, FreeForm currentVariablesDefault, String language, OrchestrationContext orchestrationContext) throws StepHandlerHelper.UnsupportedFieldTypeException {
         // This handler only supports SUMMARIZE_INFORM
         if (agentAction != AgentAction.SUMMARIZE_INFORM) {
             throw new UnsupportedOperationException("InformStepExecutionHandler only supports SUMMARIZE_INFORM action");
@@ -92,6 +93,7 @@ public class InformAPersonHandlerSummarize implements StepExecutionHandler {
 
     /**
      * Handles unsupported field type exceptions by returning appropriate error messages.
+     * Uses ChatFormMessageAction to display message in both chat and form modes.
      * @param currentVariables the current FreeForm variables
      * @param isUserResponseCase true if stepType != CST_1030, false otherwise
      * @param language the target language for translation
@@ -100,11 +102,10 @@ public class InformAPersonHandlerSummarize implements StepExecutionHandler {
     private ExtensionResponse handleUnsupportedFieldTypeException(FreeForm currentVariables, boolean isUserResponseCase, String language) {
         if (isUserResponseCase) {
             String errorMessage = TranslatableConstants.translate(TranslatableConstants.UNABLE_TO_CONVERT_USER_INPUT, translationService, language);
-            return ExtensionResponseFactory.createInformUserResponse(errorMessage);
+            return ExtensionResponseFactory.createChatFormMessageResponse(errorMessage);
         } else {
-            // Don't return FreeForm for unsupported fields to avoid serialization issues
             String errorMessage = TranslatableConstants.translate(TranslatableConstants.FIELD_NOT_SUPPORTED, translationService, language);
-            return ExtensionResponseFactory.createInformUserResponse(errorMessage);
+            return ExtensionResponseFactory.createChatFormMessageResponse(errorMessage);
         }
     }
 

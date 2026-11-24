@@ -13,14 +13,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.common;
 
 import app.krista.extensions.hook.common.models.StepMetadata;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+import app.krista.extensions.hook.util.GsonProvider;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -53,7 +52,7 @@ public class PromptBuilder {
      * @return prompt with date prefix
      */
     private static String addDatePrefix(String prompt) {
-        String datePrefix = "Today is " + getCurrentDateForPrompt() + ". Use this date as context for your response.\n\n";
+         String datePrefix = "Today is " + getCurrentDateForPrompt() + ". Use this date only as internal context for interpreting relative date references or evaluating date constraints. Do not mention or include the current date in your response.\n\n";
         return datePrefix + prompt;
     }
 
@@ -73,13 +72,8 @@ public class PromptBuilder {
      * @return JSON string representation
      */
     private static String convertMapToString(Map<String, Object> jsonMap) {
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.enable(SerializationFeature.INDENT_OUTPUT); // for pretty-printing
-            return objectMapper.writeValueAsString(jsonMap);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to convert map to string", e);
-        }
+
+        return GsonProvider.getPrettyPrinter().toJson(jsonMap);
     }
 
     /**

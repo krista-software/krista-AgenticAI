@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.llm.claude.util;
@@ -23,7 +23,8 @@ public class ClaudeConstants {
 
     // Model names
     public static final String CLAUDE_3_7_SONNET = "claude-3-7-sonnet-20250219";
-    public static final String CLAUDE_SONNET_4 = "claude-sonnet-4-20250514";
+    public static final String CLAUDE_SONNET_4 = "claude-sonnet-4-5-20250929";
+    public static final String CLAUDE_OPUS_4 = "claude-opus-4-6";
     public static final String CLAUDE_3_5_HAIKU = "claude-3-5-haiku-20241022";
     public static final String CLAUDE_3_OPUS = "claude-3-opus-20240229";
 

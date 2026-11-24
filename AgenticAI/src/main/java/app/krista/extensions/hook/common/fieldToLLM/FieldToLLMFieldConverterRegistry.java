@@ -13,13 +13,12 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.common.fieldToLLM;
 
 import app.krista.extensions.hook.common.fieldToLLM.impl.DefaultFieldToLLMFieldConverter;
-import app.krista.extensions.hook.common.fieldToLLM.impl.ListFieldToLLMFieldConverter;
 import app.krista.extensions.hook.common.fieldToLLM.impl.MultiFieldToLLMFieldConverter;
 
 import java.util.Map;
@@ -38,7 +37,6 @@ public class FieldToLLMFieldConverterRegistry {
             "com.krista.fields.DateRange",
             "com.krista.fields.DateTimeRange",
             "com.krista.fields.MultiField",
-            "com.krista.fields.List",
             "com.krista.fields.Checkboxes",
             "com.krista.fields.Switch",
             "com.krista.fields.Phone",
@@ -67,7 +65,6 @@ public class FieldToLLMFieldConverterRegistry {
 
         // Register specialized converters for complex field types
         registry.register("com.krista.fields.MultiField", new MultiFieldToLLMFieldConverter(registry));
-        registry.register("com.krista.fields.List", new ListFieldToLLMFieldConverter(registry));
 
         return registry;
     }

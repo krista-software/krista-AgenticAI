@@ -13,13 +13,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.common;
 
 import app.krista.extensions.hook.common.fieldToLLM.FieldAttributeFilter;
-import app.krista.extensions.hook.common.fieldToLLM.FieldOptionsExtractor;
+import app.krista.extensions.hook.common.fieldToLLM.FieldMetadataExtractor;
 import app.krista.extensions.hook.common.fieldToLLM.FieldToLLMFieldConverter;
 import app.krista.extensions.hook.common.fieldToLLM.FieldToLLMFieldConverterRegistry;
 import app.krista.extensions.hook.common.fieldToLLM.valueConverter.FieldValueToLLMValueConverter;
@@ -122,7 +122,7 @@ public class FreeFormHelper {
         // Extract all typed values from the FreeForm
         Map<String, FreeForm.TypedValue> typedValues = extractTypedValues(freeForm);
 
-        // DEBUG: Log all fields in FreeForm
+        // DEBUG: Log all fields in FreeForm with complete details
         System.out.println("=== DEBUG: FreeForm contains " + typedValues.size() + " fields ===");
         for (Map.Entry<String, FreeForm.TypedValue> entry : typedValues.entrySet()) {
             String fieldName = entry.getKey();
@@ -138,6 +138,16 @@ public class FreeFormHelper {
             } else {
                 System.out.println("  Value: " + fieldValue);
             }
+
+            // Log complete field attributes and options
+            if (field != null) {
+                System.out.println("  Attributes: " + field.getAttributeValues());
+                System.out.println("  Options: " + field.getOptions());
+
+                // Check isSecured specifically
+                boolean isSecured = FieldMetadataExtractor.extractIsSecured(field);
+                System.out.println("  isSecured: " + isSecured);
+            }
             System.out.println("---");
         }
 
@@ -150,6 +160,12 @@ public class FreeFormHelper {
             Object fieldValue = typedValue.getValue();
 
             if (field != null) {
+                // Check if field is secured - secured fields cannot be rendered as text
+                if (FieldMetadataExtractor.extractIsSecured(field)) {
+                    throw new Exception("Secured field '" + fieldName + "' cannot be rendered as text. " +
+                        "No converter registered for field type: " + field.getFieldType());
+                }
+
                 // Convert field definition using FieldToLLMFieldConverter with context
                 FieldToLLMFieldConverter fieldConverter = fieldConverterRegistry.get(field.getFieldType());
                 LLMField llmField = fieldConverter.extract(field, context);
@@ -194,7 +210,7 @@ public class FreeFormHelper {
             Object fieldValue = typedValue.getValue();
 
             if (field != null) {
-                boolean isMandatory = FieldOptionsExtractor.extractIsMandatory(field);
+                boolean isMandatory = FieldMetadataExtractor.extractIsMandatory(field);
 
                 if (!checkOnlyMandatoryFields || isMandatory) {
                     if (fieldValue == null || isValueEmpty(fieldValue)) {
@@ -229,7 +245,7 @@ public class FreeFormHelper {
                 Field nestedField = getNestedField(field, nestedEntry.getKey());
                 
                 if (nestedField != null) {
-                    boolean isNestedMandatory = FieldOptionsExtractor.extractIsMandatory(nestedField);
+                    boolean isNestedMandatory = FieldMetadataExtractor.extractIsMandatory(nestedField);
                     
                     if (!checkOnlyMandatoryFields || isNestedMandatory) {
                         if (nestedValue == null || isValueEmpty(nestedValue)) {
@@ -278,7 +294,7 @@ public class FreeFormHelper {
 
             if (field != null) {
                 // Check if field is mandatory
-                boolean isMandatory = FieldOptionsExtractor.extractIsMandatory(field);
+                boolean isMandatory = FieldMetadataExtractor.extractIsMandatory(field);
 
                 // If checkOnlyMandatoryFields is true, only consider mandatory fields
                 if (checkOnlyMandatoryFields && !isMandatory) {

@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.common;
@@ -44,7 +44,7 @@ public class PromptBuilderDateTest {
     private String getExpectedDatePrefix() {
         LocalDate currentDate = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy", Locale.ENGLISH);
-        return "Today is " + currentDate.format(formatter) + ". Use this date as context for your response.\n\n";
+        return "Today is " + currentDate.format(formatter) + ". Use this date only as internal context for interpreting relative date references or evaluating date constraints. Do not mention or include the current date in your response.\n\n";
     }
 
     @Test
@@ -142,8 +142,8 @@ public class PromptBuilderDateTest {
         
         // Verify the format matches the expected pattern
         assertTrue("Date prefix should contain 'Today is'", expectedPrefix.contains("Today is"));
-        assertTrue("Date prefix should contain context instruction", 
-            expectedPrefix.contains("Use this date as context for your response"));
+        assertTrue("Date prefix should contain context instruction",
+            expectedPrefix.contains("Use this date only as internal context for interpreting relative date references or evaluating date constraints. Do not mention or include the current date in your response"));
         
         // Verify it ends with double newline for proper separation
         assertTrue("Date prefix should end with double newline", expectedPrefix.endsWith("\n\n"));

@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.common;
@@ -49,7 +49,6 @@ public class FieldValueToLLMValueConverterTest {
     private CheckboxFieldValueToLLMValueConverter checkboxConverter;
     private PhoneNumberFieldValueToLLMValueConverter phoneConverter;
     private MultiFieldValueToLLMValueConverter multiFieldConverter;
-    private ListFieldValueToLLMValueConverter listConverter;
 
     @Mock
     private Field textField;
@@ -72,21 +71,9 @@ public class FieldValueToLLMValueConverterTest {
     @Mock
     private Field multiField;
     @Mock
-    private Field listField;
-    @Mock
     private NamedField nestedTextField;
     @Mock
     private NamedField nestedEmailField;
-
-    // Additional mock fields for complex test
-    @Mock
-    private NamedField complexRootField;
-    @Mock
-    private NamedField personalInfoField;
-    @Mock
-    private NamedField skillsListField;
-    @Mock
-    private NamedField skillItemField;
 
     @Before
     public void setUp() throws Exception {
@@ -104,7 +91,6 @@ public class FieldValueToLLMValueConverterTest {
         checkboxConverter = new CheckboxFieldValueToLLMValueConverter();
         phoneConverter = new PhoneNumberFieldValueToLLMValueConverter();
         multiFieldConverter = new MultiFieldValueToLLMValueConverter(registry);
-        listConverter = new ListFieldValueToLLMValueConverter(registry);
 
         createTestFieldObjects();
     }
@@ -146,7 +132,7 @@ public class FieldValueToLLMValueConverterTest {
         when(phoneField.getFieldType()).thenReturn("com.krista.fields.Phone");
         when(phoneField.getAttributeValues()).thenReturn(Map.of());
 
-        // Setup nested fields for MultiField and List tests
+        // Setup nested fields for MultiField tests
         when(nestedTextField.getName()).thenReturn("Name");
         when(nestedTextField.getFieldType()).thenReturn("com.krista.fields.Text");
         when(nestedTextField.getAttributeValues()).thenReturn(Map.of());
@@ -159,11 +145,6 @@ public class FieldValueToLLMValueConverterTest {
         when(multiField.getFieldType()).thenReturn("com.krista.fields.MultiField");
         when(multiField.getAttributeValues()).thenReturn(
                 Map.of("fields", List.of(nestedTextField, nestedEmailField)));
-
-        // List field: List of text items
-        when(listField.getFieldType()).thenReturn("com.krista.fields.List");
-        when(listField.getAttributeValues()).thenReturn(
-                Map.of("field", nestedTextField));
     }
 
     @Test
@@ -472,68 +453,6 @@ public class FieldValueToLLMValueConverterTest {
     }
 
     @Test
-    public void testListConverter_WithValidInput_ReturnsExtractedList() throws Exception {
-        // Arrange
-        List<String> input = List.of("Java", "Python", "JavaScript");
-
-        // Act
-        List<?> result = listConverter.extract(listField, input);
-
-        // Assert
-        assertNotNull(result);
-        assertEquals(3, result.size());
-        assertEquals("Java", result.get(0));
-        assertEquals("Python", result.get(1));
-        assertEquals("JavaScript", result.get(2));
-    }
-
-    @Test
-    public void testListConverter_WithNullInput_ReturnsEmptyList() throws Exception {
-        // Act
-        List<?> result = listConverter.extract(listField, null);
-
-        // Assert
-        assertNotNull(result);
-        assertTrue(result.isEmpty());
-    }
-
-    @Test
-    public void testListConverter_WithInvalidInput_ThrowsException() throws Exception {
-        // Arrange
-        String invalidInput = "not a list";
-
-        // Act & Assert
-        Exception exception = assertThrows(Exception.class, () -> {
-            listConverter.extract(listField, invalidInput);
-        });
-        assertTrue(exception.getMessage().contains("Failed to extract List value from type"));
-    }
-
-    @Test
-    public void testListConverter_WithFieldObject_ReturnsExtractedList() throws Exception {
-        // Arrange - Create a list field with a Field object (not NamedField) as element
-        Field elementField = mock(Field.class);
-        when(elementField.getFieldType()).thenReturn("com.krista.fields.Text");
-        when(elementField.getAttributeValues()).thenReturn(Map.of());
-
-        Field listFieldWithField = mock(Field.class);
-        when(listFieldWithField.getFieldType()).thenReturn("com.krista.fields.List");
-        when(listFieldWithField.getAttributeValues()).thenReturn(Map.of("field", elementField));
-
-        List<String> input = List.of("Java", "Python", "JavaScript");
-
-        // Act
-        List<?> result = listConverter.extract(listFieldWithField, input);
-
-        // Assert
-        assertNotNull(result);
-        assertEquals(3, result.size());
-        assertEquals("Java", result.get(0));
-        assertEquals("Python", result.get(1));
-        assertEquals("JavaScript", result.get(2));
-    }
-
-    @Test
     public void testConverters_WithNullInput_HandleGracefully() throws Exception {
         // Test that converters handle null input appropriately
         try {
@@ -579,70 +498,4 @@ public class FieldValueToLLMValueConverterTest {
         }
     }
 
-    @Test
-    public void testComplexMultiFieldConverter_WithNestedFieldsAndList_ReturnsExtractedValues() throws Exception {
-        // Arrange - Setup complex field structure
-        when(skillItemField.getName()).thenReturn("Skill");
-        when(skillItemField.getFieldType()).thenReturn("com.krista.fields.Text");
-        when(skillItemField.getAttributeValues()).thenReturn(Map.of());
-
-        when(skillsListField.getName()).thenReturn("Skills");
-        when(skillsListField.getFieldType()).thenReturn("com.krista.fields.List");
-        when(skillsListField.getAttributeValues()).thenReturn(Map.of("field", skillItemField));
-
-        when(personalInfoField.getName()).thenReturn("PersonalInfo");
-        when(personalInfoField.getFieldType()).thenReturn("com.krista.fields.MultiField");
-        when(personalInfoField.getAttributeValues()).thenReturn(
-                Map.of("fields", List.of(nestedTextField, nestedEmailField)));
-
-        // Create a NamedField for rating since MultiField needs named fields
-        NamedField namedRatingField = mock(NamedField.class);
-        when(namedRatingField.getName()).thenReturn("Rating");
-        when(namedRatingField.getFieldType()).thenReturn("com.krista.fields.Rating");
-        when(namedRatingField.getAttributeValues()).thenReturn(Map.of());
-
-        when(complexRootField.getName()).thenReturn("EmployeeProfile");
-        when(complexRootField.getFieldType()).thenReturn("com.krista.fields.MultiField");
-        when(complexRootField.getAttributeValues()).thenReturn(
-                Map.of("fields", List.of(personalInfoField, skillsListField, namedRatingField)));
-
-        // Complex input with nested structure
-        Map<String, Object> input = Map.of(
-                "PersonalInfo", Map.of(
-                        "Name", "Alice Johnson",
-                        "Email", "alice.johnson@company.com"
-                ),
-                "Skills", List.of("Java", "Python", "React"),
-                "Rating", 5
-        );
-
-        // Act
-        Map<String, Object> result = multiFieldConverter.extract(complexRootField, input);
-
-        // Assert
-        assertNotNull(result);
-
-        // Verify PersonalInfo extraction (nested MultiField)
-        assertTrue(result.containsKey("PersonalInfo"));
-        Map<String, Object> personalInfo = (Map<String, Object>) result.get("PersonalInfo");
-        assertNotNull(personalInfo);
-        assertEquals("Alice Johnson", personalInfo.get("Name"));
-        assertEquals("alice.johnson@company.com", personalInfo.get("Email"));
-
-        // Verify Skills list extraction
-        assertTrue(result.containsKey("Skills"));
-        List<?> skills = (List<?>) result.get("Skills");
-        assertNotNull(skills);
-        assertEquals(3, skills.size());
-        assertEquals("Java", skills.get(0));
-        assertEquals("Python", skills.get(1));
-        assertEquals("React", skills.get(2));
-
-        // Verify Rating extraction
-        assertTrue(result.containsKey("Rating"));
-        assertEquals(Integer.valueOf(5), result.get("Rating"));
-
-        // Verify total field count at root level
-        assertEquals(3, result.size());
-    }
 }

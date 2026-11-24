@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.llm.openai.util;
@@ -23,6 +23,7 @@ public class OpenAIConstants {
 
     // Model names
     public static final String GPT_4_1 = "gpt-4.1";
+    public static final String GPT_5_2 = "gpt-5.2";
     public static final String GPT_4_1_mini = "gpt-4.1-mini";
     public static final String GPT_4_1_nano = "gpt-4.1-nano";
 

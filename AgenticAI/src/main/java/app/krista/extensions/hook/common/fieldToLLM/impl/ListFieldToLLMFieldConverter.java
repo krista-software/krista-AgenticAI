@@ -13,13 +13,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.common.fieldToLLM.impl;
 
 import app.krista.extensions.hook.common.fieldToLLM.FieldAttributeFilter;
-import app.krista.extensions.hook.common.fieldToLLM.FieldOptionsExtractor;
+import app.krista.extensions.hook.common.fieldToLLM.FieldMetadataExtractor;
 import app.krista.extensions.hook.common.fieldToLLM.FieldToLLMFieldConverter;
 import app.krista.extensions.hook.common.fieldToLLM.FieldToLLMFieldConverterRegistry;
 import app.krista.extensions.hook.common.models.LLMField;
@@ -41,7 +41,7 @@ public class ListFieldToLLMFieldConverter implements FieldToLLMFieldConverter {
     @Override
     public LLMField extract(Field field) throws Exception {
         // Extract isMandatory using global utility
-        boolean isMandatory = FieldOptionsExtractor.extractIsMandatory(field);
+        boolean isMandatory = FieldMetadataExtractor.extractIsMandatory(field);
 
         // Filter attributes using global filter and process element field with default context
         Map<String, Object> filteredAttributes = processAttributesWithElementField(field.getAttributeValues(), FieldAttributeFilter.PromptContext.DEFAULT);
@@ -52,7 +52,7 @@ public class ListFieldToLLMFieldConverter implements FieldToLLMFieldConverter {
     @Override
     public LLMField extract(Field field, FieldAttributeFilter.PromptContext context) throws Exception {
         // Extract isMandatory using global utility
-        boolean isMandatory = FieldOptionsExtractor.extractIsMandatory(field);
+        boolean isMandatory = FieldMetadataExtractor.extractIsMandatory(field);
 
         // Filter attributes using context-aware filter and process element field
         Map<String, Object> filteredAttributes = processAttributesWithElementField(field.getAttributeValues(), context);
@@ -97,6 +97,12 @@ public class ListFieldToLLMFieldConverter implements FieldToLLMFieldConverter {
     private Object processElementField(Object fieldObj, FieldAttributeFilter.PromptContext context) throws Exception {
         if (!(fieldObj instanceof Field elementField)) {
             return fieldObj; // Return as-is if not a Field
+        }
+
+        // Check if element field is secured - secured fields cannot be rendered as text
+        if (FieldMetadataExtractor.extractIsSecured(elementField)) {
+            throw new Exception("Secured field in list cannot be rendered as text. " +
+                "No converter registered for field type: " + elementField.getFieldType());
         }
 
         // Get appropriate converter for the element field type

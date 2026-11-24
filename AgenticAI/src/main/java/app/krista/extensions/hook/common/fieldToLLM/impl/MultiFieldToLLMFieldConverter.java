@@ -13,14 +13,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.common.fieldToLLM.impl;
 
 import app.krista.extensions.hook.common.NamedFieldConverter;
 import app.krista.extensions.hook.common.fieldToLLM.FieldAttributeFilter;
-import app.krista.extensions.hook.common.fieldToLLM.FieldOptionsExtractor;
+import app.krista.extensions.hook.common.fieldToLLM.FieldMetadataExtractor;
 import app.krista.extensions.hook.common.fieldToLLM.FieldToLLMFieldConverter;
 import app.krista.extensions.hook.common.fieldToLLM.FieldToLLMFieldConverterRegistry;
 import app.krista.extensions.hook.common.models.LLMField;
@@ -45,7 +45,7 @@ public class MultiFieldToLLMFieldConverter implements FieldToLLMFieldConverter {
     @Override
     public LLMField extract(Field field) throws Exception {
         // Extract isMandatory using global utility
-        boolean isMandatory = FieldOptionsExtractor.extractIsMandatory(field);
+        boolean isMandatory = FieldMetadataExtractor.extractIsMandatory(field);
 
         // Filter attributes using global filter and process nested fields with default context
         Map<String, Object> filteredAttributes = processAttributesWithNestedFields(field.getAttributeValues(), FieldAttributeFilter.PromptContext.DEFAULT);
@@ -56,7 +56,7 @@ public class MultiFieldToLLMFieldConverter implements FieldToLLMFieldConverter {
     @Override
     public LLMField extract(Field field, FieldAttributeFilter.PromptContext context) throws Exception {
         // Extract isMandatory using global utility
-        boolean isMandatory = FieldOptionsExtractor.extractIsMandatory(field);
+        boolean isMandatory = FieldMetadataExtractor.extractIsMandatory(field);
 
         // Filter attributes using context-aware filter and process nested fields
         Map<String, Object> filteredAttributes = processAttributesWithNestedFields(field.getAttributeValues(), context);
@@ -69,7 +69,7 @@ public class MultiFieldToLLMFieldConverter implements FieldToLLMFieldConverter {
     /**
      * Apply global attribute filtering and process nested fields for MultiField
      */
-    private Map<String, Object> processAttributesWithNestedFields(Map<String, Object> attributes, FieldAttributeFilter.PromptContext context) {
+    private Map<String, Object> processAttributesWithNestedFields(Map<String, Object> attributes, FieldAttributeFilter.PromptContext context) throws Exception {
         // First apply context-aware filtering
         Map<String, Object> filtered = FieldAttributeFilter.filterAttributes(attributes, context);
 
@@ -84,7 +84,7 @@ public class MultiFieldToLLMFieldConverter implements FieldToLLMFieldConverter {
     /**
      * Process nested fields for MultiField with context-aware filtering (fields attribute contains List<NamedField>)
      */
-    private Object processNestedFields(Object fieldsObj, FieldAttributeFilter.PromptContext context) {
+    private Object processNestedFields(Object fieldsObj, FieldAttributeFilter.PromptContext context) throws Exception {
         if (!(fieldsObj instanceof List<?> fieldsList)) {
             return fieldsObj; // Return as-is if not a list
         }
@@ -96,25 +96,26 @@ public class MultiFieldToLLMFieldConverter implements FieldToLLMFieldConverter {
             NamedField namedField = NamedFieldConverter.convertToAppNamedField(fieldObj);
 
             if (namedField != null) {
-                try {
-                    // Get appropriate converter for the nested field type
-                    FieldToLLMFieldConverter converter = registry.get(namedField.getFieldType());
-
-                    // Recursively convert each nested field to LLMField with context
-                    LLMField nestedLLMField = converter.extract(namedField, context);
-
-                    // Create a map representation that includes the field name
-                    Map<String, Object> fieldMap = new HashMap<>();
-                    fieldMap.put("name", namedField.getName());
-                    fieldMap.put("fieldType", nestedLLMField.fieldType());
-                    fieldMap.put("isMandatoryField", nestedLLMField.isMandatory());
-                    fieldMap.put("attributes", nestedLLMField.attributeValues());
-
-                    processedFields.add(fieldMap);
-                } catch (Exception e) {
-                    System.out.println("Failed to process nested field: " + e.getMessage());
-                    // Skip this field if we can't process it
+                // Check if nested field is secured - secured fields cannot be rendered as text
+                if (FieldMetadataExtractor.extractIsSecured(namedField)) {
+                    throw new Exception("Secured field '" + namedField.getName() + "' cannot be rendered as text. " +
+                        "No converter registered for field type: " + namedField.getFieldType());
                 }
+
+                // Get appropriate converter for the nested field type
+                FieldToLLMFieldConverter converter = registry.get(namedField.getFieldType());
+
+                // Recursively convert each nested field to LLMField with context
+                LLMField nestedLLMField = converter.extract(namedField, context);
+
+                // Create a map representation that includes the field name
+                Map<String, Object> fieldMap = new HashMap<>();
+                fieldMap.put("name", namedField.getName());
+                fieldMap.put("fieldType", nestedLLMField.fieldType());
+                fieldMap.put("isMandatoryField", nestedLLMField.isMandatory());
+                fieldMap.put("attributes", nestedLLMField.attributeValues());
+
+                processedFields.add(fieldMap);
             } else {
                 System.out.println("Failed to convert field to NamedField: " + fieldObj.getClass().getName());
             }

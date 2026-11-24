@@ -13,44 +13,46 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.llm.claude;
+
 import app.krista.extensions.hook.llm.HttpClientPool;
 import app.krista.extensions.hook.llm.LLMClient;
 import app.krista.extensions.hook.llm.RateLimitException;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+import app.krista.extensions.hook.util.GsonProvider;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParser;
 import okhttp3.*;
-
 
 import java.io.IOException;
 
 import static app.krista.extensions.hook.llm.claude.util.ClaudeConstants.*;
 
 public class ClaudeClient implements LLMClient {
+
     private final OkHttpClient httpClient;
-    private final ObjectMapper objectMapper;
     private final String apiKey;
     private final String model;
     private final int timeoutSeconds;
 
     public ClaudeClient(String apiKey, String model) {
+
         this(apiKey, model, DEFAULT_TIMEOUT_SECONDS);
     }
 
     public ClaudeClient(String apiKey, String model, int timeoutSeconds) {
+
         if (apiKey == null || apiKey.isEmpty()) {
+
             throw new IllegalArgumentException(API_KEY_EMPTY_ERROR);
         }
 
         // Use pooled HTTP client for better resource management and concurrency
         this.httpClient = HttpClientPool.getInstance().getClient("claude", timeoutSeconds);
 
-        this.objectMapper = new ObjectMapper();
         this.apiKey = apiKey;
         this.model = model;
         this.timeoutSeconds = timeoutSeconds;
@@ -116,38 +118,41 @@ public class ClaudeClient implements LLMClient {
     }
 
     private String extractResponseText(String responseBody) {
+
         try {
-            ObjectNode responseJson = (ObjectNode) objectMapper.readTree(responseBody);
+
+            JsonObject responseJson = JsonParser.parseString(responseBody).getAsJsonObject();
             if (responseJson.has(CONTENT_FIELD)) {
-                return responseJson.get(CONTENT_FIELD)
+
+                return responseJson.getAsJsonArray(CONTENT_FIELD)
                         .get(CONTENT_ARRAY_INDEX)
+                        .getAsJsonObject()
                         .get(TEXT_FIELD)
-                        .asText();
+                        .getAsString();
             }
             return "";
-        } catch (JsonProcessingException e) {
+        } catch (Exception e) {
+
             throw new RuntimeException(RESPONSE_PARSE_ERROR + e.getMessage(), e);
         }
     }
 
     private String createSimpleRequestBody(String systemPrompt, String userPrompt) {
-        ObjectNode rootNode = objectMapper.createObjectNode();
-        rootNode.put(MODEL_FIELD, model);
-        rootNode.put(MAX_TOKENS_FIELD, DEFAULT_MAX_TOKENS);
 
-        ObjectNode userMessage = objectMapper.createObjectNode();
-        userMessage.put(ROLE_FIELD, USER_ROLE);
-        userMessage.put(CONTENT_FIELD, userPrompt);
+        JsonObject rootNode = new JsonObject();
+        rootNode.addProperty(MODEL_FIELD, model);
+        rootNode.addProperty(MAX_TOKENS_FIELD, DEFAULT_MAX_TOKENS);
 
-        ArrayNode messagesArray = rootNode.putArray(MESSAGES_FIELD);
-        rootNode.put(SYSTEM_FIELD, systemPrompt);
+        JsonObject userMessage = new JsonObject();
+        userMessage.addProperty(ROLE_FIELD, USER_ROLE);
+        userMessage.addProperty(CONTENT_FIELD, userPrompt);
+
+        JsonArray messagesArray = new JsonArray();
         messagesArray.add(userMessage);
+        rootNode.add(MESSAGES_FIELD, messagesArray);
+        rootNode.addProperty(SYSTEM_FIELD, systemPrompt);
 
-        try {
-            return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(rootNode);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(REQUEST_BODY_ERROR, e);
-        }
+        return GsonProvider.getPrettyPrinter().toJson(rootNode);
     }
 
     /**

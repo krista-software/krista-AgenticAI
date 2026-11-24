@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.translation;
@@ -31,7 +31,7 @@ import app.krista.extensions.hook.llm.LLMServiceWithFallback;
 public class MessageTranslationService {
 
     private final LLMServiceWithFallback llmService;
-    
+
     // Constants for default language handling
     private static final String DEFAULT_LANGUAGE = "English";
     private static final String ENGLISH_CODE = "en";
@@ -65,12 +65,12 @@ public class MessageTranslationService {
         try {
             String translatedMessage = performTranslation(englishMessage, targetLanguage);
 
-            System.out.println("MessageTranslationService: Translated message to " + targetLanguage);
+            System.out.println("Translated message to language: " + targetLanguage);
             return translatedMessage;
 
         } catch (Exception e) {
-            System.out.println("MessageTranslationService: Translation failed for language " + targetLanguage +
-                             ": " + e.getMessage() + ". Returning original English message.");
+            System.err.println("Translation failed: " + e.getMessage());
+            e.printStackTrace();
 
             // Return original English message if translation fails (API down, timeout, etc.)
             return englishMessage;

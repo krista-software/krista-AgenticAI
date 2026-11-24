@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook;
@@ -24,6 +24,8 @@ import app.krista.extension.impl.anno.*;
 import app.krista.extensions.hook.llm.LLMClient;
 import app.krista.extensions.hook.llm.openai.OpenAIClient;
 import app.krista.extensions.hook.llm.claude.ClaudeClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import java.util.Map;
@@ -46,18 +48,21 @@ import static app.krista.extensions.hook.Constants.DOCS_PATH;
         })
 
 @Extension(implementingDomainIds = "catEntryDomain_66277b92-e35f-4838-a41d-f5e4785eb2c9",
-        name = "AgenticAI",
-        version = "1.0.2",
+        name = "Agentic AI",
+        version = "1.0.6",
         jaxrsId = Constants.JAX_RS_ID,
         requireWorkspaceAdminRights = true,
         supportingModes = app.krista.extension.request.ExecutionMode.LIVE)
 @Domain(id = "catEntryDomain_66277b92-e35f-4838-a41d-f5e4785eb2c9",
-        name = "AgenticAI",
+        name = "Agentic AI",
         ecosystemId = "catEntryEcosystem_2141418b-7dd8-4c04-865e-8763ba9aadcf",
         ecosystemName = "AI",
         ecosystemVersion = "4f61efe0-8b50-4ef7-a841-1334a1fe1e03")
 @StaticResource(path = "docs", file = "docs")
+@ChangeLog(file = "docs/pages/release-notes.md")
 public class CamHookExtension {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(CamHookExtension.class);
 
     private final Invoker invoker;
 
@@ -73,7 +78,7 @@ public class CamHookExtension {
 
     @InvokerRequest(InvokerRequest.Type.VALIDATE_ATTRIBUTES)
     public void validateAttributes(Map<String, String> attributes) {
-        System.out.println("Validating extension attributes");
+        LOGGER.info("Validating extension attributes");
 
         try {
             // Validate CloudLLMProvider
@@ -96,17 +101,17 @@ public class CamHookExtension {
             // Test the connection with provided credentials
             testConnectionWithAttributes(attributes);
 
-            System.out.println("Extension attributes validation completed successfully");
+            LOGGER.info("Extension attributes validation completed successfully");
 
         } catch (Exception e) {
-            System.out.println("Extension attributes validation failed: " + e.getMessage());
+            LOGGER.error("Extension attributes validation failed: {}", e.getMessage());
             throw new RuntimeException("Configuration validation failed: " + e.getMessage(), e);
         }
     }
 
     @InvokerRequest(InvokerRequest.Type.TEST_CONNECTION)
     public void testConnection() {
-        System.out.println("Testing connection to configured LLM providers");
+        LOGGER.info("Testing connection to configured LLM providers");
 
         try {
             if (Objects.isNull(invoker.getAttributes()) || invoker.getAttributes().isEmpty()) {
@@ -122,10 +127,10 @@ public class CamHookExtension {
             // Reuse validation logic which includes connection testing
             validateAttributes(attributesMap);
 
-            System.out.println("Connection test completed successfully");
+            LOGGER.info("Connection test completed successfully");
 
         } catch (Exception e) {
-            System.out.println("Connection test failed: " + e.getMessage());
+            LOGGER.error("Connection test failed: {}", e.getMessage());
             throw new RuntimeException("Connection test failed: " + e.getMessage(), e);
         }
     }
@@ -134,7 +139,7 @@ public class CamHookExtension {
      * Helper method to test connection with provided attributes
      */
     private void testConnectionWithAttributes(Map<String, String> attributes) {
-        System.out.println("Testing connection to LLM provider");
+        LOGGER.info("Testing connection to LLM provider");
 
         try {
             String cloudProvider = attributes.get(CLOUD_LLM_PROVIDER);
@@ -152,18 +157,19 @@ public class CamHookExtension {
             String testSystemPrompt = "You are a helpful assistant.";
             String testUserPrompt = "Say 'Connection test successful' if you can read this.";
 
-            System.out.println("Sending test query to " + cloudProvider + " provider");
+            LOGGER.debug("Sending test query to {} provider", cloudProvider);
             String response = client.query(testSystemPrompt, testUserPrompt);
 
             if (response == null || response.trim().isEmpty()) {
                 throw new RuntimeException(cloudProvider + " provider returned empty response during connection test");
             }
 
-            System.out.println("Connection test successful for " + cloudProvider + ". Response: " +
+            LOGGER.info("Connection test successful for {}. Response preview: {}",
+                cloudProvider,
                 response.substring(0, Math.min(100, response.length())) + "...");
 
         } catch (Exception e) {
-            System.out.println("Connection test failed: " + e.getMessage());
+            LOGGER.error("Connection test failed: {}", e.getMessage());
             throw new RuntimeException("Failed to connect to LLM provider: " + e.getMessage(), e);
         }
     }
@@ -177,7 +183,7 @@ public class CamHookExtension {
         return switch (normalizedProvider) {
             case "openai" -> new OpenAIClient(apiKey, "gpt-4o-mini", 10); // 10 second timeout for connection test
             case "claude" ->
-                    new ClaudeClient(apiKey, "claude-3-5-sonnet-20241022", 10); // 10 second timeout for connection test
+                    new ClaudeClient(apiKey, "claude-sonnet-4-5-20250929", 10); // 10 second timeout for connection test
             default -> throw new IllegalArgumentException("Unsupported LLM provider: " + cloudProvider);
         };
     }

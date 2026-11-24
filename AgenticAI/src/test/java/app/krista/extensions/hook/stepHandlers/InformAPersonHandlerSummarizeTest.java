@@ -13,15 +13,19 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.stepHandlers;
 
 import app.krista.extension.executor.ExtensionResponse;
 import app.krista.extension.executor.Invoker;
+import app.krista.extension.executor.RemediationAction;
 import app.krista.extension.executor.impl.AgentAction;
+import app.krista.extension.executor.impl.ChatFormMessageAction;
+import app.krista.extension.executor.impl.InformAPersonAction;
 import app.krista.extensions.hook.common.models.StepMetadata;
+import app.krista.extensions.hook.common.OrchestrationContext;
 import app.krista.model.base.FreeForm;
 import app.krista.model.field.Field;
 import org.junit.Before;
@@ -71,7 +75,8 @@ public class InformAPersonHandlerSummarizeTest {
             userMessage,
             metaData,
             new FreeForm(), // currentVariablesDefault - empty for test
-            "English" // language
+            "English", // language
+            OrchestrationContext.empty()
         );
 
         // Assert
@@ -98,7 +103,8 @@ public class InformAPersonHandlerSummarizeTest {
             userMessage,
             metaData,
             new FreeForm(), // currentVariablesDefault - empty for test
-            "English" // language
+            "English", // language
+            OrchestrationContext.empty()
         );
 
         // Assert
@@ -125,7 +131,8 @@ public class InformAPersonHandlerSummarizeTest {
             userMessage,
             metaData,
             new FreeForm(), // currentVariablesDefault - empty for test
-            "English" // language
+            "English", // language
+            OrchestrationContext.empty()
         );
 
         // Assert
@@ -149,7 +156,8 @@ public class InformAPersonHandlerSummarizeTest {
             null,
             metaData,
             new FreeForm(), // currentVariablesDefault - empty for test
-            "English" // language
+            "English", // language
+            OrchestrationContext.empty()
         );
 
         // Assert
@@ -159,7 +167,15 @@ public class InformAPersonHandlerSummarizeTest {
         // Check that the response contains the specific error message for convertFormResponseToText
         String responseMessage = extractResponseMessage(response);
         assertEquals("Unable to convert user input to text due to presence of unsupported field", responseMessage);
-        System.out.println("Test passed: stepType != CST_1030 with unsupported field returns specific error message");
+
+        // Verify that ChatFormMessageAction is used (not InformAPersonAction)
+        RemediationAction action = extractFirstAction(response);
+        assertNotNull("Action should not be null", action);
+        assertTrue("Action should be ChatFormMessageAction, but was: " + action.getClass().getSimpleName(),
+            action instanceof ChatFormMessageAction);
+        assertFalse("Action should NOT be InformAPersonAction", action instanceof InformAPersonAction);
+
+        System.out.println("Test passed: stepType != CST_1030 with unsupported field returns ChatFormMessageAction");
     }
 
     @Test
@@ -176,7 +192,8 @@ public class InformAPersonHandlerSummarizeTest {
             null,
             metaData,
             new FreeForm(), // currentVariablesDefault - empty for test
-            "English" // language
+            "English", // language
+            OrchestrationContext.empty()
         );
 
         // Assert
@@ -186,7 +203,15 @@ public class InformAPersonHandlerSummarizeTest {
         // Check that the response contains the generic error message for CST_1030 steps
         String responseMessage = extractResponseMessage(response);
         assertEquals("Field not supported, please switch to form based mode", responseMessage);
-        System.out.println("Test passed: CST_1030 step with unsupported field returns generic error message");
+
+        // Verify that ChatFormMessageAction is used (not InformAPersonAction)
+        RemediationAction action = extractFirstAction(response);
+        assertNotNull("Action should not be null", action);
+        assertTrue("Action should be ChatFormMessageAction, but was: " + action.getClass().getSimpleName(),
+            action instanceof ChatFormMessageAction);
+        assertFalse("Action should NOT be InformAPersonAction", action instanceof InformAPersonAction);
+
+        System.out.println("Test passed: CST_1030 step with unsupported field returns ChatFormMessageAction");
     }
 
     @Test
@@ -207,7 +232,8 @@ public class InformAPersonHandlerSummarizeTest {
                 userMessage,
                 metaData,
                 new FreeForm(), // currentVariablesDefault - empty for test
-                "English" // language
+                "English", // language
+                OrchestrationContext.empty()
             );
             fail("Expected UnsupportedOperationException to be thrown");
         } catch (UnsupportedOperationException e) {
@@ -218,6 +244,8 @@ public class InformAPersonHandlerSummarizeTest {
         System.out.println("Test passed: Unsupported action throws exception");
     }
 
+    // ==================== Helper Methods ====================
+
     /**
      * Helper method to extract response message from ExtensionResponse
      */
@@ -227,6 +255,16 @@ public class InformAPersonHandlerSummarizeTest {
             !response.getRemediationActions().getRemediationActionList().isEmpty()) {
 
             return response.getRemediationActions().getRemediationActionList().get(0).getMessage();
+        }
+        return null;
+    }
+
+    private RemediationAction extractFirstAction(ExtensionResponse response) {
+        if (response.getRemediationActions() != null &&
+            response.getRemediationActions().getRemediationActionList() != null &&
+            !response.getRemediationActions().getRemediationActionList().isEmpty()) {
+
+            return response.getRemediationActions().getRemediationActionList().get(0);
         }
         return null;
     }

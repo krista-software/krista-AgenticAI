@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.stepHandlers;
@@ -52,7 +52,7 @@ public class AskAPersonHandlerExtractVariables implements StepExecutionHandler {
     }
 
     @Override
-    public ExtensionResponse processRequest(AgentAction agentAction, FreeForm currentVariables, String formMessage, String userMessage, StepMetadata metaData, FreeForm currentVariablesDefault, String language) {
+    public ExtensionResponse processRequest(AgentAction agentAction, FreeForm currentVariables, String formMessage, String userMessage, StepMetadata metaData, FreeForm currentVariablesDefault, String language, OrchestrationContext orchestrationContext) {
         if (agentAction != AgentAction.EXTRACT_VARIABLES) {
             throw new UnsupportedOperationException("ExtractVariablesHandler only supports EXTRACT_VARIABLES action");
         }
@@ -74,8 +74,9 @@ public class AskAPersonHandlerExtractVariables implements StepExecutionHandler {
         } catch (Exception e) {
             // Check if the exception is caused by unsupported field type
             if (StepHandlerHelper.isUnsupportedFieldTypeException(e)) {
+                // Use ChatFormMessageAction to display message in both chat and form modes
                 String errorMessage = TranslatableConstants.translate(TranslatableConstants.FIELD_NOT_SUPPORTED, translationService, language);
-                return ExtensionResponseFactory.createAskUserResponse(currentVariables, errorMessage);
+                return ExtensionResponseFactory.createChatFormMessageResponse(errorMessage);
             }
             return ExtensionResponseFactory.createErrorResponse(e.getMessage(), currentVariables);
         }

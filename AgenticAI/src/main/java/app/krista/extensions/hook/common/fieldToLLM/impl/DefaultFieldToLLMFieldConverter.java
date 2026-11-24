@@ -13,13 +13,13 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.common.fieldToLLM.impl;
 
 import app.krista.extensions.hook.common.fieldToLLM.FieldAttributeFilter;
-import app.krista.extensions.hook.common.fieldToLLM.FieldOptionsExtractor;
+import app.krista.extensions.hook.common.fieldToLLM.FieldMetadataExtractor;
 import app.krista.extensions.hook.common.fieldToLLM.FieldToLLMFieldConverter;
 import app.krista.extensions.hook.common.models.LLMField;
 import app.krista.model.field.Field;
@@ -31,9 +31,15 @@ public class DefaultFieldToLLMFieldConverter implements FieldToLLMFieldConverter
 
 
     @Override
-    public LLMField extract(Field field) {
+    public LLMField extract(Field field) throws Exception {
+        // Check if field is secured - secured fields cannot be rendered as text
+        if (FieldMetadataExtractor.extractIsSecured(field)) {
+            throw new Exception("Secured field cannot be rendered as text. " +
+                "No converter registered for field type: " + field.getFieldType());
+        }
+
         // Extract isMandatory using global utility
-        boolean isMandatory = FieldOptionsExtractor.extractIsMandatory(field);
+        boolean isMandatory = FieldMetadataExtractor.extractIsMandatory(field);
 
         // Filter attributes using global filter with default context
         Map<String, Object> filteredAttributes = FieldAttributeFilter.filterAttributes(field.getAttributeValues(), FieldAttributeFilter.PromptContext.DEFAULT);
@@ -42,9 +48,15 @@ public class DefaultFieldToLLMFieldConverter implements FieldToLLMFieldConverter
     }
 
     @Override
-    public LLMField extract(Field field, FieldAttributeFilter.PromptContext context) {
+    public LLMField extract(Field field, FieldAttributeFilter.PromptContext context) throws Exception {
+        // Check if field is secured - secured fields cannot be rendered as text
+        if (FieldMetadataExtractor.extractIsSecured(field)) {
+            throw new Exception("Secured field cannot be rendered as text. " +
+                "No converter registered for field type: " + field.getFieldType());
+        }
+
         // Extract isMandatory using global utility
-        boolean isMandatory = FieldOptionsExtractor.extractIsMandatory(field);
+        boolean isMandatory = FieldMetadataExtractor.extractIsMandatory(field);
 
         // Filter attributes using context-aware filter
         Map<String, Object> filteredAttributes = FieldAttributeFilter.filterAttributes(field.getAttributeValues(), context);

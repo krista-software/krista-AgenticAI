@@ -13,16 +13,25 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.stepHandlers;
 
 import app.krista.extension.executor.ExtensionResponse;
 import app.krista.extension.executor.impl.AgentAction;
+import app.krista.extensions.hook.common.OrchestrationContext;
 import app.krista.extensions.hook.common.models.StepMetadata;
 import app.krista.model.base.FreeForm;
 
 public interface StepExecutionHandler {
-    ExtensionResponse processRequest(AgentAction agentAction, FreeForm currentVariables, String formMessage, String userMessage, StepMetadata metaData, FreeForm currentVariablesDefault, String language) throws Exception;
+    ExtensionResponse processRequest(
+            AgentAction agentAction,
+            FreeForm currentVariables,
+            String formMessage,
+            String userMessage,
+            StepMetadata metaData,
+            FreeForm currentVariablesDefault,
+            String language,
+            OrchestrationContext orchestrationContext) throws Exception;
 }

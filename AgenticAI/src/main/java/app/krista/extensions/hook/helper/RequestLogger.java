@@ -13,48 +13,51 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 package app.krista.extensions.hook.helper;
 
 import app.krista.extension.executor.ExtensionResponse;
+import app.krista.extensions.hook.util.GsonProvider;
 import app.krista.model.base.FreeForm;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+import com.google.gson.Gson;
 
 /**
  * Utility class for logging requests and responses
  */
 public class RequestLogger {
 
-    private final ObjectMapper objectMapper;
+    private final Gson gson;
 
     public RequestLogger() {
-        this.objectMapper = new ObjectMapper();
-        this.objectMapper.enable(SerializationFeature.INDENT_OUTPUT); // Enable pretty-printing for logs
+
+        this.gson = GsonProvider.getPrettyPrinter();
     }
 
     /**
      * Logs all request parameters in a structured format
      */
     public void logRequestParameters(FreeForm currentVariables, FreeForm currentVariablesDefault, String action, String formMessage, String userMessage) {
+
         try {
-            String log = "Request parameters:\n" + 
+
+            String log = "Request parameters:\n" +
                         "Action: " + action + "\n" +
                         "Form Message: " + formMessage + "\n" +
                         "User Message: " + userMessage + "\n" +
                         "CurrentVariables: " +
                         (currentVariables != null ?
-                                objectMapper.writeValueAsString(currentVariables) : "null") +
+                                gson.toJson(currentVariables) : "null") +
                         "\n" +
                         "CurrentVariablesDefault: " +
                         (currentVariablesDefault != null ?
-                                objectMapper.writeValueAsString(currentVariablesDefault) : "null") +
+                                gson.toJson(currentVariablesDefault) : "null") +
                         "\n";
 
             System.out.println(log);
         } catch (Exception e) {
+
             System.out.println("Failed to log request parameters: " + e.getMessage());
         }
     }
@@ -71,7 +74,8 @@ public class RequestLogger {
 
             // Try to serialize the full response first
             try {
-                String fullResponse = objectMapper.writeValueAsString(response);
+
+                String fullResponse = gson.toJson(response);
                 System.out.println("Response: " + fullResponse);
             } catch (Exception serializationException) {
                 // If full serialization fails, log a simplified version
